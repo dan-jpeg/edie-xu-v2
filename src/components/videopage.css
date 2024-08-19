@@ -1,0 +1,27 @@
+.video-player {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 61vw;
+}
+
+.video-player video {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.displayed-project-image {
+    width: 600px;
+    object-fit: fill;
+}
+
+@media screen and (min-width: 801px) {
+    .video-wrapper {
+        padding-left: 250px;
+    }
+
+    .video-player {
+        /*padding-left: 300px;*/
+    }
+}

@@ -1,0 +1,62 @@
+.listing-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+    gap: 20px; /* Adjust the gap between columns if needed */
+    max-width: 600px; /* Adjust according to your design */
+    margin: 0 auto; /* Center the grid container */
+    padding: 20px;
+
+}
+
+.text-content {
+    display: flex;
+    font-size: 0.8em;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    color: #333; /* Adjust the text color */
+}
+
+.text-content p {
+    margin: 0 0 0 12px;
+    font-size: 12px; /* Adjust the font size as needed */
+
+}
+
+.text-content h3 {
+    margin: 0 0 0 12px;
+    font-size: 1.1em;
+    padding: 4px 4px 6px 0;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.image-content {
+    position: relative;
+    text-align: right; /* Aligns the date text to the right */
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 1px; /* Optional: Adjust if you want rounded corners */
+}
+
+.image-content .date {
+    font-style: italic;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 5px 10px;
+    font-size: 11px;
+
+}
+
+@media screen and (max-width: 800px) {
+    listing-container {
+        max-width: 100%;
+        padding: 8px 12px;
+    }
+
+
+}

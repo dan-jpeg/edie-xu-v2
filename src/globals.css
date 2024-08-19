@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body {
+    --lightblack: rgb(102,102,102);
+    --black: rgb(34,34,34);
+    overflow: auto;
+    font-family: "Times New Roman";
+    @apply scrollbar-hide;
+}
+
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+
+
+.main-container {
+    float: right;
+    padding-top: 40px;
+    margin-right: 12px;
+    @apply scrollbar-hide;
+
+}
+
+
+body a {
+    text-decoration: none
+
+
+}
+
+
+.sidebar-container {
+    float: left;
+
+}
+
+.app-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 800px) {
+    .app-container {
+        flex-direction: column;
+        justify-content: normal;
+    }
+
+    .main-container {
+        float: none;
+        margin-right: 12px;
+        padding-top: 400px;
+    }
+
+    .sidebar-container {
+        float: none ;
+    }
+
+
+}
+
+
+.progress-bar {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 66vw;
+    height: 12px;
+    border-radius: 1px;
+    background: var(--black);
+    transform-origin: 0%;
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}

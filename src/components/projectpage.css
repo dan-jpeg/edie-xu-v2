@@ -1,0 +1,13 @@
+.displayed-project-image {
+    width: 100%;
+    object-fit: fill;
+}
+
+
+@media screen and (min-width: 801px) {
+    .displayed-project-container {
+        width: 61vw;
+    }
+}
+
+

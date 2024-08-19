@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    --lightblack: rgb(102,102,102);
+    --black: rgb(34,34,34);
+
+    font-family: "Times New Roman";
+    @apply scrollbar-hide;
+}
+
