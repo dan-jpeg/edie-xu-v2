@@ -81,10 +81,10 @@ body a {
 
 .progress-bar {
     position: fixed;
-    bottom: 16px;
+    bottom: 12px;
     left: 16px;
     right: 66vw;
-    height: 12px;
+    height: 4px;
     border-radius: 1px;
     background: var(--lightblack);
     transform-origin: 0%;

@@ -1,11 +1,12 @@
 .listing-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.6fr;
     align-items: start;
     gap: 20px; /* Adjust the gap between columns if needed */
-    max-width: 450px; /* Adjust according to your design */
+    max-width: 500px; /* Adjust according to your design */
     margin: 0 auto; /* Center the grid container */
-    padding: 20px;
+    padding: 24px 0;
+    font-family: "Times New Roman"
 
 }
 
@@ -14,23 +15,27 @@
     font-size: 0.8em;
 
     flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+    justify-content: right;
+    gap: 6px;
     color: #333; /* Adjust the text color */
 }
 
 .text-content p {
     margin: 0 0 0 12px;
-    font-size: 12px; /* Adjust the font size as needed */
+    font-size: 10px; /* Adjust the font size as needed */
 
 }
 
-.text-content h3 {
+.text-content h2 {
     margin: 0 0 0 12px;
     font-size: 1.1em;
     padding: 4px 4px 6px 0;
-    font-style: italic;
-    font-weight: normal;
+    font-weight: bolder;
+}
+
+.text-content h3 {
+    font-weight: lighter;
+    font-size: 0.7em;
 }
 
 .image-content {
@@ -39,13 +44,12 @@
 }
 
 .image-content img {
-    width: 80%;
+    width: 100%;
     height: auto;
     border-radius: 1px; /* Optional: Adjust if you want rounded corners */
 }
 
 .image-content .date {
-    font-style: italic;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     padding: 5px 10px;
     font-size: 11px;
