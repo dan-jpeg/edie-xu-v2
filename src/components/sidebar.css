@@ -69,23 +69,28 @@ p.more-link:hover {
 @media screen and (max-width: 800px) {
     .sidebar {
 
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
     }
 
 
     .sidebar-header {
-        flex: 1.5;
+        flex: 1.2;
     }
     .sidebar-section {
         margin-top: 24px;
         flex: 1.61;
-        min-width: 30vw;
+        width: 100px;
+        /*min-width: 30vw;*/
         font-size: 0.9em;
         display: flex;
         flex-direction: column;
     }
 
+    .sidebar-body {
+        display: flex;
+        flex-direction: row;
+    }
     p.more-link {
         font-size: 10px;
         margin-left: 12px;

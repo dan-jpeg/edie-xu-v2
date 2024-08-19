@@ -1,0 +1,12 @@
+.work-included-container p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 0.8em;
+
+}
+
+.work-included-row {
+    display: flex;
+    flex-direction: row;
+}

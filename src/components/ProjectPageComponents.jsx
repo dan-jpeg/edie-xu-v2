@@ -1,10 +1,14 @@
+import './included-work.css'
+
+
+
 export const IncludedWork = ({work}) => {
     return (
-        <div className="work-included-container">
-            <p className="work-included-title">{work.title}</p>
-            <p className="work-included-title">{work.material}</p>
-            <p className="work-included-title">{work.dimensions}</p>
-            <p className="work-included-title">{work.year}</p>
+        <div className="work-included-container ">
+            <p className="work-included-title ">{work.title}</p>
+            <p className="work-included-material">{work.material}</p>
+            <p className="work-included-dimensions">{work.dimensions}</p>
+            <p className="work-included-year">{work.year}</p>
         </div>
 
     )

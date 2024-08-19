@@ -22,42 +22,45 @@ const Sidebar = () => {
                 <h3 onClick={() => window.location.href = '/'}>edie xu</h3>
             </div>
 
-            <div className="sidebar-section selected-works">
-                <h3 className="clickable">selected works</h3>
-                <ul>
-                    {displayedWorks.map((project) => (
-                        <li key={project.id}>
-                            <Link to={`/project/${slugify(project.title)}`}>{project.title}</Link>
-                        </li>
-                    ))}
-                    {selectedWorks.length > 3 && (
-                        <li>
-                            <p className="more-link" onClick={toggleWorks}>
-                                {worksExpanded ? '-' : '+'}
-                            </p>
-                        </li>
-                    )}
-                </ul>
-            </div>
+            <div className="sidebar-body">
+                <div className="sidebar-section selected-works">
+                    <h3 className="clickable">selected works</h3>
+                    <ul>
+                        {displayedWorks.map((project) => (
+                            <li key={project.id}>
+                                <Link to={`/project/${slugify(project.title)}`}>{project.title}</Link>
+                            </li>
+                        ))}
+                        {selectedWorks.length > 3 && (
+                            <li>
+                                <p className="more-link" onClick={toggleWorks}>
+                                    {worksExpanded ? '-' : '+'}
+                                </p>
+                            </li>
+                        )}
+                    </ul>
+                </div>
 
-            <div className="sidebar-section video-and-performances">
-                <h3 className="clickable">video & performances</h3>
-                <ul>
-                    {displayedVideos.map((video) => (
-                        <li key={video.id}>
-                            <Link to={`/video/${slugify(video.safeTitle)}`}>{video.title}</Link>
-                        </li>
-                    ))}
-                    {videos.length > 3 && (
-                        <li>
-                            <p className="more-link" onClick={toggleVideos}>
-                                {videosExpanded ? '-' : '+'}
-                            </p>
-                        </li>
-                    )}
-                </ul>
-            </div>
+                <div className="sidebar-section video-and-performances">
+                    <h3 className="clickable">video & performances</h3>
+                    <ul>
+                        {displayedVideos.map((video) => (
+                            <li key={video.id}>
+                                <Link to={`/video/${slugify(video.safeTitle)}`}>{video.title}</Link>
+                            </li>
+                        ))}
+                        {videos.length > 3 && (
+                            <li>
+                                <p className="more-link" onClick={toggleVideos}>
+                                    {videosExpanded ? '-' : '+'}
+                                </p>
+                            </li>
+                        )}
+                    </ul>
+                </div>
 
+
+            </div>
 
         </aside>
     );

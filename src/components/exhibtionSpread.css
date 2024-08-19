@@ -1,11 +1,10 @@
 .images-single img {
     width: 100%;
-    padding: 4px 0;
 }
 
 .exhibition-spread-container {
     max-width: 600px;
-    padding-right: 48px;
+    padding: 0;
 }
 
 .images-row {
@@ -34,26 +33,50 @@
 
 }
 
+.exhibition-header-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.exhibition-header-div, h2 {
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-style: italic;
+}
 .prev-next-container {
-    padding: 24px 48px 24px 48px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
 }
 
+.work-included-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.work-included-row div {
+    padding: 48px;
+}
+
 p.next-button {
-    padding-left: 200px;
+    padding: 0
 }
 
 p.previous-button {
-    padding-right: 50px;
+    padding: 0
 }
 
 @media screen, (max-width: 800px) {
     .exhibition-spread-container {
-        max-swidth: 100%;
-        marging: 4px;
+        maxwidth: 100%;
+        margin: 4px;
     }
 
 }

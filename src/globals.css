@@ -42,7 +42,8 @@ body::-webkit-scrollbar {
 
 
 body a {
-    text-decoration: none
+    text-decoration: none;
+    color: var(--lightblack);
 
 
 }
@@ -85,7 +86,7 @@ body a {
     right: 66vw;
     height: 12px;
     border-radius: 1px;
-    background: var(--black);
+    background: var(--lightblack);
     transform-origin: 0%;
 }
 

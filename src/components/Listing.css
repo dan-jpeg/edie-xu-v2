@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 2fr;
     align-items: start;
     gap: 20px; /* Adjust the gap between columns if needed */
-    max-width: 600px; /* Adjust according to your design */
+    max-width: 450px; /* Adjust according to your design */
     margin: 0 auto; /* Center the grid container */
     padding: 20px;
 
@@ -39,7 +39,7 @@
 }
 
 .image-content img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 1px; /* Optional: Adjust if you want rounded corners */
 }
