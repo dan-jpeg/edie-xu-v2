@@ -98,3 +98,9 @@ p.header-date {
     }
 
 }
+
+@media screen and (min-width: 801px) {
+    .exhibition-spread-container {
+        width: 61vw;
+    }
+}

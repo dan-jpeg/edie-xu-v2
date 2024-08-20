@@ -18,6 +18,7 @@ const Sidebar = () => {
 
     return (
         <aside className="sidebar">
+
             <div className="sidebar-header">
                 <h3 onClick={() => window.location.href = '/'}>edie xu</h3>
             </div>

@@ -197,7 +197,7 @@ const videos = [
         safeTitle: "Untitled",
         year: "2019",
         duration: "13min",
-        videoUrl: "",
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/untitled.mp4",
         thumbnail: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/%E3%80%8A%E7%9F%B3%E5%AD%90%E8%B7%AF%E3%80%8B_thumbnail.jpeg"
     }
 ];
