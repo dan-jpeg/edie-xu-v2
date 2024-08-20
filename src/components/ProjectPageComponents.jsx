@@ -39,6 +39,19 @@ export const ImageRow = ({images}) => {
     )
 }
 
+export const ImageRowEqual = ({images}) => {
+    return (
+        <div className="images-row-even">
+            <div className="left-image">
+                <img src={images[0]} alt="left-image"/>
+            </div>
+            <div className="right-image">
+                <img src={images[1]} alt="right-image"/>
+            </div>
+        </div>
+    )
+}
+
 export const PrevNextControls = () => {
     return (
         <div className="prev-next-container">

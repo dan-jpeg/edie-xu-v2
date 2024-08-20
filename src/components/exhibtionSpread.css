@@ -1,5 +1,6 @@
 .images-single img {
     width: 100%;
+    padding: 3px 0;
 }
 
 .exhibition-spread-container {
@@ -12,6 +13,16 @@
     grid-template-columns: 1.618fr 1fr;
     grid-gap: 12px;
     padding-top: 4px;
+    padding-bottom: 8px;
+}
+
+
+
+.images-row-even {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 6px;
+    padding-bottom: 8px;
 }
 
 .left-image, .right-image {
@@ -71,6 +82,13 @@ p.next-button {
 
 p.previous-button {
     padding: 0
+}
+
+p.header-date {
+    font-size: 0.8em;
+    padding-top: 0;
+    margin-top: 4px;
+    font-style: normal  ;
 }
 
 @media screen, (max-width: 800px) {
