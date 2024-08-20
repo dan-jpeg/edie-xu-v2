@@ -9,7 +9,7 @@ const Listing = ({ listing }) => {
             <div className="text-content">
 
                 <h2>{listing.title}</h2>
-                <h3>{listing.date}</h3>
+                {/*<h3 className='listing-date'>{listing.date}</h3>*/}
 
                 <p>{listing.category}</p>
                 <p>{listing.location}</p>

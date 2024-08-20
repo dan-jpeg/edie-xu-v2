@@ -1,11 +1,11 @@
 .listing-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.61fr;
     align-items: start;
-    text-align: left;
+    text-align: right;
     gap: 20px; /* Adjust the gap between columns if needed */
-    max-width: 450px; /* Adjust according to your design */
-    margin: 0 auto; /* Center the grid container */
+    max-width: 500px; /* Adjust according to your design */
+    margin: 0 12px; /* Center the grid container */
     padding-bottom: 12px;
 
 }
@@ -13,14 +13,14 @@
 .text-content {
     display: flex;
     font-size: 0.8em;
-
+    align-items: flex-end;
     flex-direction: column;
-    justify-content: left;
+    justify-content: right;
     color: #333; /* Adjust the text color */
 }
 
 .text-content p {
-    margin: 0 0 0 12px;
+    margin: 0;
     padding: 0;
     font-size: 12px; /* Adjust the font size as needed */
 
@@ -28,18 +28,19 @@
 
 .text-content h3 {
     margin: 0;
-    font-size: 1em;
-    font-style: italic;
-    padding: 0 0 42px 0;
-    font-weight: normal;
+   font-size: 0.5em;
+    padding-bottom: 12px;
+    font-weight: lighter;
 
 }
+
 
 .text-content h2 {
     margin: 0;
     font-size: 1em;
     font-style: italic;
     font-weight: normal;
+    padding-bottom: 24px;
 }
 
 
@@ -49,17 +50,23 @@
 }
 
 .image-content img {
-    width: 80%;
+    width: 100%;
     height: auto;
     border-radius: 1px; /* Optional: Adjust if you want rounded corners */
 }
 
 .image-content .date {
-    font-style: italic;
+    font-style: normal;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     font-size: 11px;
+    font-family: "JetBrains Mono";
+    font-size: 0.5em;
+    font-weight: lighter;
 
-}
+    }
+
+
+
 
 @media screen and (max-width: 800px) {
     listing-container {

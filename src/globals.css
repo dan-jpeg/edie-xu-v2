@@ -11,7 +11,10 @@ body {
     overflow: auto;
     font-family: "Times New Roman";
     @apply scrollbar-hide;
+    color: rgb(102,102,102);
 }
+
+
 
 /*body p {*/
 /*    margin: 0;*/
@@ -88,7 +91,7 @@ body a {
     position: fixed;
     bottom: 12px;
     left: 16px;
-    right: 66vw;
+    right: 64.5vw;
     height: 4px;
     border-radius: 1px;
     background: var(--lightblack);

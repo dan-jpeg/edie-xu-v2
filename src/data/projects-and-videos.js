@@ -271,11 +271,12 @@ const exhibitions2 = [
         subheader: "",
         images: [
             "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/resonate-with-fragmentation_01.jpeg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ready/resonate02.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ready/resonate03.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ready/resonate04.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ready/resonate05.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ready/resonate06.png",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate02%400.3x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate03%400.3x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate04%400.3x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate05%400.3x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate06%400.3x.jpg",
+
         ],
         textContent: "Edie Xu, born in New York in 2000, graduated from the School of the Art Institute of Chicago in 2023. Her works involve various media, including sculpture installations, ceramics, clothing, painting, and more. The delicacy and fragility of these media create tension within her works. Her recent pieces question aesthetic standards by exploring geometric distortions of the body, interpreting the relationship between media and symbols, expressing precisely the irregular and unconstrained essence between humanity and society. Her works in the exhibition, spanning different media, focus on the exploration of perceptions of the body, space, and time, collectively revealing the dialectical relationship between positive and negative forms in space. In the ceramic sculpture 'Intimate being,' the tension between the ceramic shell and its hollow interior mirrors the positive and negative spaces within and around our bodies. The solid presence of ceramics evokes associations with the human body, while fabric serves as the external skin, enveloping the form. In the soft sculpture piece 'Landmart', she chooses fabric as a soft material to explore the ever- changing relationship between the artwork and space. The hollow of the ceramic sculpture transforms into holes between taut fabric fibers here. The lead nail powder left on the ground becomes an integral part of the work, extending the connection with the space. As a highly flexible medium, fabric brings infinite possibilities for change, establishing diverse and fragile relationships with space. It can not only be worn on the human body but can also be related to the current exhibition space. Body, space, and concepts in Edie Xu's sculptural works form a cohesive whole, presenting an organic form that flows and spreads.",
         footnote: "",
