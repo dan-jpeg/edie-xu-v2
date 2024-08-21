@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import './projectpage.css'
+import './included-work.css'
 import {ImagesSingleColumn} from "./ProjectPageComponents.jsx";
 
 const DisplayedProject = ({ project }) => {
@@ -44,19 +45,20 @@ const DisplayedProject = ({ project }) => {
 
     return (
         <div className="displayed-project-container scrollbar-hide">
-            <div className="displayed-title-container">
+            <div className="displayed-title-container text-center   ">
                 <div className="work-included-container ">
-                    <p className="work-included-title ">{project.title}</p>
+                    <p className="work-included-title italic text-lg">{project.title}</p>
                     <p className="work-included-material">{project.material}</p>
                     <p className="work-included-dimensions">{project.dimensions}</p>
                     <p className="work-included-year">{project.year}</p>
                 </div>
 
-                <p>{project.description}</p>
+                <p className="content-center right-8 pt-12 text-sm">{project.description}</p>
 
             </div>
-
-            <ImagesSingleColumn images={imageMedia.map(item => item.url)}/>
+            <div className="project-image-container">
+                <ImagesSingleColumn images={imageMedia.map(item => item.url)}/>
+            </div>
         </div>
     );
 };

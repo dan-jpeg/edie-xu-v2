@@ -5,12 +5,16 @@
 
 
 
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     --lightblack: rgb(102,102,102);
     --black: rgb(34,34,34);
     overflow: auto;
     font-family: "Times New Roman";
-    @apply scrollbar-hide;
     color: rgb(102,102,102);
 }
 
@@ -21,15 +25,6 @@ body {
 /*    padding: 0;*/
 /*}*/
 
-
-.hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-}
 
 
 
@@ -60,21 +55,22 @@ body a {
 .sidebar-container {
     float: left;
 
+
 }
 
 .progress-bar {
     position: fixed;
     bottom: 16px;
-    left: 24px;
-    right: 64.5vw;
-    height: 4px;
-    border-radius: 1px;
+    left: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 0.5px;
     background: var(--lightblack);
-    transform-origin: 0%;
 }
 
 .app-container {
     display: flex;
+    margin: 12px 8px;
     justify-content: space-between;
 }
 
@@ -85,21 +81,21 @@ body a {
     }
 
     .progress-bar {
-        background-color: rgba(180,20,180, 0.6);
-        height: 8px;
+        background-color: rgba(180,180,180, 0.6);
+        height: 24px;
+        width: 32px;
         z-index: 1;
-        right: 24px;
-        top: 0; /* Changed from 2px to 0 */
-        bottom: auto; /* Remove bottom positioning */
-        left: 0; /* Ensure it starts from the left edge */
-        width: 100%; /* Make it full width */
+        right: auto;
+        top: auto; /* Changed from 2px to 0 */
+        bottom: 12px; /* Remove bottom positioning */
+        left: 12px; /* Ensure it starts from the left edge */
     }
 
     .main-container {
         justify-content: center;
         display: flex;
         float: none;
-        margin: 0 8px;
+        margin: 0 12px;
         padding-top: 400px;
     }
 

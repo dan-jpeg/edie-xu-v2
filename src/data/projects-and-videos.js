@@ -3,8 +3,8 @@ const selectedWorks = [
         id: "0",
         category: " ",
         location: " ",
-        title: "CMMMMC - Ceramic Meets Metal Metal Meets Ceramic",
-        description: "",
+        title: "CMMMMC",
+        description: "Ceramic Meets Metal Metal Meets Ceramic",
         year: "2024",
         dimensions: "70 x 23 x 94 inches (177 x 58 x 240 cm)",
         material: "Oxidized metal and broken fired stoneware",
@@ -235,7 +235,7 @@ const exhibitions2 = [
         location: "Beijing Commune, Beijing",
         url: "https://www.beijingcommune.com/exhibitions/108.html",
         date: "2024. 01. 26-03. 02",
-        header: "Group exhibition with Chang Yuchen, Ge Yulu, Hu Xiaoyuan, Li Binyuan, Li Shuang, Zhao Zhiliang, and Zhou Yilun,",
+        header: "Group exhibition with Chang Yuchen, Ge Yulu, Hu Xiaoyuan, Li Binyuan, Li Shuang, Zhao Zhiliang, and Zhou Yilun",
         subheader: "",
 
         images:  [
@@ -344,19 +344,20 @@ const exhibitions2 = [
 
         images: [
             "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/somatic-attunement_01.png",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement03.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement04.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement05.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement06.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement07.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement08.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement09.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement10.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement11.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement02.png",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement12.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement13.jpg",
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/export/somatic-attunement14.png"
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement02%400.25x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement03%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement04%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement05%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement06%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement07%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement08%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement09%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement10%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement11%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement12%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement13%400.2x.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement14%400.25x.jpg",
+
         ],
         textContent: `Studio Gallery are very pleased to have invited eleven Chinese contemporary female young artists to present the group exhibition Borrow Somatic Attunement 」. This time exhibition takes the artist's delicate 'material view' as a clue, and will be the first sculpture exhibition presented since the opening of the new space of the studio gallery. exhibition will open on September 12 and remain on display until October 17.
 

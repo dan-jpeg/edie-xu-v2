@@ -12,7 +12,11 @@
 @media screen and (min-width: 801px) {
     .displayed-project-container {
         width: 61vw;
+        padding-top: 72px;
     }
 }
 
 
+.project-image-container {
+    padding-top: 72px;
+}

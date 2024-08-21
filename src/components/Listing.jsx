@@ -1,26 +1,29 @@
-import { Link } from 'react-router-dom';
-import { exhibitions2 } from "../data/projects-and-videos.js";
-import './Listing.css';
-import { slugify } from '../helpers/slugify';
+    import { Link } from 'react-router-dom';
+    import { exhibitions2 } from "../data/projects-and-videos.js";
+    import './Listing.css';
+    import { slugify } from '../helpers/slugify';
 
-const Listing = ({ listing }) => {
-    return (
-        <Link to={`/exhibition/${slugify(listing.title)}`} className="listing-container">
-            <div className="text-content">
+    const Listing = ({ listing }) => {
+        return (
+            <Link to={`/exhibition/${slugify(listing.title)}`} className="listing-container">
 
-                <h2>{listing.title}</h2>
-                {/*<h3 className='listing-date'>{listing.date}</h3>*/}
+                <div className="date-container">
+                    <p>{`${listing.date}`}</p>
+                </div>
+                <div className="text-content">
 
-                <p>{listing.category}</p>
-                <p>{listing.location}</p>
+                    <h2 className="italic">{`${listing.title}`}</h2>
 
-            </div>
-            <div className="image-content">
-                <img src={listing.images[0]} alt="Art Image"/>
-                <div className="date">{listing.date}</div>
-            </div>
-        </Link>
-    );
-};
+                    <p>{listing.category}</p>
+                    <p>{listing.location}</p>
 
-export default Listing;
+                </div>
+                <div className="image-content">
+                    <img src={listing.images[0]} alt="Art Image"/>
+                    {/*<div className="date">{listing.date}</div>*/}
+                </div>
+            </Link>
+        );
+    };
+
+    export default Listing;

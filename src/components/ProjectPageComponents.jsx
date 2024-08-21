@@ -4,8 +4,8 @@ import './included-work.css'
 
 export const IncludedWork = ({work}) => {
     return (
-        <div className="work-included-container ">
-            <p className="work-included-title ">{work.title}</p>
+        <div className="work-included-container pr-[44px] pl-[44px] pt-16 pb-12">
+            <p className="work-included-title italic pb-3">{work.title}</p>
             <p className="work-included-material">{work.material}</p>
             <p className="work-included-dimensions">{work.dimensions}</p>
             <p className="work-included-year">{work.year}</p>

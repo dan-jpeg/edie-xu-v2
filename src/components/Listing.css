@@ -1,21 +1,37 @@
 .listing-container {
     display: grid;
-    grid-template-columns: 1fr 1.61fr;
+    grid-template-columns: 0.6fr 1.61fr 2fr;
     align-items: start;
+    justify-content: flex-start;
     text-align: right;
-    gap: 20px; /* Adjust the gap between columns if needed */
+    gap: 18px; /* Adjust the gap between columns if needed */
     max-width: 500px; /* Adjust according to your design */
     margin: 0 12px; /* Center the grid container */
     padding-bottom: 12px;
 
 }
 
+.date-container {
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 0.7em;
+    font-style: italic;
+    margin-top: 2px;
+
+}
+
+.date-container p {
+    margin: 0;
+    padding: 0;
+}
+
 .text-content {
     display: flex;
-    font-size: 0.8em;
-    align-items: flex-end;
+    font-size: 0.9em;
+    align-items: center;
     flex-direction: column;
     justify-content: right;
+    transition: 300ms all ease-in-out;
     color: #333; /* Adjust the text color */
 }
 
@@ -28,17 +44,16 @@
 
 .text-content h3 {
     margin: 0;
-   font-size: 0.5em;
-    padding-bottom: 12px;
+    padding: 0 0 12px 0;
     font-weight: lighter;
 
 }
 
 
 .text-content h2 {
-    margin: 0;
     font-size: 1em;
-    font-style: italic;
+    margin-left: 0px;
+    margin-top: 0;
     font-weight: normal;
     padding-bottom: 24px;
 }
@@ -67,11 +82,29 @@
 
 
 
-@media screen and (max-width: 800px) {
-    listing-container {
+@media screen and (max-width: 750px) {
+    .listing-container {
         max-width: 100%;
-        padding: 8px 12px;
+        /*padding: 8px 12px;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    .text-content h2 {
+
+        margin-left: auto;
+
+    }
+
+    .text-content {
+        align-items: center;
+    }
+    .image-content {
+        padding-bottom: 82px;
+    }
+
 
 
 }

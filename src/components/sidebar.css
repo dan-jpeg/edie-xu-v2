@@ -42,8 +42,9 @@ p.more-link:hover {
 }
 
 
+
 .sidebar h3 {
-    margin-bottom: 0.5em;
+    margin: 12px 0;
 }
 
 .sidebar h3:hover {
@@ -66,7 +67,7 @@ p.more-link:hover {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
     .sidebar {
 
         flex-direction: column;
@@ -90,6 +91,8 @@ p.more-link:hover {
     .sidebar-body {
         display: flex;
         flex-direction: row;
+        padding-left: 20px;
+       justify-content: flex-start;
     }
     p.more-link {
         font-size: 10px;

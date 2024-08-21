@@ -19,13 +19,13 @@ const Sidebar = () => {
     return (
         <aside className="sidebar">
 
-            <div className="sidebar-header">
+            <div className="sidebar-header italic font-bold">
                 <h3 onClick={() => window.location.href = '/'}>edie xu</h3>
             </div>
 
             <div className="sidebar-body">
                 <div className="sidebar-section selected-works">
-                    <h3 className="clickable">selected works</h3>
+                    <h3 className="clickable font-bold">selected works</h3>
                     <ul>
                         {displayedWorks.map((project) => (
                             <li key={project.id}>
@@ -43,7 +43,7 @@ const Sidebar = () => {
                 </div>
 
                 <div className="sidebar-section video-and-performances">
-                    <h3 className="clickable">video & performances</h3>
+                    <h3 className="clickable font-bold">video & performances</h3>
                     <ul>
                         {displayedVideos.map((video) => (
                             <li key={video.id}>
