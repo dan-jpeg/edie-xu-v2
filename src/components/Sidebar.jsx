@@ -1,14 +1,15 @@
 
-import { useState} from "react";
+import {useEffect, useState} from "react";
 import { selectedWorks, videos } from "../data/projects-and-videos.js";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { slugify} from "../helpers/slugify.jsx";
 import './sidebar.css'
 
 
-const Sidebar = () => {
+const Sidebar = ({isShowingVideo}) => {
     const [worksExpanded, setWorksExpanded] = useState(false);
     const [videosExpanded, setVideosExpanded] = useState(false);
+
 
     const toggleWorks = () => setWorksExpanded(!worksExpanded);
     const toggleVideos = () => setVideosExpanded(!videosExpanded);
@@ -17,7 +18,8 @@ const Sidebar = () => {
     const displayedVideos = videosExpanded ? videos : videos.slice(0, 3);
 
     return (
-        <aside className="sidebar">
+        <aside className={`sidebar transform transition duration-300 ${isShowingVideo? ' bg-none translate-x-[-250px]' : ''} `}>
+
 
             <div className="sidebar-header italic font-bold">
                 <h3 onClick={() => window.location.href = '/'}>edie xu</h3>

@@ -215,7 +215,17 @@ const exhibitions2 = [
         location: "Shanghart, Shang Hai",
         url: "https://www.shanghartgallery.com/galleryarchive/exhibition.htm?exbId=17117",
         date: "2024 03. 22-06. 01",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/limited-intentionality_01.jpeg","https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_02.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_03.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_04.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_05.png"],
+        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/limited-intentionality_01.jpeg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality07small.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality06-small.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality08-small.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality01-small.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality02-small.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality03-small.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality04-small.jpg",
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality05-small.jpg",
+
+        ],
 
         header: "Group Exhibition with Cai Lei, Hang Chunhui, Liu Yue, Su Chang, Sun Wenjia",
         subheader: "Curated by Zhang Jiarong",

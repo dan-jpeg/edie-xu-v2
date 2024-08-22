@@ -29,7 +29,7 @@ const VideoPage = () => {
     return <DisplayedVideo video={video} />;
 };
 
-const ExhibitionPage = () => {
+ const ExhibitionPage = ({ scrollYProgress }) => {
     const { slug } = useParams();
     const exhibition = exhibitions2.find(e => slugify(e.title) === slug);
 
@@ -37,7 +37,6 @@ const ExhibitionPage = () => {
         return <div>Exhibition not found</div>;
     }
 
-    return <ExhibitionDefaultSpread exhibition={exhibition} />;
+    return <ExhibitionDefaultSpread exhibition={exhibition} scrollYProgress={scrollYProgress} />;
 };
-
 export { ProjectPage, VideoPage, ExhibitionPage };

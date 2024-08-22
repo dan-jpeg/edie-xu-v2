@@ -1,12 +1,18 @@
 .video-player {
     margin-top: 20px;
-    width: 100%;
-    max-width: 61vw;
+    width: 100vw;
 }
 
 .video-player video {
-    width: 100%;
+    width: 100vw;
     height: auto;
+}
+
+.video-wrapper {
+    padding-top: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -18,7 +24,13 @@
 
 @media screen and (min-width: 801px) {
     .video-wrapper {
-        padding-left: 250px;
+        padding-top: 70vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 10px;
+
     }
 
     .video-player {

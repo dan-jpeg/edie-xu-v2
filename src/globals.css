@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 
-
-
-
 *::-webkit-scrollbar {
     display: none;
 }
@@ -20,10 +17,27 @@ body {
 
 
 
-/*body p {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
+
+.progress-bar-wrapper {
+
+        position: fixed;
+        bottom: 16px;
+        left: 25px;
+        width: 48px;  /* Increase this for a wider clickable area */
+        height: 64px; /* Increase this for a taller clickable area */
+        cursor: pointer;
+        z-index: 1000; /* Ensure it's above other elements */
+
+
+}
+
+.progress-bar-wrapper,video-showing {
+    bottom: auto;
+    left: 50%;
+    top: 0;
+}
+
+
 
 
 
@@ -38,7 +52,6 @@ body::-webkit-scrollbar {
 .main-container {
     float: right;
     padding-top: 40px;
-    margin-right: 12px;
     @apply scrollbar-hide;
 
 }
@@ -48,20 +61,31 @@ body a {
     text-decoration: none;
     color: var(--lightblack);
 
-
 }
 
 
 .sidebar-container {
     float: left;
 
-
 }
+
 
 .progress-bar {
     position: fixed;
     bottom: 16px;
     left: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 0.5px;
+    background: var(--lightblack);
+}
+
+.progress-bar.video-showing {
+    position: fixed;
+    bottom: auto;
+    left: auto;
+    right: 12px;
+    top: 24px;
     width: 36px;
     height: 36px;
     border-radius: 0.5px;

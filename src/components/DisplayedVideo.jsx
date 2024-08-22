@@ -5,8 +5,8 @@ import './videopage.css'
 const DisplayedVideo = ({video}) => {
     return (
         <div className="displayed-video-container">
-            <div className="video-title-container">
-                <h2 className="video-title">{video.title}</h2>
+            <div className="video-title-container text-center">
+                <h2 className="video-title pt-[39vh] pb-4">{video.title}</h2>
                 <div className="video-details">
                     <p>{video.year}</p>
                     <p>{video.duration}</p>
@@ -16,7 +16,7 @@ const DisplayedVideo = ({video}) => {
 
             {video.videoUrl ? (
                 <div className="video-wrapper">
-                    <ReactPlayer url={video.videoUrl} playing={true} width='100%' height='100%' />
+                    <ReactPlayer url={video.videoUrl} playing={true} width='95%' height='100%'  />
 
                 </div>
 

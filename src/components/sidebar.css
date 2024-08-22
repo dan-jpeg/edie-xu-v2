@@ -20,7 +20,6 @@ p.more-link:hover {
 .sidebar {
     position: fixed;
     left: 0;
-    background-color: #fff;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -32,6 +31,7 @@ p.more-link:hover {
     transition: all 0.3s ease-in-out;
 
 }
+
 
 .sidebar-header {
     flex: 1;
@@ -69,7 +69,7 @@ p.more-link:hover {
 
 @media screen and (max-width: 750px) {
     .sidebar {
-
+        background-color: #fff;
         flex-direction: column;
         width: 100%;
     }
