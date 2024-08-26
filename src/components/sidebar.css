@@ -45,6 +45,7 @@ p.more-link:hover {
 
 .sidebar h3 {
     margin: 12px 0;
+    font-size: 0.7rem;
 }
 
 .sidebar h3:hover {
@@ -59,12 +60,17 @@ p.more-link:hover {
 
 .sidebar li {
     cursor: crosshair;
-
-    padding: 0.5em 0;
+    font-size: 0.7em;
+    padding: 0;
 }
 
 .sidebar li:hover {
     text-decoration: underline;
+}
+
+h3.edie-xu {
+    font-size: 0.9rem;
+    margin-bottom: 0px;
 }
 
 @media screen and (max-width: 750px) {

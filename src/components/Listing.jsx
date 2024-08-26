@@ -5,7 +5,7 @@
 
     const Listing = ({ listing }) => {
         return (
-            <Link to={`/exhibition/${slugify(listing.title)}`} className="listing-container">
+            <Link to={`/exhibition/${slugify(listing.title)}`} className="listing-container text-xs">
 
                 <div className="date-container">
                     <p>{`${listing.date}`}</p>
@@ -14,7 +14,7 @@
 
                     <h2 className="italic">{`${listing.title}`}</h2>
 
-                    <p>{listing.category}</p>
+                    <p className={`text-sm`}> {listing.category}</p>
                     <p>{listing.location}</p>
 
                 </div>

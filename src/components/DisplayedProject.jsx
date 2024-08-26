@@ -47,7 +47,7 @@ const DisplayedProject = ({ project }) => {
         <div className="displayed-project-container scrollbar-hide">
             <div className="displayed-title-container text-center   ">
                 <div className="work-included-container">
-                    <p className="work-included-title italic pb-10 text-lg">{project.title}</p>
+                    <p className="work-included-title italic pb-10 text-sm ">{project.title}</p>
                     <p className="work-included-material">{project.material}</p>
                     <p className="work-included-dimensions">{project.dimensions}</p>
                     <p className="work-included-year">{project.year}</p>

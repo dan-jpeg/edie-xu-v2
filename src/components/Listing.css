@@ -1,11 +1,11 @@
 .listing-container {
     display: grid;
-    grid-template-columns: 0.6fr 1.61fr 2fr;
+    grid-template-columns: 0.5fr 1.61fr 2fr;
     align-items: start;
     justify-content: flex-start;
     text-align: right;
     gap: 18px; /* Adjust the gap between columns if needed */
-    max-width: 500px; /* Adjust according to your design */
+    max-width: 450px; /* Adjust according to your design */
     margin: 0 12px; /* Center the grid container */
     padding-bottom: 12px;
 
@@ -27,7 +27,6 @@
 
 .text-content {
     display: flex;
-    font-size: 0.9em;
     align-items: center;
     flex-direction: column;
     justify-content: right;
@@ -38,13 +37,14 @@
 .text-content p {
     margin: 0;
     padding: 0;
-    font-size: 12px; /* Adjust the font size as needed */
+    opacity: 0.9;
+    font-size: 9px; /* Adjust the font size as needed */
 
 }
 
 .text-content h3 {
     margin: 0;
-    padding: 0 0 12px 0;
+    padding: 0 0 8px 0;
     font-weight: lighter;
 
 }
@@ -55,7 +55,7 @@
     margin-left: 0px;
     margin-top: 0;
     font-weight: normal;
-    padding-bottom: 24px;
+    padding-bottom: 8px;
 }
 
 
