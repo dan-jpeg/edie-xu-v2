@@ -152,17 +152,21 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   return (
     <div className="app-container scrollbar-hide">
       <div
-        className={`top-right-header-wrapper  fixed left-[1.8rem] text-xs top-[8.5rem] md:top-[20.5rem] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
+        className={`top-right-header-wrapper  fixed left-[1.8rem] top-[6.5rem] md:top-auto md:bottom-[10vh] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
       >
         <motion.div
           variants={contactVariants}
           animate={hidden ? "hidden" : "visible"}
           transition={{ duration: 0.2, type: "tween" }}
-          className="top-right-header italic font-bold text-[1.7rem] md:text-xs"
+          className="top-right-header italic font-bold text-xl md:text-xs"
         >
-          <ul className={"list-none"}>
-            <li className={`py-3 md:py-1`}>contact</li>
-            <li className={`py-3 md:py-1`}>download cv</li>
+          <ul className={"grid-cols-2"}>
+            <li className={`py-3 md:py-1`}>
+              <h1>contact</h1>
+            </li>
+            <li className={`py-3 md:py-1`}>
+              <h1>download cv</h1>
+            </li>
           </ul>
         </motion.div>
       </div>

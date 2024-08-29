@@ -72,7 +72,7 @@ const Sidebar = ({ isShowingVideo, hidden }) => {
     ${isShowingVideo ? " -translate-x-[250px] md:translate-x-0" : ""}
   `}
       >
-        <div className="sidebar-body flex flex-rows md:flex-col align-top pl-40 md:pl-8 mt-4">
+        <div className="sidebar-body flex flex-rows md:flex-col align-top pl-32 md:pl-8 mt-4">
           <div className="sidebar-section selected-works ">
             <h3 className="clickable  text-[1.7rem] md:text-xs my-3 italic">
               w
