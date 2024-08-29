@@ -28,6 +28,7 @@ import {
 import useScrollToTop from "./hooks/useScrollToTop";
 import ScrollBasedAnimation from "./components/NavigationControls.jsx";
 import { getAdjacentItems } from "./components/NavigationUtility.jsx";
+import ContactMenu from "./components/ContactMenu.jsx";
 
 const App = () => {
   const [lenisScrollProgress, setLenisScrollProgress] = useState(0);
@@ -39,7 +40,7 @@ const App = () => {
 
   useMotionValueEvent(scrollYProgress, "change", (latestValue) => {
     const previousValue = scrollYProgress.getPrevious();
-    if (latestValue > previousValue && latestValue > 0.2) {
+    if (latestValue > previousValue && latestValue > 0.1) {
       setHidden(true);
       console.log(latestValue);
     } else {
@@ -80,6 +81,8 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
     prev: null,
     next: null,
   });
+
+  const [contactMenuExpanded, setContactMenuExpanded] = useState(false);
 
   useEffect(() => {
     const isVideoRoute = location.pathname.includes("/video/");
@@ -145,24 +148,34 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   };
 
   const contactVariants = {
-    visible: { y: 0, opacity: 1 },
-    hidden: { y: -5, opacity: 0 },
+    visible: { y: 0, x: 0, opacity: 1 },
+    hidden: { y: -5, x: -15, opacity: 0 },
   };
 
   return (
     <div className="app-container scrollbar-hide">
       <div
-        className={`top-right-header-wrapper  fixed left-[1.8rem] top-[6.5rem] md:top-auto md:bottom-[10vh] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
+        className={`top-right-header-wrapper  fixed left-[1.8rem] top-[4.5rem] md:top-auto md:bottom-[10vh] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
       >
         <motion.div
           variants={contactVariants}
           animate={hidden ? "hidden" : "visible"}
-          transition={{ duration: 0.2, type: "tween" }}
+          transition={{ duration: 0.32, ease: "linear" }}
           className="top-right-header italic font-bold text-xl md:text-xs"
         >
           <ul className={"grid-cols-2"}>
-            <li className={`py-3 md:py-1`}>
-              <h1>contact</h1>
+            <li className={`p-0 m-0 md:py-1`}>
+              <h1
+                className={`pb-0`}
+                onClick={() => setContactMenuExpanded(!contactMenuExpanded)}
+              >
+                contact
+              </h1>
+              {contactMenuExpanded ? (
+                <ContactMenu contactMenuExpanded={contactMenuExpanded} />
+              ) : (
+                ""
+              )}
             </li>
             <li className={`py-3 md:py-1`}>
               <h1>download cv</h1>
@@ -170,18 +183,6 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
           </ul>
         </motion.div>
       </div>
-
-      {/*<div*/}
-      {/*  className={`top-right-header-wrapper  fixed left-[1.8rem] top-[6.5rem] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}*/}
-      {/*>*/}
-      {/*  <motion.div*/}
-      {/*    variants={contactVariants}*/}
-      {/*    animate={hidden ? "hidden" : "visible"}*/}
-      {/*    className="top-right-header italic font-bold text-[1.7rem] md:text-xs"*/}
-      {/*  >*/}
-      {/*    contact*/}
-      {/*  </motion.div>*/}
-      {/*</div>*/}
 
       <div
         className={`navigation-controls transition ${isShowingProject || isShowingVideo ? "" : "hidden"} duration-200 fixed left-[6rem] text-xs bottom-[2.6rem] z-30 ${isShowingVideo ? "translate-y-[50px]" : ""}`}
