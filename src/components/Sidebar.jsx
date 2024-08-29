@@ -7,29 +7,34 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import "./newSidebarCss.css";
 
 const Sidebar = ({ isShowingVideo, hidden }) => {
+  const [isDesktop, setIsDesktop] = useState(false);
   const [worksExpanded, setWorksExpanded] = useState(true);
-  const [videosExpanded, setVideosExpanded] = useState(true);
+  const [videosExpanded, setVideosExpanded] = useState(false);
 
   const toggleWorks = () => setWorksExpanded(!worksExpanded);
   const toggleVideos = () => setVideosExpanded(!videosExpanded);
 
   const { scrollY } = useScroll();
 
-  const displayedWorks = worksExpanded
-    ? selectedWorks
-    : selectedWorks.slice(0, 3);
-  const displayedVideos = videosExpanded ? videos : videos.slice(0, 3);
-
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
-
   useEffect(() => {
+    const checkIsDesktop = () => window.innerWidth >= 768;
+    setIsDesktop(checkIsDesktop());
+    setVideosExpanded(checkIsDesktop());
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
+      const newIsDesktop = checkIsDesktop();
+      setIsDesktop(newIsDesktop);
+
+      setVideosExpanded(newIsDesktop);
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const displayedWorks = worksExpanded
+    ? selectedWorks
+    : selectedWorks.slice(0, 3);
+  const displayedVideos = videosExpanded ? videos : videos.slice(0, 3);
 
   const mobileVariants = {
     visible: { y: 0, opacity: 1 },
@@ -74,7 +79,7 @@ const Sidebar = ({ isShowingVideo, hidden }) => {
     ${isShowingVideo ? " -translate-x-[250px] md:translate-x-0" : ""}
   `}
       >
-        <div className="sidebar-body flex flex-rows md:flex-col align-top pl-32 md:pl-8 mt-4">
+        <div className="sidebar-body flex flex-rows md:flex-col align-top pl-36 md:pl-8 mt-4">
           <div className="sidebar-section selected-works ">
             <h3 className="clickable  text-[1.7rem] md:text-xs my-3 italic">
               w
