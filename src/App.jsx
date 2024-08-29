@@ -41,11 +41,11 @@ const App = () => {
   useMotionValueEvent(scrollYProgress, "change", (latestValue) => {
     const previousValue = scrollYProgress.getPrevious();
 
-    if (latestValue > previousValue && latestValue > 0.1 && latestValue > 0.9) {
-      setHidden(true);
-      console.log(latestValue);
+    if (latestValue > 0.1) {
+      if (latestValue > previousValue) {
+        setHidden(true);
+      }
     } else {
-      console.log(latestValue);
       setHidden(false);
     }
   });
