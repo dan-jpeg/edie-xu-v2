@@ -19,7 +19,12 @@ import {
   VideoPage,
 } from "./components/PageComponents.jsx";
 import { ReactLenis, useLenis } from "lenis/react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import useScrollToTop from "./hooks/useScrollToTop";
 import ScrollBasedAnimation from "./components/NavigationControls.jsx";
 import { getAdjacentItems } from "./components/NavigationUtility.jsx";
@@ -27,10 +32,22 @@ import { getAdjacentItems } from "./components/NavigationUtility.jsx";
 const App = () => {
   const [lenisScrollProgress, setLenisScrollProgress] = useState(0);
   const { scrollYProgress } = useScroll();
-
+  const [hidden, setHidden] = useState(false);
   const lenisOptions = {
     duration: 0.6,
   };
+
+  useMotionValueEvent(scrollYProgress, "change", (latestValue) => {
+    const previousValue = scrollYProgress.getPrevious();
+    if (latestValue > previousValue && latestValue > 0.2) {
+      setHidden(true);
+      console.log(latestValue);
+    } else {
+      console.log(latestValue);
+
+      setHidden(false);
+    }
+  });
 
   const onLenisScroll = useCallback(({ scroll, limit }) => {
     // Calculate scroll progress as a percentage
@@ -42,20 +59,22 @@ const App = () => {
     <Router>
       <ReactLenis root options={lenisOptions} onScroll={onLenisScroll}>
         <AppContent
-          scrollYProgress={scrollYProgress}
           lenisScrollProgress={lenisScrollProgress}
+          scrollYProgress={scrollYProgress}
+          hidden={hidden}
         />
       </ReactLenis>
     </Router>
   );
 };
 
-const AppContent = ({ scrollYProgress, lenisScrollProgress }) => {
+const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   useScrollToTop();
 
   const location = useLocation();
   const navigate = useNavigate();
   const [isShowingVideo, setIsShowingVideo] = useState(false);
+
   const [isShowingProject, setIsShowingProject] = useState(false);
   const [adjacentItems, setAdjacentItems] = useState({
     prev: null,
@@ -91,7 +110,12 @@ const AppContent = ({ scrollYProgress, lenisScrollProgress }) => {
   const topRightTranlsate = useTransform(
     scrollYProgress,
     [0, 0.1, 0.3, 0.4, 0.5],
-    [0, -5, -10, -20, -30],
+    [0, -5, -30, -130, -250],
+  );
+  const contactTranslate = useTransform(
+    scrollYProgress,
+    [0, 0.1, 0.3, 0.4, 0.5],
+    [0, -5, -30, -150, -300],
   );
 
   const bottomLeftTranslate = useTransform(
@@ -120,21 +144,40 @@ const AppContent = ({ scrollYProgress, lenisScrollProgress }) => {
     }
   };
 
+  const contactVariants = {
+    visible: { y: 0, opacity: 1 },
+    hidden: { y: -5, opacity: 0 },
+  };
+
   return (
     <div className="app-container scrollbar-hide">
       <div
-        className={`top-right-header-wrapper transition duration-200 fixed right-[1.5rem] text-xs top-[0.75rem] z-30 ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
+        className={`top-right-header-wrapper  fixed left-[1.8rem] text-xs top-[8.5rem] md:top-[20.5rem] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
       >
         <motion.div
-          className="top-right-header italic font-bold text-[0.9rem]"
-          style={{
-            // eslint-disable-next-line react/prop-types
-            translateY: topRightTranlsate,
-          }}
+          variants={contactVariants}
+          animate={hidden ? "hidden" : "visible"}
+          transition={{ duration: 0.2, type: "tween" }}
+          className="top-right-header italic font-bold text-[1.7rem] md:text-xs"
         >
-          download cv
+          <ul className={"list-none"}>
+            <li className={`py-3 md:py-1`}>contact</li>
+            <li className={`py-3 md:py-1`}>download cv</li>
+          </ul>
         </motion.div>
       </div>
+
+      {/*<div*/}
+      {/*  className={`top-right-header-wrapper  fixed left-[1.8rem] top-[6.5rem] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}*/}
+      {/*>*/}
+      {/*  <motion.div*/}
+      {/*    variants={contactVariants}*/}
+      {/*    animate={hidden ? "hidden" : "visible"}*/}
+      {/*    className="top-right-header italic font-bold text-[1.7rem] md:text-xs"*/}
+      {/*  >*/}
+      {/*    contact*/}
+      {/*  </motion.div>*/}
+      {/*</div>*/}
 
       <div
         className={`navigation-controls transition ${isShowingProject || isShowingVideo ? "" : "hidden"} duration-200 fixed left-[6rem] text-xs bottom-[2.6rem] z-30 ${isShowingVideo ? "translate-y-[50px]" : ""}`}
@@ -169,7 +212,7 @@ const AppContent = ({ scrollYProgress, lenisScrollProgress }) => {
       </div>
 
       <div className="sidebar-container">
-        <Sidebar isShowingVideo={isShowingVideo} />
+        <Sidebar isShowingVideo={isShowingVideo} hidden={hidden} />
       </div>
       <div className="main-container">
         <Routes>

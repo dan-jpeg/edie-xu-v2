@@ -11,7 +11,7 @@ body {
     --lightblack: rgb(102,102,102);
     --black: rgb(34,34,34);
     overflow: auto;
-    font-family: "TimesNew Roman", serif;
+    font-family: "TimesNewRoman", serif;
     color: rgb(102,102,102);
 }
 
@@ -119,7 +119,7 @@ body a {
 
     .main-container {
         justify-content: center;
-        font-family: "Arial", sans-serif;
+        font-family: "Times New Roman", sans-serif;
         display: flex;
         float: none;
         margin: 0 12px;

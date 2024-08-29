@@ -1,0 +1,14 @@
+.sidebar-header {
+    flex: 1
+}
+
+.sidebar-body {
+    flex-direction: row;
+    flex: 5;
+    z-indez: 100;
+}
+
+.sidebar-body a:hover {
+    cursor: crosshair;
+}
+
