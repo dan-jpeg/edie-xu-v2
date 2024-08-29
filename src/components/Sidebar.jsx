@@ -60,13 +60,15 @@ const Sidebar = ({ isShowingVideo, hidden }) => {
         className={`
     fixed top-0 left-0 
     bg-white md:bg-transparent w-full 
-    pl-40
+    pl-28
+    
+    pb-12
     md:w-auto
     pt-1
     md:pt-0
     md:mt-0
     flex flex-row md:flex-col
-     
+    
      text-xs text-[#1a1a1a] 
 
     ${isShowingVideo ? " -translate-x-[250px] md:translate-x-0" : ""}
