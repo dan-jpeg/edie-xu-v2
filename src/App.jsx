@@ -40,12 +40,12 @@ const App = () => {
 
   useMotionValueEvent(scrollYProgress, "change", (latestValue) => {
     const previousValue = scrollYProgress.getPrevious();
-    if (latestValue > previousValue && latestValue > 0.1) {
+
+    if (latestValue > previousValue && latestValue > 0.1 && latestValue < 0.9) {
       setHidden(true);
       console.log(latestValue);
     } else {
       console.log(latestValue);
-
       setHidden(false);
     }
   });
@@ -164,7 +164,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
           className="top-right-header italic font-bold text-xl md:text-xs"
         >
           <ul className={"grid-cols-2"}>
-            <li className={`p-0 m-0 md:py-1`}>
+            <li className={`pt-14 m-0 md:py-1`}>
               <h1
                 className={`pb-0`}
                 onClick={() => setContactMenuExpanded(!contactMenuExpanded)}
@@ -178,7 +178,13 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
               )}
             </li>
             <li className={`py-3 md:py-1`}>
-              <h1>download cv</h1>
+              <a
+                href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                download cv
+              </a>
             </li>
           </ul>
         </motion.div>

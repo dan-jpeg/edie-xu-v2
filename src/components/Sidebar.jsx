@@ -74,7 +74,7 @@ const Sidebar = ({ isShowingVideo, hidden }) => {
     md:pt-0
     md:mt-0
     flex flex-row md:flex-col
-    border-b-2 border-stone-200 md:border-none
+  
      text-xs text-[#1a1a1a] 
 
     ${isShowingVideo ? " -translate-x-[250px] md:translate-x-0" : ""}
