@@ -6,7 +6,7 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 import "./newSidebarCss.css";
 
-const Sidebar = ({ isShowingVideo, hidden }) => {
+const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [worksExpanded, setWorksExpanded] = useState(true);
   const [videosExpanded, setVideosExpanded] = useState(false);
@@ -46,9 +46,14 @@ const Sidebar = ({ isShowingVideo, hidden }) => {
     hidden: { x: 0 },
   };
 
+  const selectedHeaderVariants = {
+    visible: { y: 0, opacity: 1 },
+    hidden: { y: 10, opacity: 0 },
+  };
+
   return (
     <div className={`md-block ${isShowingVideo ? "sticky" : "fixed"} z-[1000]`}>
-      <div className="sidebar-header mr-16 z-40 fixed top-3 left-4">
+      <div className="sidebar-header mr-16 md: flex-row z-40 fixed top-3 left-4">
         <h3
           className="edie-xu ml-2 text-4xl md:text-xs italic font-bold mb-0 mt-3 cursor-pointer"
           onClick={() => (window.location.href = "/")}
@@ -56,6 +61,15 @@ const Sidebar = ({ isShowingVideo, hidden }) => {
           edie xu
         </h3>
       </div>
+      <motion.h3
+        variants={selectedHeaderVariants}
+        type
+        animate={isHome ? "visible" : "hidden"}
+        className="edie-xu ml-2 text-4xl  fixed md:top-3 left-1/3 md:text-xs italic font-bold mb-0 mt-3 cursor-pointer"
+        onClick={() => (window.location.href = "/")}
+      >
+        selected exhibitions
+      </motion.h3>
       <motion.nav
         variants={
           isDesktop && !isShowingVideo ? desktopVariants : mobileVariants

@@ -75,7 +75,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isShowingVideo, setIsShowingVideo] = useState(false);
-
+  const [isHome, setIsHome] = useState(false);
   const [isShowingProject, setIsShowingProject] = useState(false);
   const [adjacentItems, setAdjacentItems] = useState({
     prev: null,
@@ -85,6 +85,9 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   const [contactMenuExpanded, setContactMenuExpanded] = useState(false);
 
   useEffect(() => {
+    const isHomePage = location.pathname === "/"; // Check if the current route is "/"
+    setIsHome(isHomePage); // Update isHome state
+
     const isVideoRoute = location.pathname.includes("/video/");
     const isLandingPage = location.pathname === "/hello";
     const isProjectOrExhibitionPage =
@@ -223,7 +226,11 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
       </div>
 
       <div className="sidebar-container">
-        <Sidebar isShowingVideo={isShowingVideo} hidden={hidden} />
+        <Sidebar
+          isShowingVideo={isShowingVideo}
+          hidden={hidden}
+          isHome={isHome}
+        />
       </div>
       <div className="main-container">
         <Routes>
