@@ -41,7 +41,7 @@ const App = () => {
   useMotionValueEvent(scrollYProgress, "change", (latestValue) => {
     const previousValue = scrollYProgress.getPrevious();
 
-    if (latestValue > previousValue && latestValue > 0.1 && latestValue < 0.9) {
+    if (latestValue > previousValue && latestValue > 0.1 && latestValue > 0.9) {
       setHidden(true);
       console.log(latestValue);
     } else {
@@ -177,7 +177,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
                 ""
               )}
             </li>
-            <li className={`py-3 md:py-1`}>
+            <li className={`py-0 my-0 md:py-1`}>
               <a
                 href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf"
                 target="_blank"
