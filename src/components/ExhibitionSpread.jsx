@@ -56,7 +56,7 @@ export default ExhibitionSpread;
 
 export const ExhibitionDefaultSpread = ({ exhibition, scrollYProgress }) => {
   return (
-    <div className="exhibition-spread-container items-center flex-col justify-start  gap-4">
+    <div className="exhibition-spread-container items-center flex-col justify-start  gap-4 pb-16 md:pb-0">
       <p className="text-3xl pb-2 italic m-0 md:fixed md:top-20 md:right-20">
         {exhibition.title}
       </p>

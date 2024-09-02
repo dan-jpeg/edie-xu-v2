@@ -136,7 +136,10 @@ body a {
 @media screen and (max-width: 500px) {
 
     .progress-bar {
-        display: none;
+        left: 12px;
+        top: auto; /* Changed from 2px to 0 */
+        bottom: 12px; /* Remove bottom positioning */
+        left: auto; /* Ensure it starts from the left edge */
     }
 }
 
