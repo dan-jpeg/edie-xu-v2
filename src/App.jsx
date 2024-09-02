@@ -194,7 +194,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
       </div>
 
       <div
-        className={`navigation-controls transition ${isShowingProject || isShowingVideo ? "" : "hidden"} duration-200 fixed  right-1/2  bottom-2 left-1/2 md:left-[6rem] md:bottom-[2.6rem] z-30 ${isShowingVideo ? "translate-y-[50px]" : ""}`}
+        className={`navigation-controls transition ${isShowingProject || isShowingVideo ? "" : "hidden"} duration-200 fixed  right-1/2  bottom-20 left-1/2 md:left-[6rem] md:bottom-[2.6rem] z-30 ${isShowingVideo ? "translate-y-[50px]" : ""}`}
       >
         <motion.div
           className="italic text-[1.6rem] md:text-[0.8rem]"
@@ -205,7 +205,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
         </motion.div>
       </div>
       <div
-        className={` ${isShowingProject || isShowingVideo ? "" : "hidden"} fixed md:left-[8.3rem] 1 bottom-2 right-6 md:bottom-[2.6rem] z-30`}
+        className={` ${isShowingProject || isShowingVideo ? "" : "hidden"} fixed md:left-[8.3rem]  bottom-20 right-6 md:bottom-[2.6rem] z-30`}
       >
         <motion.div
           className=" italic text-[1.6rem] md:text-[0.8rem]"
