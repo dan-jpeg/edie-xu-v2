@@ -156,7 +156,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   };
 
   return (
-    <div className="app-container max-w-screen-lg    scrollbar-hide">
+    <div className="app-container    scrollbar-hide">
       <div
         className={`top-right-header-wrapper  fixed left-[1.8rem] top-[4.5rem] md:top-auto md:bottom-[10vh] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
       >
