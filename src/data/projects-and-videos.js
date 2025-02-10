@@ -316,11 +316,11 @@ const videos = [
     title: "Ceramic Meets Metal Meets Ceramic",
     safeTitle: "CMMMC",
     year: "2022",
-    duration: "11min",
+    duration: "11min, 17min",
     videoUrl:
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/ceramic_meets_metal_1.mp4",
     videoUrl2:
-      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/lp_video-safari-hd.mp4",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/ceramic_metal_closeup.mp4",
     thumbnail:
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/%E3%80%8A%E7%9F%B3%E5%AD%90%E8%B7%AF%E3%80%8B_thumbnail.jpeg",
   },
