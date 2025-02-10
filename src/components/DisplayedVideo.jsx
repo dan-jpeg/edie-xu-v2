@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./videopage.css";
 
 const DisplayedVideo = ({ video }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleReady = () => {
     setLoading(false);
@@ -13,14 +13,14 @@ const DisplayedVideo = ({ video }) => {
   return (
     <div className="displayed-video-container">
       {/* Full-screen loading module */}
-      {loading && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="text-white text-center">
-            <p className="text-lg animate-pulse mb-4">Content loading...</p>
-            <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-          </div>
-        </div>
-      )}
+      {/*{loading && (*/}
+      {/*  <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">*/}
+      {/*    <div className="text-white text-center">*/}
+      {/*      <p className="text-lg animate-pulse mb-4">Content loading...</p>*/}
+      {/*      <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*)}*/}
 
       <div className="video-title-container text-center">
         <h2 className="video-title pt-[39vh] text-sm pb-4">{video.title}</h2>
