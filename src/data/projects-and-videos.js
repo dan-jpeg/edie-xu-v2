@@ -316,7 +316,7 @@ const videos = [
     title: "Ceramic Meets Metal Meets Ceramic",
     safeTitle: "CMMMC",
     year: "2022",
-    duration: "11min, 17min",
+    duration: "11min, 15min",
     videoUrl:
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/ceramic_meets_metal_1.mp4",
     videoUrl2:
