@@ -1,7 +1,8 @@
 import { exhibitions2 } from "../data/projects-and-videos.js";
 import Listing from "./Listing.jsx";
 import "./exhibtionSpread.css";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 ("framer-motion");
 import {
@@ -54,35 +55,73 @@ const ExhibitionSpread = ({ scrollYProgress }) => {
 
 export default ExhibitionSpread;
 
-export const ExhibitionDefaultSpread = ({ exhibition, scrollYProgress }) => {
-  return (
-    <div className="exhibition-spread-container items-center flex-col justify-start  gap-4 pb-16 md:pb-0">
-      <p className="text-3xl pb-2 italic m-0 md:fixed md:top-20 md:right-20">
-        {exhibition.title}
-      </p>
-      <div className="exhibition-header-di justify-items-start w-2/3 ml-4 pt-40">
-        <p className="text-s pb-2 not-italic "> {exhibition.location}</p>
-        <p className="text-s pb-3 not-italic m-0"> {exhibition.date}</p>
+const CHARACTER_LIMIT = 1000;
 
-        <p className="text-xs not-italic pt-12 text-center ">
-          {" "}
-          {exhibition.header}
-        </p>
-        <p className="text-sm not-italic pt-12 pb-16 font-bold indent-[2vw] text-justify">
-          {" "}
-          {exhibition.textContent}
-        </p>
+const CollapsibleText = ({ text }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const shouldCollapse = text.length > CHARACTER_LIMIT;
+
+  const displayText =
+    !shouldCollapse || isExpanded
+      ? text
+      : text.slice(0, CHARACTER_LIMIT) + "...";
+
+  return (
+    <div className="relative">
+      <AnimatePresence>
+        <motion.p
+          className="font-[11px]   leading-5 mx-6  indent-[2vw] text-justify "
+          initial={{ height: "auto" }}
+          animate={{ height: "auto" }}
+          exit={{ height: "auto" }}
+          transition={{ duration: 0.3 }}
+        >
+          {displayText}
+        </motion.p>
+      </AnimatePresence>
+
+      {shouldCollapse && (
+        <div className="flex place-items-center justify-center">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-gray font-bold font-alte-haas  hover:op text-xl mb-6 mt-2  cursor-pointer"
+          >
+            {isExpanded ? "-" : "+"}
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export const ExhibitionDefaultSpread = ({ exhibition }) => {
+  const { title, location, date, header, textContent, workIncluded, images } =
+    exhibition;
+
+  return (
+    <div className="exhibition-spread-container flex flex-col items-end text-right gap-4 pb-16 md:pb-0">
+      <div> </div>
+      <p className="pb-2 italic m-0 md:fixed md:top-20 font-bold text-[20px]  md:right-6">
+        {title}
+      </p>
+
+      <div className="   place-content-end ml-4 pt-[80vh]">
+        <p className=" pb-2 place-s not-italic">{location}</p>
+        <p className=" pb-3 not-italic m-0">{date}</p>
+        <p className="not-italic max-w-[200px] pt-6 text-right">{header}</p>
       </div>
 
-      {exhibition.workIncluded && exhibition.workIncluded.length > 0 && (
+      {workIncluded && workIncluded.length >= 2 && (
         <div className="work-included-row">
-          <IncludedWork work={exhibition.workIncluded[0]} />
-          <IncludedWork work={exhibition.workIncluded[1]} />
+          <IncludedWork work={workIncluded[0]} />
+          <IncludedWork work={workIncluded[1]} />
         </div>
       )}
 
-      <ImagesSingleColumn images={exhibition.images} />
-      {/*<ImageRow images={[exhibitions2[1].images[10], exhibitions2[1].images[9]]} />*/}
+      <ImagesSingleColumn images={[images[0]]} />
+      <CollapsibleText text={textContent} />
+      <ImagesSingleColumn images={images.slice(1, 9)} />
+      <div className="pt-12 pb-16">a</div>
     </div>
   );
 };

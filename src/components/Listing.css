@@ -15,7 +15,7 @@
 .date-container {
     align-items: flex-end;
     justify-content: flex-end;
-    font-size: 0.7em;
+    font-size: 11px;
     font-style: italic;
     margin-top: 2px;
 
@@ -28,36 +28,15 @@
 
 .text-content {
     display: flex;
-    align-items: center;
+    align-items: end;
     flex-direction: column;
     justify-content: right;
     transition: 300ms all ease-in-out;
     color: #333; /* Adjust the text color */
 }
 
-.text-content p {
-    margin: 0;
-    padding: 0;
-    opacity: 0.9;
-    font-size: 9px; /* Adjust the font size as needed */
-
-}
-
-.text-content h3 {
-    margin: 0;
-    padding: 0 0 8px 0;
-    font-weight: lighter;
-
-}
 
 
-.text-content h2 {
-    font-size: 1em;
-    margin-left: 0px;
-    margin-top: 0;
-    font-weight: normal;
-    padding-bottom: 8px;
-}
 
 
 .image-content {
@@ -71,14 +50,7 @@
     border-radius: 1px; /* Optional: Adjust if you want rounded corners */
 }
 
-.image-content .date {
-    font-style: normal;
-    font-size: 11px;
-    font-family: "JetBrains Mono";
-    font-size: 0.5em;
-    font-weight: lighter;
 
-}
 
 
 

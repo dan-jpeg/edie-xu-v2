@@ -13,15 +13,15 @@ const Listing = ({ listing }) => {
     >
       <Link
         to={`/exhibition/${slugify(listing.title)}`}
-        className="listing-container text-xs"
+        className="listing-container "
       >
-        <motion.div className="date-container">
-          <p>{`${listing.date}`}</p>
+        <motion.div className="text-[9px] leading-5">
+          <p className="font-alte-haas">{`${listing.date.slice(0, 4)}`}</p>
         </motion.div>
-        <div className="text-content">
-          <h2 className="italic">{`${listing.title}`}</h2>
+        <div className="text-content text-right text-[11px]">
+          <h2 className=" pb-4">{`${listing.title}`}</h2>
 
-          <p className={`text-sm`}> {listing.category}</p>
+          <p className={`text-[11px]`}> {listing.category}</p>
           <p>{listing.location}</p>
         </div>
         <div className="image-content">

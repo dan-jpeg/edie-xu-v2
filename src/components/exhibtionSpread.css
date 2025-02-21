@@ -4,8 +4,9 @@
 }
 
 .exhibition-spread-container {
-    max-width: 600px;
+    max-width: 61vw;
     padding: 0;
+    font-size: 12px;
 }
 
 .images-row {
@@ -44,42 +45,7 @@
 
 }
 
-.exhibition-header-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    text-align: left;
-}
 
-.exhibition-header-div, h2 {
-    font-weight: normal;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    font-style: italic;
-}
-.prev-next-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: row;
-}
-
-.work-included-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-
-
-
-p.header-date {
-    font-size: 0.8em;
-    padding-top: 0;
-    margin-top: 4px;
-    font-style: normal;
-}
 
 @media screen, (max-width: 800px) {
     .exhibition-spread-container {
