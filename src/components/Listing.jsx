@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
-import { exhibitions2 } from "../data/projects-and-videos.js";
+import { motion } from "framer-motion";
 import "./Listing.css";
 import { slugify } from "../helpers/slugify";
-import { motion } from "framer-motion";
 
-const Listing = ({ listing }) => {
+const Listing = ({ listing, previousListing }) => {
+  const currentYear = listing.date.slice(0, 4);
+  const previousYear = previousListing
+    ? previousListing.date.slice(0, 4)
+    : null;
+  const showYear = currentYear !== previousYear;
+
   return (
     <motion.div
       initial="visible"
@@ -13,20 +18,20 @@ const Listing = ({ listing }) => {
     >
       <Link
         to={`/exhibition/${slugify(listing.title)}`}
-        className="listing-container "
+        className="listing-container"
       >
-        <motion.div className="text-[9px] leading-5">
-          <p className="font-alte-haas">{`${listing.date.slice(0, 4)}`}</p>
+        <motion.div className="text-[11px] font-bold leading-5">
+          <p className={`${showYear ? "opacity-1" : "opacity-0"}`}>
+            {currentYear}
+          </p>
         </motion.div>
         <div className="text-content text-right text-[11px]">
-          <h2 className=" pb-4">{`${listing.title}`}</h2>
-
-          <p className={`text-[11px]`}> {listing.category}</p>
+          <h2 className="pb-4">{listing.title}</h2>
+          <p className="text-[11px]">{listing.category}</p>
           <p>{listing.location}</p>
         </div>
         <div className="image-content">
           <img src={listing.images[0]} alt="Art Image" />
-          {/*<div className="date">{listing.date}</div>*/}
         </div>
       </Link>
     </motion.div>

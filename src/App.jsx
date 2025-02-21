@@ -256,7 +256,11 @@ const Home = () => {
   return (
     <div className="project-listing-column">
       {exhibitions2.map((exhibition, index) => (
-        <Listing listing={exhibition} key={index} />
+        <Listing
+          key={exhibition.id}
+          listing={exhibition}
+          previousListing={index > 0 ? exhibitions2[index - 1] : null}
+        />
       ))}
     </div>
   );

@@ -394,7 +394,7 @@ const exhibitions2 = [
     images: [
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/limited-intentionality_01.jpeg",
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality07small.jpg",
-      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality06-small.jpg",
+      "https://edie-xu-portfolizo.s3.us-east-2.amazonaws.com/photos/limited_intentionality06-small.jpg",
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality08-small.jpg",
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality01-small.jpg",
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality02-small.jpg",
@@ -482,7 +482,7 @@ const exhibitions2 = [
   {
     id: "e2",
     category: " ",
-    title: "Resonate",
+    title: "Resonate with Fragmentation",
     location: "Ginkgo Space, Shanghai",
     date: "2024. 01. 06-03. 09",
     url: "https://www.ginkgospace.cn/en/exhibition/details/2267",
