@@ -1,30 +1,19 @@
 .listing-container {
     display: grid;
-    grid-template-columns: 0.5fr 1.61fr 2fr;
+    grid-template-columns: 0.6fr 2fr 2fr;
     align-items: start;
     justify-content: flex-start;
     text-align: right;
     gap: 18px; /* Adjust the gap between columns if needed */
-    max-width: 450px; /* Adjust according to your design */
+    max-width: 400px; /* Adjust according to your design */
     margin: 0 12px; /* Center the grid container */
     padding-bottom: 12px;
 
 
 }
 
-.date-container {
-    align-items: flex-end;
-    justify-content: flex-end;
-    font-size: 11px;
-    font-style: italic;
-    margin-top: 2px;
 
-}
 
-.date-container p {
-    margin: 0;
-    padding: 0;
-}
 
 .text-content {
     display: flex;

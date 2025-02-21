@@ -26,7 +26,7 @@ const Listing = ({ listing, previousListing }) => {
           </p>
         </motion.div>
         <div className="text-content text-right text-[11px]">
-          <h2 className="pb-4">{listing.title}</h2>
+          <h2 className="pb-2">{listing.title}</h2>
           <p className="text-[11px]">{listing.category}</p>
           <p>{listing.location}</p>
         </div>
