@@ -84,7 +84,7 @@ const DisplayedProject = ({ project, scrollYProgress }) => {
         </div>
 
         <motion.div
-          className="fixed md:fixed bottom-[30vh] left-[10vw] flex flex-col justify-center place-items-center"
+          className="fixed md:fixed bottom-[24vh] left-[10vw] flex flex-col justify-center place-items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{
             opacity: showDescriptionText ? 1 : 0,

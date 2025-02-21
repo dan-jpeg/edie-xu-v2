@@ -24,7 +24,7 @@ const ExhibitionCell = ({ title, year, images }) => {
           <span className=" hover:opacity-15 max-w-[70%] leading-tight">
             {title}
           </span>
-          <span className="font-alte-haas">{year.slice(0, 4)}</span>
+          <span className="font-alte-ha`as">{year.slice(0, 4)}</span>
         </div>
       </div>
       <div className="w-full pt-4 flex justify-center">

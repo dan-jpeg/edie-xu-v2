@@ -7,7 +7,7 @@ const FromEarthAndUp = () => {
   ];
 
   return (
-    <div className="displayed-project-container scrollbar-hide pb-20 md:pb-0">
+    <div className="displayed-project-container cursor-default scrollbar-hide pb-20 md:pb-0">
       <div className="displayed-title-container text-center">
         <div className="work-included-container">
           <p className="work-included-title italic pb-10 text-sm ">
@@ -21,12 +21,12 @@ const FromEarthAndUp = () => {
           <p className="work-included-year">61 x 19 x 4 (cm)</p>
           <p className="work-included-year">Gui Zhou, China)</p>
         </div>
-        <div className="fixed  md:fixed bottom-[30vh] left-[10vw] flex flex-col justify-center place-items-center"></div>
+        <div className="fixed  md:fixed bottom-[30vh] left-[10vw] flex flex-col  italic justify-center place-items-center"></div>
       </div>
       <div className="project-image-container">
         <img className="images-single" src={images[0]} alt="img-1" />
-        <div className="grid grid-cols-3   text-[12px] ">
-          <div className="col-span-3 mt-4">
+        <div className="grid grid-cols-3     text-[12px] ">
+          <div className="col-span-3 italic  mt-4">
             <p>
               I brought a hand-built ceramic piece to Guizhou to create this
               documentation and process-based project that investigates the
@@ -48,7 +48,7 @@ const FromEarthAndUp = () => {
             </p>
           </div>
           <img
-            className="images-single col-span-3 "
+            className="  images-single col-span-3 "
             src={images[1]}
             alt="img-1"
           />
