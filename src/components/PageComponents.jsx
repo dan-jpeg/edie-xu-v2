@@ -10,7 +10,7 @@ import {
 import { slugify } from "../helpers/slugify.jsx";
 import { getAdjacentItems } from "./NavigationUtility.jsx";
 
-const ProjectPage = () => {
+const ProjectPage = ({ scrollYProgress }) => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const project = selectedWorks.find((p) => slugify(p.title) === slug);
@@ -22,7 +22,7 @@ const ProjectPage = () => {
 
   return (
     <>
-      <DisplayedProject project={project} />
+      <DisplayedProject scrollYProgress={scrollYProgress} project={project} />
     </>
   );
 };

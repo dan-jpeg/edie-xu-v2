@@ -53,7 +53,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
 
   return (
     <div className={`md-block ${isShowingVideo ? "sticky" : "fixed"} z-[1000]`}>
-      <div className="sidebar-header mr-16 md: flex-row z-40 fixed top-3 left-4">
+      <div className="sidebar-header mr-16 md: flex-row z-40 fixed top-3 left-4 ">
         <h3
           className="edie-xu ml-2 text-4xl md:text-xs italic font-bold mb-0 mt-3 cursor-pointer"
           onClick={() => (window.location.href = "/")}
@@ -61,15 +61,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
           edie xu
         </h3>
       </div>
-      <motion.h3
-        variants={selectedHeaderVariants}
-        type
-        animate={isHome ? "visible" : "hidden"}
-        className="edie-xu ml-2 text-4xl  fixed md:top-3 left-1/3 md:text-xs italic font-bold mb-0 mt-3 cursor-pointer"
-        onClick={() => (window.location.href = "/")}
-      >
-        selected exhibitions
-      </motion.h3>
+
       <motion.nav
         variants={
           isDesktop && !isShowingVideo ? desktopVariants : mobileVariants
@@ -94,7 +86,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     ${isShowingVideo ? " -translate-x-[250px] md:translate-x-0" : ""}
   `}
       >
-        <div className="sidebar-body flex flex-rows md:flex-col align-top pl-36 md:pl-8 mt-4">
+        <div className="sidebar-body bg-white  flex flex-rows md:flex-col align-top pl-36 md:pl-8 mt-4">
           <div className="sidebar-section selected-works ">
             <h3 className="clickable  text-[1.7rem] md:text-xs my-3 italic">
               w

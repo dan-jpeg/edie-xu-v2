@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,3 +14,25 @@ body {
     @apply scrollbar-hide;
 }
 
+
+
+@font-face {
+    font-family: 'Alte Haas Grotesk';
+    src: url('public/fonts/AlteHaasGroteskRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TRJN DaVinci';
+    src: url('public/fonts/TRJNDaVinci-Regular-Trial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alte Haas Grotesk';
+    src: url('public/fonts/AlteHaasGroteskBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}

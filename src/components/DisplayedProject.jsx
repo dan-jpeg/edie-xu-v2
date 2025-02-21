@@ -1,47 +1,81 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { motion, useSpring } from "framer-motion";
 import "./projectpage.css";
 import "./included-work.css";
 import { ImagesSingleColumn } from "./ProjectPageComponents.jsx";
+import FromEarthAndUp from "./FromEarthAndUp.jsx";
 
-const DisplayedProject = ({ project }) => {
-  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
-  const imageMedia = project.media.filter((item) => item.type === "image");
+const FullScreenModal = ({ isOpen, onClose, children }) => {
+  useEffect(() => {
+    const handleEscapeKey = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
 
-  const goToPreviousMedia = () => {
-    setCurrentMediaIndex((prevIndex) =>
-      prevIndex === 0 ? project.media.length - 1 : prevIndex - 1,
-    );
-  };
-
-  const goToNextMedia = () => {
-    setCurrentMediaIndex((prevIndex) =>
-      prevIndex === project.media.length - 1 ? 0 : prevIndex + 1,
-    );
-  };
-
-  const renderMedia = () => {
-    const currentMedia = project.media[currentMediaIndex];
-    if (currentMedia.type === "image") {
-      return (
-        <img
-          className="displayed-project-image"
-          src={currentMedia.url}
-          key={currentMedia.url}
-          alt={`${project.title} ${currentMediaIndex + 1}`}
-        />
-      );
-    } else if (currentMedia.type === "video") {
-      return <video className="video-player" src={currentMedia.url} controls />;
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscapeKey);
+      document.body.style.overflow = "hidden";
     }
-    return null;
-  };
 
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 bg-white">
+      <div className="relative w-full h-full overflow-y-auto">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+        >
+          <span className="text-2xl">&times;</span>
+        </button>
+        <div className="h-full w-full">{children}</div>
+      </div>
+    </div>
+  );
+};
+
+const DisplayedProject = ({ project, scrollYProgress }) => {
+  const [showDescriptionText, setShowDescriptionText] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Use a spring for smooth animation
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+  });
+
+  useEffect(() => {
+    // Show description when scrolling past 30% of the page
+    const unsubscribe = smoothProgress.onChange((value) => {
+      setShowDescriptionText(value > 0.3);
+    });
+
+    return () => unsubscribe(); // Cleanup
+  }, [smoothProgress]);
+
+  if (project.id === "10") {
+    return (
+      <>
+        <div className="cursor-pointer" onClick={() => setIsModalOpen(true)}>
+          <FromEarthAndUp />
+        </div>
+      </>
+    );
+  }
+  // Regular project display (unchanged)
   return (
     <div className="displayed-project-container scrollbar-hide pb-20 md:pb-0">
       <div className="displayed-title-container text-center">
         <div className="work-included-container">
-          <p className="work-included-title italic pb-10 text-sm ">
+          <p className="work-included-title italic pb-10 text-sm">
             {project.title}
           </p>
           <p className="work-included-material">{project.material}</p>
@@ -49,12 +83,27 @@ const DisplayedProject = ({ project }) => {
           <p className="work-included-year">{project.year}</p>
         </div>
 
-        <p className="content-center right-8 pt-12 text-sm">
-          {project.description}
-        </p>
+        <motion.div
+          className="fixed md:fixed bottom-[30vh] left-[10vw] flex flex-col justify-center place-items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: showDescriptionText ? 1 : 0,
+            y: showDescriptionText ? 0 : 20,
+          }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="content-center hidden md:block text-black text-center w-[20vw] pt-12 text-[1vw] lg:text-[11px]">
+            {project.description}
+          </p>
+        </motion.div>
       </div>
+
       <div className="project-image-container">
-        <ImagesSingleColumn images={imageMedia.map((item) => item.url)} />
+        <ImagesSingleColumn
+          images={project.media
+            .filter((item) => item.type === "image")
+            .map((item) => item.url)}
+        />
       </div>
     </div>
   );
@@ -76,6 +125,7 @@ DisplayedProject.propTypes = {
       }),
     ).isRequired,
   }).isRequired,
+  scrollYProgress: PropTypes.object.isRequired,
 };
 
 export default DisplayedProject;

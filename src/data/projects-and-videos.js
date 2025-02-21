@@ -32,6 +32,27 @@ const selectedWorks = [
       },
     ],
   },
+
+  {
+    id: "10",
+    category: " ",
+    location: "Gui Zhou, China",
+    title: "FROM EARTH AND UP",
+    description: "",
+    year: "Photographed in April of 2024",
+    dimensions: "61 x 19 x 4 (cm)",
+    material: "stoneware",
+    media: [
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/FROM_EARTH_AND_UP00001.jpeg?alt=media&token=4d20ba91-2f10-4e4c-8690-767554e798c9",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/FROM_EARTH_AND_UP00002.jpeg?alt=media&token=ae265c46-4f8a-4baf-bb01-c010ae5f3edc",
+      },
+    ],
+  },
   {
     id: "1",
     category: " ",
@@ -61,7 +82,8 @@ const selectedWorks = [
     category: " ",
     location: " ",
     title: "Thine air",
-    description: "",
+    description:
+      "The piece takes the form of nostalgia for one's embrace through the memories of my hands. The piece is slightly curved and bent over, showing subtle bumps of one's spine, arched into a finger-like tentacle. The piece is not glazed; it is made with two different clay, fired at 1800 degrees, creating various textures and colors. The black line in the middle of the 'torso' is reminiscent of the two digestive tracks of shrimp, the back which then morphs with the spinal cords of the human back.",
     year: "2023",
     dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
     material: "unglazed stoneware",
@@ -70,17 +92,26 @@ const selectedWorks = [
         type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_01-%400.33x.jpg",
       },
-      {
-        type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_02-%400.33x.jpg",
-      },
+
       {
         type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_03-%400.33x.jpg",
       },
       {
         type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_02-%400.33x.jpg",
+      },
+      {
+        type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_04-%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/THINE_AIR_END%400.25x.jpg?alt=media&token=6393f2dd-46b8-4d08-90ca-13a4c896540a",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/THINE_AIR_END2%400.25x.jpg?alt=media&token=6a4083e7-1907-405b-bf8d-8d1a7522e8b8",
       },
     ],
   },
@@ -89,23 +120,21 @@ const selectedWorks = [
     category: " ",
     location: " ",
     title: "oxygenated  ",
-    description: "",
+    description:
+      "This piece was fired multiple times at different temperatures to achieve layers of tonal and texture variations while consistently using the same hand mixed clay body",
     year: "2023",
     dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
     material: "stoneware",
     media: [
       {
         type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_01%400.33x.jpg",
-      },
-      {
-        type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_02.png",
-      },
-      {
-        type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_03%400.33x.jpg",
       },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_01%400.33x.jpg",
+      },
+
       {
         type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_04%400.33x.jpg",
@@ -113,6 +142,20 @@ const selectedWorks = [
       {
         type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_05%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_02.png",
+      },
+
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/oxygenated_6n.jpg?alt=media&token=c5cb9b32-cea8-417a-a449-408347f8b750",
+      },
+
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/oxygenated-7%400.2x.jpg?alt=media&token=2bbb22b6-6b4d-4f93-9326-3d6a7192ca5b",
       },
     ],
   },
@@ -164,11 +207,15 @@ const selectedWorks = [
     media: [
       {
         type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_02.png",
+      },
+      {
+        type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_01.jpg",
       },
       {
         type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_02.png",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_SERIES.jpg?alt=media&token=968d8f47-02e1-4713-bb89-a5e5675067eb",
       },
     ],
   },
@@ -184,7 +231,15 @@ const selectedWorks = [
     media: [
       {
         type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-02_02.jpg",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_01%400.25x.jpg?alt=media&token=72b7baf4-a061-4b77-b6c6-cef4af080caa",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_SERIES_0201.jpg?alt=media&token=31583244-b6cb-414f-8617-89ca5f5f9a3d",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_SERIES_0202.jpg?alt=media&token=3c698625-04dd-49e6-874f-266495b09d41",
       },
       {
         type: "image",
@@ -568,7 +623,10 @@ Psychoanalysis: analysts mobilize their own activity and consciously experience 
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies09%400.33x.jpg",
       "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies10%400.33x.jpg",
     ],
-    textcontent:
+    textContent:
+      "The quilting of work Outside of bodies is inspired by the lines of wrinkles on the soles of our feet. The piece explores social taboos, inner desires, and fetish through an immersive site-\n" +
+      "specific installation that is hand and machine-sewn",
+    textContent2:
       "A series that I started working on in 2019, starting from on a 40 x 40 canvas. The installation is partly sewn with a sewing machine and hand stuffed throughout. Other areas are hand stitches before and during installation, and lastly negative spaces that are cut and torn for finishing touches. I was really interested in how one feels when they walk into the gallery space which is still something I am researching and diving deeper into, lot of light adjustments, including brightness, warmth, angel, shadows, and overall vibe. Space, spatial perception, interconnections, and changes as the audience walks to, around, and within. So before the actual piece was made, it was first a photo from different angles, sketches, and imagined measurements. Then blank canvases were hung, with ideas of the whole installation already in mind. Ladders were built and r hen it was the process of on-site sketching. After all pieces were sketched they were brought back to the studio to sew together. Brought back, reassembling, and slight changes, lastly the interconnecting tubes were shown by hand on sight as the width, tension, and length were then adjusted according to the whole thing.",
     footnote:
       "The form of the piece it self is a macroscopic view into the micro, into the abject and sacred. The stitched forms are replication of foot wrinkles",

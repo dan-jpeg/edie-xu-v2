@@ -236,7 +236,10 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/exhibition/:slug" element={<ExhibitionPage />} />
-          <Route path="/project/:slug" element={<ProjectPage />} />
+          <Route
+            path="/project/:slug"
+            element={<ProjectPage scrollYProgress={scrollYProgress} />}
+          />
           <Route path="/video/:slug" element={<VideoPage />} />
           <Route
             path="/exhibition1"
