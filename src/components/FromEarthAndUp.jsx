@@ -25,7 +25,7 @@ const FromEarthAndUp = () => {
       </div>
       <div className="project-image-container">
         <img className="images-single" src={images[0]} alt="img-1" />
-        <div className="grid grid-cols-3     text-[12px] ">
+        <div className="grid grid-cols-3   text-[10px] place-items-center ">
           <div className="col-span-3 italic  mt-4">
             <p>
               I brought a hand-built ceramic piece to Guizhou to create this
@@ -35,10 +35,10 @@ const FromEarthAndUp = () => {
             </p>
           </div>
 
-          <div className="col-span-3  pt-4 pb-6">
-            <p>
+          <div className="col-span-3  indent-4 pt-4 pb-6">
+            <p className="indent-4">
               Like fabric, the ceramic piece is dipped again and again into the
-              cement vat filled with indigo dye at 独山(Du Shan, Gui Zhou,
+              cement vat filled with indigo dye at 独山 (Du Shan, Gui Zhou,
               China). Over time, the indigo, which was once planted and
               harvested, soaks into the skin and pores of the hand and clay.
               Inspired by the shape of a boat, the ceramic piece is hand-built
@@ -52,7 +52,7 @@ const FromEarthAndUp = () => {
             src={images[1]}
             alt="img-1"
           />
-          <div className="col-span-3 py-10">
+          <div className="col-span-3  py-10">
             <p>
               Indigo dyeing in Guizhou follows a centuries-old traditional
               process, beginning with the cultivation of Indigofera tinctoria,
