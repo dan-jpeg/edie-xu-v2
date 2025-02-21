@@ -51,7 +51,7 @@ export const PrevNextControls = () => {
   return (
     <div className="prev-next-container">
       <p className="previous-button">previous</p>
-      <p className="next-button">nexxt</p>
+      <p className="next-button">next</p>
     </div>
   );
 };

@@ -105,7 +105,7 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
         {title}
       </p>
 
-      <div className="   place-content-end ml-4 pt-[80vh]">
+      <div className="   place-content-end ml-4 pt-[calc(100vh-220px)]">
         <p className=" pb-2 place-s not-italic">{location}</p>
         <p className=" pb-3 not-italic m-0">{date}</p>
         <p className="not-italic max-w-[200px] pt-6 text-right">{header}</p>

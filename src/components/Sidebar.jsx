@@ -55,10 +55,10 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     <div className={`md-block ${isShowingVideo ? "sticky" : "fixed"} z-[1000]`}>
       <div className="sidebar-header mr-16 md: flex-row z-40 fixed top-3 left-4 ">
         <h3
-          className="edie-xu ml-2 text-4xl md:text-xs italic font-bold mb-0 mt-3 cursor-pointer"
+          className="edie-xu ml-2 text-4xl md:text-[11px] italic font-bold mb-0 mt-3 cursor-pointer"
           onClick={() => (window.location.href = "/")}
         >
-          edie xu
+          EDIE XU
         </h3>
       </div>
 
@@ -86,16 +86,14 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     ${isShowingVideo ? " -translate-x-[250px] md:translate-x-0" : ""}
   `}
       >
-        <div className="sidebar-body bg-white  flex flex-rows md:flex-col align-top pl-36 md:pl-8 mt-4">
-          <div className="sidebar-section selected-works ">
-            <h3 className="clickable  text-[1.7rem] md:text-xs my-3 italic">
-              w
-            </h3>
-            <ul className="list-none pl-6 transition-all duration-300 ease-in-out cursor-crosshair">
+        <div className=" bg-white  flex flex-rows md:flex-col align-top pl-36 md:pl-8 mt-4">
+          <div className=" selected-works uppercase pt-2 ">
+            <h3 className="clickable   md:text-xs my-3 italic">WORKS</h3>
+            <ul className=" pl-6 transition-all duration-300 ease-in-out cursor-crosshair">
               {displayedWorks.map((project) => (
                 <li
                   key={project.id}
-                  className="cursor-crosshair text-[0.7em] m-0 p-0 hover:underline"
+                  className="cursor-crosshair m-0 p-0 hover:underline"
                 >
                   <Link
                     className={`m-0`}
@@ -108,7 +106,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
               {selectedWorks.length > 3 && (
                 <li>
                   <p
-                    className="more-link mx-6 my-2 text-xs cursor-none hover:underline"
+                    className="more-link mx-6 my-2  cursor-none hover:underline"
                     onClick={toggleWorks}
                   >
                     {worksExpanded ? "-" : "+"}
@@ -118,14 +116,14 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
             </ul>
           </div>
 
-          <div className="sidebar-section video-and-performances">
-            <h3 className="clickable  italic text-[1.7rem] my-3 md:text-xs pb-0">
-              v
+          <div className="uppercase">
+            <h3 className="clickable   italic text-[1.7rem] my-3 md:text-xs pb-0">
+              PERFORMANCE
             </h3>
             <ul className="list-none pl-6 transition-all duration-300 ease-in-out">
               {displayedVideos.map((video) => (
                 <li
-                  className="p-0 cursor-crosshair text-[0.7em] hover:underline"
+                  className="p-0 cursor-crosshair  hover:underline"
                   key={video.id}
                 >
                   <Link

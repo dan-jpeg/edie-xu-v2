@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
 
 .main-container {
     float: right;
-    padding-top: 40px;
+    padding-top: 22px;
     @apply scrollbar-hide;
 
 }

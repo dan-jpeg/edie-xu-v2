@@ -197,7 +197,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
         className={`navigation-controls transition ${isShowingProject || isShowingVideo ? "" : "hidden"} duration-200 fixed  right-1/2  bottom-20 left-1/2 md:left-[6rem] md:bottom-[2.6rem] z-30 ${isShowingVideo ? "translate-y-[50px]" : ""}`}
       >
         <motion.div
-          className="italic text-[1.6rem] md:text-[0.8rem]"
+          className="italic  hover:opacity-30 text-[1.6rem] md:text-[0.8rem]"
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("prev")}
         >
@@ -208,7 +208,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
         className={` ${isShowingProject || isShowingVideo ? "" : "hidden"} fixed md:left-[8.3rem]  bottom-20 right-6 md:bottom-[2.6rem] z-30`}
       >
         <motion.div
-          className=" italic text-[1.6rem] md:text-[0.8rem]"
+          className="   hover:opacity-30 italic text-[1.6rem] md:text-[0.8rem]"
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("next")}
         >
@@ -219,7 +219,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
         className={`progress-bar-wrapper ${isShowingVideo ? "video-showing" : ""}`}
       >
         <motion.div
-          className={`progress-bar ${isShowingVideo ? "video-showing opacity-60" : ""}`}
+          className={`progress-bar hover:opacity-30 ${isShowingVideo ? "video-showing opacity-60" : ""}`}
           style={{ scale: progressScale }}
           onClick={scrollToTop}
         />
@@ -254,7 +254,11 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
 
 const Home = () => {
   return (
-    <div className="project-listing-column">
+    <div className=" pb-[90vh] ">
+      <span className=" hidden font-bold text-[11px] mt italic md:block md:absolute transform -translate-x-[80px]">
+        {" "}
+        EXHIBITIONS{" "}
+      </span>
       {exhibitions2.map((exhibition, index) => (
         <Listing
           key={exhibition.id}

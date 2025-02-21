@@ -1,39 +1,5 @@
 const selectedWorks = [
   {
-    id: "0",
-    category: " ",
-    location: " ",
-    title: "CMMMMC",
-    description: "Ceramic Meets Metal Metal Meets Ceramic",
-    year: "2024",
-    dimensions: "70 x 23 x 94 inches (177 x 58 x 240 cm)",
-    material: "Oxidized metal and broken fired stoneware",
-    duration: "15 min",
-    media: [
-      {
-        type: "video",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/ceramic_metal_v01.mp4",
-      },
-      {
-        type: "video",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/ceramic_metal_v02.MP4",
-      },
-      {
-        type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_01.png",
-      },
-      {
-        type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_02.jpg",
-      },
-      {
-        type: "image",
-        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_03.JPG",
-      },
-    ],
-  },
-
-  {
     id: "10",
     category: " ",
     location: "Gui Zhou, China",
@@ -292,6 +258,63 @@ const selectedWorks = [
       {
         type: "image",
         url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_03-small.jpg",
+      },
+    ],
+  },
+  {
+    id: "11",
+    category: " ",
+    location: " ",
+    title: "Sound of Kiln",
+    description:
+      "The broken, already-made plates and ceramic wares become fragmented pieces of organic space. Questioning where 'form' comes from, I combined these already \"made' forms with the raw clay. At the same time, it questions the craftsmanship of perfection in ceramic as the pieces slowly collapse into one in the heat of the kiln, creating cracks due to the different densities of the pre-and post-fired clay. As they melted and collapsed upon each other, creating something beautiful",
+    year: "2020",
+    dimensions: "24 x 42 x 32inches",
+    material: "thrifted/found used ceramic ware fired with green ware",
+    media: [
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound1.jpg?alt=media&token=b05492b5-ed5f-4c20-b99a-b9a81426e005",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound2.jpg?alt=media&token=cc2eb6ed-22e4-4a76-a660-f38b4d209c95",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound3.jpg?alt=media&token=3234331a-3e86-4148-b937-f353d8675238",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound4.jpg?alt=media&token=8bc5ae2f-6362-4ed2-9f3c-bf20f999eacf",
+      },
+    ],
+  },
+  {
+    id: "12",
+    category: " ",
+    location: " ",
+    title: "UNTITLED",
+    description: "",
+    year: "2020",
+    dimensions: "36 x 18 x 22 inches",
+    material: "Medium; glazed stone ware ",
+    media: [
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled1.jpg?alt=media&token=63ab42dc-e87a-41f0-91fa-3e860653afcd",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled2.jpg?alt=media&token=ef3d51bd-fa5e-4cea-8520-90189ab88966",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled3.jpg?alt=media&token=d7ae2e55-a2da-4678-8031-5cd639ca1a6c",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled4.jpg?alt=media&token=1d293cc6-0fb6-4e1a-b76e-ab5310d96271",
       },
     ],
   },

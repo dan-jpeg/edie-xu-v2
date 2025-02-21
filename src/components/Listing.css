@@ -1,13 +1,13 @@
 .listing-container {
     display: grid;
-    grid-template-columns: 0.6fr 2fr 2fr;
+    grid-template-columns: 0.6fr 1fr;
     align-items: start;
-    justify-content: flex-start;
+    justify-content: flex-end;
     text-align: right;
-    gap: 18px; /* Adjust the gap between columns if needed */
+    gap: 10px; /* Adjust the gap between columns if needed */
     max-width: 400px; /* Adjust according to your design */
     margin: 0 12px; /* Center the grid container */
-    padding-bottom: 12px;
+    padding-bottom: 18px;
 
 
 }
@@ -21,7 +21,6 @@
     flex-direction: column;
     justify-content: right;
     transition: 300ms all ease-in-out;
-    color: #333; /* Adjust the text color */
 }
 
 
