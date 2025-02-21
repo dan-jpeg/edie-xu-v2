@@ -255,9 +255,8 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
 const Home = () => {
   return (
     <div className=" pb-[90vh] ">
-      <span className=" hidden font-bold text-[11px] mt italic md:block md:absolute transform -translate-x-[80px]">
-        {" "}
-        EXHIBITIONS{" "}
+      <span className=" hidden text-black text-[12px] -mt-1 italic md:block md:absolute transform -translate-x-[80px]">
+        EXHIBITIONS
       </span>
       {exhibitions2.map((exhibition, index) => (
         <Listing

@@ -6,8 +6,8 @@
     text-align: right;
     gap: 10px; /* Adjust the gap between columns if needed */
     max-width: 400px; /* Adjust according to your design */
-    margin: 0 12px; /* Center the grid container */
-    padding-bottom: 18px;
+    margin: 0 2px; /* Center the grid container */
+    padding-bottom: 16px;
 
 
 }

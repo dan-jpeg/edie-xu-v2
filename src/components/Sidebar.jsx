@@ -86,7 +86,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     ${isShowingVideo ? " -translate-x-[250px] md:translate-x-0" : ""}
   `}
       >
-        <div className=" bg-white  flex flex-rows md:flex-col align-top pl-36 md:pl-8 mt-4">
+        <div className=" bg-transparent  flex flex-row md:flex-col align-top pl-36 md:pl-8 mt-4">
           <div className=" selected-works uppercase pt-2 ">
             <h3 className="clickable   md:text-xs my-3 italic">WORKS</h3>
             <ul className=" pl-6 transition-all duration-300 ease-in-out cursor-crosshair">
@@ -116,8 +116,8 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
             </ul>
           </div>
 
-          <div className="uppercase">
-            <h3 className="clickable   italic text-[1.7rem] my-3 md:text-xs pb-0">
+          <div className="uppercase pt-2">
+            <h3 className="clickable   my-3  italic text-[1.7rem]  md:text-xs pb-0">
               PERFORMANCE
             </h3>
             <ul className="list-none pl-6 transition-all duration-300 ease-in-out">
