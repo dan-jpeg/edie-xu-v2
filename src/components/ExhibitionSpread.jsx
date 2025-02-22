@@ -70,7 +70,7 @@ const CollapsibleText = ({ text }) => {
     <div className="relative">
       <AnimatePresence>
         <motion.p
-          className="font-[11px]   leading-5 mx-6  indent-[2vw] text-justify "
+          className="font-[11px]   leading-5 mx-6 pt-4 indent-[2vw] text-justify "
           initial={{ height: "auto" }}
           animate={{ height: "auto" }}
           exit={{ height: "auto" }}
@@ -101,7 +101,7 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
   return (
     <div className="exhibition-spread-container flex flex-col items-end text-right gap-4 pb-16 md:pb-0">
       <div> </div>
-      <p className="pb-2 italic m-0 md:fixed md:top-20 font-bold text-[20px]  md:right-6">
+      <p className="pb-2  m-0 md:fixed md:top-20 place-self-center uppercase text-[20px]  md:right-[5vw] ">
         {title}
       </p>
 

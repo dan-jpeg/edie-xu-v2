@@ -164,7 +164,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
           variants={contactVariants}
           animate={hidden ? "hidden" : "visible"}
           transition={{ duration: 0.32, ease: "linear" }}
-          className="top-right-header italic font-bold text-xl md:text-xs"
+          className="top-right-header italic font-bold  text-[12px]"
         >
           <ul className={"grid-cols-2"}>
             <li className={`pt-14 m-0 md:py-1`}>

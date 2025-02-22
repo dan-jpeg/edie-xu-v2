@@ -55,7 +55,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     <div className={`md-block ${isShowingVideo ? "sticky" : "fixed"} z-[1000]`}>
       <div className="sidebar-header mr-16 md: flex-row z-40 fixed top-3 left-4 ">
         <h3
-          className="edie-xu ml-2 text-4xl md:text-[11px] italic font-bold mb-0 mt-3 cursor-pointer"
+          className="edie-xu ml-2 text-[12px] italic font-bold mb-0 mt-3 cursor-pointer"
           onClick={() => (window.location.href = "/")}
         >
           EDIE XU
@@ -72,14 +72,14 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     fixed top-0 left-0 
     bg-white md:bg-transparent w-full 
     pl-28
-    
+    hidden
     pb-12
     md:h-auto
     md:w-auto
     pt-1
     md:pt-0
     md:mt-0
-    flex flex-row md:flex-col
+    md:flex flex-row md:flex-col
   
      text-xs text-[#1a1a1a] 
 
