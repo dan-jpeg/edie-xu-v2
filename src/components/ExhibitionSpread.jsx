@@ -101,7 +101,7 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
   return (
     <div className="exhibition-spread-container flex flex-col items-end text-right gap-4 pb-16 md:pb-0">
       <div></div>
-      <p className="pb-2  w-full m-0 md:fixed md:bottom-[200px]  uppercase text-[20px]  md:right-[5vw] ">
+      <p className="pb-2  w-full m-0 md:fixed md:bottom-[50vh]  uppercase text-[20px]  md:right-[5vw] ">
         {title}
       </p>
 
@@ -111,7 +111,8 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
       </div>
 
       <ImagesSingleColumn images={[images[0]]} />
-      <CollapsibleText text={textContent} />
+      {textContent && <CollapsibleText text={textContent} />}
+
       <ImagesSingleColumn images={images.slice(1, 9)} />
       <div className="grid-cols-3 grid pt-12 w-full">
         {workIncluded && workIncluded.length >= 2 && (
@@ -132,7 +133,7 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
         )}
 
         <div className="col-span-3 text-center justify-self-center ">
-          <p className="not-italic max-w-[200px] font-[9px] leading-4 pt-6 ">
+          <p className="not-italic max-w-[200px] font-[9px] leading-4 pb-[200px] pt-6 ">
             {header}
           </p>
         </div>
