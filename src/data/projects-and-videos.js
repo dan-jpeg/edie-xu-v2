@@ -302,7 +302,7 @@ const selectedWorks = [
     media: [
       {
         type: "image",
-        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled1.jpg?alt=media&token=63ab42dc-e87a-41f0-91fa-3e860653afcd",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled1-new.jpg?alt=media&token=e690640e-8107-467e-b9e3-aed0e8fc7586",
       },
       {
         type: "image",

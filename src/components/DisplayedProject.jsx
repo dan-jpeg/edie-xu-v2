@@ -107,10 +107,11 @@ const DisplayedProject = ({ project, scrollYProgress }) => {
           <div className="col-span-3 ">
             <ImagesSingleColumn images={[images[0]]} />
           </div>
-
-          <div className="col-span-3  indent-4 italic mt-4 mb-6">
-            <p> {project.description}</p>
-          </div>
+          {project.description && (
+            <div className="col-span-3  indent-4 italic mt-4 mb-6">
+              <p> {project.description}</p>
+            </div>
+          )}
           <div className="col-span-3 ">
             <ImagesSingleColumn images={images.slice(1)} />
           </div>
