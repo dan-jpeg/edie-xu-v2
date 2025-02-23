@@ -100,7 +100,7 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
 
   return (
     <div className="exhibition-spread-container flex flex-col items-end text-right gap-4 pb-16 md:pb-0">
-      <div> </div>
+      <div></div>
       <p className="pb-2  m-0 md:fixed md:top-20 place-self-center uppercase text-[20px]  md:right-[5vw] ">
         {title}
       </p>
@@ -108,20 +108,44 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
       <div className="   place-content-end ml-4 pt-[calc(100vh-220px)]">
         <p className=" pb-2 place-s not-italic">{location}</p>
         <p className=" pb-3 not-italic m-0">{date}</p>
-        <p className="not-italic max-w-[200px] pt-6 text-right">{header}</p>
       </div>
-
-      {workIncluded && workIncluded.length >= 2 && (
-        <div className="work-included-row">
-          <IncludedWork work={workIncluded[0]} />
-          <IncludedWork work={workIncluded[1]} />
-        </div>
-      )}
 
       <ImagesSingleColumn images={[images[0]]} />
       <CollapsibleText text={textContent} />
       <ImagesSingleColumn images={images.slice(1, 9)} />
-      <div className="pt-12 pb-16">a</div>
+      <div className="grid-cols-3 grid pt-12 w-full">
+        {workIncluded && workIncluded.length >= 2 && (
+          <>
+            <div className="col-span-1 -mr-4 ">
+              <IncludedWork work={workIncluded[0]} />
+            </div>
+            <div className="col-span-1 opacity-0 -mr-4">
+              <IncludedWork work={workIncluded[0]} />
+            </div>
+            <div className="col-span-1 -ml-12">
+              <IncludedWork work={workIncluded[1]} />
+            </div>
+          </>
+        )}
+        <>
+          <div className="col-span-1 opacity-0">
+            <IncludedWork work={workIncluded[0]} />
+          </div>
+          <div className="col-span-1 opacity-0">
+            <IncludedWork work={workIncluded[1]} />
+          </div>
+          <div className="col-span-1 opacity-0">
+            <IncludedWork work={workIncluded[0]} />
+          </div>
+        </>
+
+        <div className="col-span-1 pb-40  opacity-0">
+          <IncludedWork work={workIncluded[1]} />
+        </div>
+        <div className="col-span-1 self-start  text-center justify-self-start ">
+          <p className="not-italic max-w-[200px] pt-6 ">{header}</p>
+        </div>
+      </div>
     </div>
   );
 };

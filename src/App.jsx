@@ -166,13 +166,17 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
           transition={{ duration: 0.32, ease: "linear" }}
           className="top-right-header italic font-bold  text-[12px]"
         >
-          <ul className={"grid-cols-2"}>
-            <li className={`pt-14 m-0 md:py-1`}>
+          <ul
+            className={
+              "  hidden font-alte-haas cursor-context-menu grid-cols-2"
+            }
+          >
+            <li className={`pt-14 not-italic m-0 md:py-1`}>
               <h1
                 className={`pb-0`}
                 onClick={() => setContactMenuExpanded(!contactMenuExpanded)}
               >
-                contact
+                CONTACT
               </h1>
               {contactMenuExpanded ? (
                 <ContactMenu contactMenuExpanded={contactMenuExpanded} />
@@ -180,41 +184,59 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
                 ""
               )}
             </li>
-            <li className={`py-0 my-0 md:py-1`}>
+            <li className={`py-0 not-italic my-0 md:py-1`}>
               <a
                 href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                download cv
+                DOWNLOAD CV
               </a>
             </li>
           </ul>
         </motion.div>
       </div>
 
+      <div className="w-full fixed bottom-4 italic text-[11px]  font-alte-haas flex place-items-center justify-center">
+        <div className="flex space-x-4 font flex-row">
+          <a href="mailto:ediexxu@gmail.com">EMAIL</a>
+          <a href="http://instagram.com/e__xu">INSTAGRAM</a>
+
+          <a
+            href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CV
+          </a>
+        </div>
+      </div>
       <div
-        className={`navigation-controls transition ${isShowingProject || isShowingVideo ? "" : "hidden"} duration-200 fixed  right-1/2  bottom-20 left-1/2 md:left-[6rem] md:bottom-[2.6rem] z-30 ${isShowingVideo ? "translate-y-[50px]" : ""}`}
+        className={`${
+          isShowingProject || isShowingVideo ? "" : "hidden"
+        } fixed bottom-20 md:bottom-[2.6rem] left-6 right-6 md:left-[6rem] md:right-[8.3rem] z-30 flex justify-between transition duration-200 ${
+          isShowingVideo ? "translate-y-[50px]" : ""
+        }`}
       >
+        {/* Previous Button */}
         <motion.div
-          className="italic  hover:opacity-30 text-[1.6rem] md:text-[0.8rem]"
+          className="italic hover:opacity-30 text-[1.6rem] md:text-[11px]"
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("prev")}
         >
-          {adjacentItems.prev ? "prev" : ""}
+          {adjacentItems.prev ? "<" : ""}
         </motion.div>
-      </div>
-      <div
-        className={` ${isShowingProject || isShowingVideo ? "" : "hidden"} fixed md:left-[8.3rem]  bottom-20 right-6 md:bottom-[2.6rem] z-30`}
-      >
+
+        {/* Next Button */}
         <motion.div
-          className="   hover:opacity-30 italic text-[1.6rem] md:text-[0.8rem]"
+          className="italic hover:opacity-30 text-[1.6rem] md:text-[0.8rem]"
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("next")}
         >
-          {adjacentItems.next ? "next" : ""}
+          {adjacentItems.next ? ">" : ""}
         </motion.div>
       </div>
+
       <div
         className={`progress-bar-wrapper ${isShowingVideo ? "video-showing" : ""}`}
       >

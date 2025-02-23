@@ -55,7 +55,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     <div className={`md-block ${isShowingVideo ? "sticky" : "fixed"} z-[1000]`}>
       <div className="sidebar-header mr-16 md: flex-row z-40 fixed top-3 left-4 ">
         <h3
-          className="edie-xu ml-2 text-[12px] italic font-bold mb-0 mt-3 cursor-pointer"
+          className="edie-xu ml-2 text-[11px] italic text-black font-bold mb-0 mt-[24px] cursor-pointer"
           onClick={() => (window.location.href = "/")}
         >
           EDIE XU
@@ -87,7 +87,7 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
   `}
       >
         <div className=" bg-transparent  flex flex-row md:flex-col align-top pl-36 md:pl-8 mt-4">
-          <div className=" selected-works uppercase pt-2 ">
+          <div className=" selected-works uppercase  pb-24 pt-2 ">
             <h3 className="clickable   md:text-xs my-3 italic">WORKS</h3>
             <ul className=" pl-6 transition-all duration-300 ease-in-out cursor-crosshair">
               {displayedWorks.map((project) => (
@@ -103,16 +103,16 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
                   </Link>
                 </li>
               ))}
-              {selectedWorks.length > 3 && (
-                <li>
-                  <p
-                    className="more-link mx-6 my-2  cursor-none hover:underline"
-                    onClick={toggleWorks}
-                  >
-                    {worksExpanded ? "-" : "+"}
-                  </p>
-                </li>
-              )}
+              {/*{selectedWorks.length > 3 && (*/}
+              {/*  <li>*/}
+              {/*    <p*/}
+              {/*      className="more-link mx-6 my-2  cursor-none hover:underline"*/}
+              {/*      onClick={toggleWorks}*/}
+              {/*    >*/}
+              {/*      {worksExpanded ? "-" : "+"}*/}
+              {/*    </p>*/}
+              {/*  </li>*/}
+              {/*)}*/}
             </ul>
           </div>
 

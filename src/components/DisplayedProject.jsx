@@ -46,6 +46,10 @@ const DisplayedProject = ({ project, scrollYProgress }) => {
   const [showDescriptionText, setShowDescriptionText] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const images = project.media
+    .filter((item) => item.type === "image")
+    .map((item) => item.url);
+
   // Use a spring for smooth animation
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -83,27 +87,34 @@ const DisplayedProject = ({ project, scrollYProgress }) => {
           <p className="work-included-year">{project.year}</p>
         </div>
 
-        <motion.div
-          className="fixed md:fixed bottom-[24vh] left-[10vw] flex flex-col justify-center place-items-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: showDescriptionText ? 1 : 0,
-            y: showDescriptionText ? 0 : 20,
-          }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="content-center hidden md:block text-black text-center w-[20vw] pt-12 text-[1vw] lg:text-[11px]">
-            {project.description}
-          </p>
-        </motion.div>
+        {/*<motion.div*/}
+        {/*  className="fixed md:fixed bottom-[24wvh] left-[10vw] flex flex-col justify-center place-items-center"*/}
+        {/*  initial={{ opacity: 0, y: 20 }}*/}
+        {/*  animate={{*/}
+        {/*    opacity: showDescriptionText ? 1 : 0,*/}
+        {/*    y: showDescriptionText ? 0 : 20,*/}
+        {/*  }}*/}
+        {/*  transition={{ duration: 0.5 }}*/}
+        {/*>*/}
+        {/*  <p className="content-center hidden md:block text-black text-center w-[20vw] pt-12 text-[1vw] lg:text-[11px]">*/}
+        {/*    {project.description}*/}
+        {/*  </p>*/}
+        {/*</motion.div>*/}
       </div>
 
       <div className="project-image-container">
-        <ImagesSingleColumn
-          images={project.media
-            .filter((item) => item.type === "image")
-            .map((item) => item.url)}
-        />
+        <div className="grid grid-cols-3   text-[10px] place-items-center ">
+          <div className="col-span-3">
+            <ImagesSingleColumn images={[images[0]]} />
+          </div>
+
+          <div className="col-span-3 italic mt-4 mb-6">
+            <p> {project.description}</p>
+          </div>
+          <div className="col-span-3">
+            <ImagesSingleColumn images={images.slice(1)} />
+          </div>
+        </div>
       </div>
     </div>
   );
