@@ -101,7 +101,7 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
   return (
     <div className="exhibition-spread-container flex flex-col items-end text-right gap-4 pb-16 md:pb-0">
       <div></div>
-      <p className="pb-2  m-0 md:fixed md:top-20 place-self-center uppercase text-[20px]  md:right-[5vw] ">
+      <p className="pb-2  w-full m-0 md:fixed md:bottom-[200px]  uppercase text-[20px]  md:right-[5vw] ">
         {title}
       </p>
 

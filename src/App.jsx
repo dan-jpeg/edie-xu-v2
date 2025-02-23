@@ -214,26 +214,26 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
       <div
         className={`${
           isShowingProject || isShowingVideo ? "" : "hidden"
-        } fixed bottom-20 md:bottom-[2.6rem] left-6 right-6 md:left-[6rem] md:right-[8.3rem] z-30 flex justify-between transition duration-200 ${
+        } fixed bottom-20 md:bottom-[2.6rem] left-6 right-6 md:left-[6rem] md:w-[50px] z-30 md:space-x-4 font-alte-haas flex justify-between transition duration-200 ${
           isShowingVideo ? "translate-y-[50px]" : ""
         }`}
       >
         {/* Previous Button */}
         <motion.div
-          className="italic hover:opacity-30 text-[1.6rem] md:text-[11px]"
+          className="italic hover:opacity-30 text-[11px] "
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("prev")}
         >
-          {adjacentItems.prev ? "<" : ""}
+          {adjacentItems.prev ? "PREVIOUS" : ""}
         </motion.div>
 
         {/* Next Button */}
         <motion.div
-          className="italic hover:opacity-30 text-[1.6rem] md:text-[0.8rem]"
+          className="italic hover:opacity-30 text-[11px] "
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("next")}
         >
-          {adjacentItems.next ? ">" : ""}
+          {adjacentItems.next ? "NEXT" : ""}
         </motion.div>
       </div>
 
