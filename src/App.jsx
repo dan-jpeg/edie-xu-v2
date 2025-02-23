@@ -276,7 +276,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
 
 const Home = () => {
   return (
-    <div className="  ">
+    <div className=" pb-[510px] ">
       <span className=" hidden text-black text-[12px] -mt-1 italic md:block md:absolute transform -translate-x-[80px]">
         EXHIBITIONS
       </span>
