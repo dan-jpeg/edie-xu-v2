@@ -200,7 +200,13 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
       <div className="w-full fixed bottom-4 italic text-[11px]  font-alte-haas flex place-items-center justify-center">
         <div className="flex space-x-4 font flex-row">
           <a href="mailto:ediexxu@gmail.com">EMAIL</a>
-          <a href="http://instagram.com/e__xu">INSTAGRAM</a>
+          <a
+            href="http://instagram.com/e__xu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            INSTAGRAM
+          </a>
 
           <a
             href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf"

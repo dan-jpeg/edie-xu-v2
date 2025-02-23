@@ -104,14 +104,14 @@ const DisplayedProject = ({ project, scrollYProgress }) => {
 
       <div className="project-image-container">
         <div className="grid grid-cols-3   text-[10px] place-items-center ">
-          <div className="col-span-3">
+          <div className="col-span-3 ">
             <ImagesSingleColumn images={[images[0]]} />
           </div>
 
-          <div className="col-span-3 italic mt-4 mb-6">
+          <div className="col-span-3  indent-4 italic mt-4 mb-6">
             <p> {project.description}</p>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-3 ">
             <ImagesSingleColumn images={images.slice(1)} />
           </div>
         </div>

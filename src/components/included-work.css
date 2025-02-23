@@ -9,3 +9,7 @@
     display: flex;
     flex-direction: row;
 }
+
+.images-single img {
+    object-fit: cover;
+}

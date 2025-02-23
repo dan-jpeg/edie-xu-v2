@@ -13,7 +13,7 @@ export const IncludedWork = ({ work }) => {
 
 export const ImagesSingleColumn = ({ images }) => {
   return (
-    <div className="images-single">
+    <div className="images-single object-fill w-full">
       {images.map((image, index) => (
         <img src={image} key={index} />
       ))}
