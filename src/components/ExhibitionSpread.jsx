@@ -116,19 +116,13 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
       <div className="grid-cols-3 grid pt-12 w-full">
         {workIncluded && workIncluded.length >= 2 && (
           <>
-            <div className="col-span-1 -mr-4 ">
+            <div className="col-span-1  ">
               <IncludedWork work={workIncluded[0]} />
             </div>
             <div className="col-span-1 opacity-0 -mr-4">
               <IncludedWork work={workIncluded[0]} />
             </div>
-            <div className="col-span-1 -ml-12">
-              <IncludedWork work={workIncluded[1]} />
-            </div>
-            <div className="col-span-1 opacity-0">
-              <IncludedWork work={workIncluded[0]} />
-            </div>
-            <div className="col-span-1 opacity-0">
+            <div className="col-span-1 ">
               <IncludedWork work={workIncluded[1]} />
             </div>
             <div className="col-span-1 opacity-0">
@@ -137,8 +131,10 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
           </>
         )}
 
-        <div className="col-span-1 self-start justify-self-start ">
-          <p className="not-italic max-w-[200px] pt-6 ">{header}</p>
+        <div className="col-span-3 text-center justify-self-center ">
+          <p className="not-italic max-w-[200px] font-[9px] leading-4 pt-6 ">
+            {header}
+          </p>
         </div>
       </div>
     </div>
