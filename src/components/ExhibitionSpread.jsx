@@ -125,24 +125,19 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
             <div className="col-span-1 -ml-12">
               <IncludedWork work={workIncluded[1]} />
             </div>
+            <div className="col-span-1 opacity-0">
+              <IncludedWork work={workIncluded[0]} />
+            </div>
+            <div className="col-span-1 opacity-0">
+              <IncludedWork work={workIncluded[1]} />
+            </div>
+            <div className="col-span-1 opacity-0">
+              <IncludedWork work={workIncluded[0]} />
+            </div>
           </>
         )}
-        <>
-          <div className="col-span-1 opacity-0">
-            <IncludedWork work={workIncluded[0]} />
-          </div>
-          <div className="col-span-1 opacity-0">
-            <IncludedWork work={workIncluded[1]} />
-          </div>
-          <div className="col-span-1 opacity-0">
-            <IncludedWork work={workIncluded[0]} />
-          </div>
-        </>
 
-        <div className="col-span-1 pb-40  opacity-0">
-          <IncludedWork work={workIncluded[1]} />
-        </div>
-        <div className="col-span-1 self-start  text-center justify-self-start ">
+        <div className="col-span-1 self-start justify-self-start ">
           <p className="not-italic max-w-[200px] pt-6 ">{header}</p>
         </div>
       </div>
