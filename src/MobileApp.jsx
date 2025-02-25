@@ -74,25 +74,25 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
   return (
     <div className="mobile-app-container  scrollbar-hide">
       {/* Simple progress bar */}
-      <div className="fixed top-0 left-0  w-full h-0.5 bg-gray-100">
-        <motion.div
-          className="h-full bg-black"
-          style={{ scaleX: progressScale, transformOrigin: "0%" }}
-          onClick={scrollToTop}
-        />
-      </div>
+      {/*<div className="fixed top-0 left-0  w-full h-2 bg-gray-100">*/}
+      {/*  <motion.div*/}
+      {/*    className="h-full bg-black"*/}
+      {/*    style={{ scaleX: progressScale, transformOrigin: "0%" }}*/}
+      {/*    onClick={scrollToTop}*/}
+      {/*  />*/}
+      {/*</div>*/}
 
       <div
         onClick={goToHome}
-        className=" fixed bottom-[10px] transform tranlate-y-[1px] z-30 right-16"
+        className=" fixed bottom-[9px] transform tranlate-y-[1px] z-30 right-16"
       >
         <span className=" cursor-pointer text-[11px] font-alte-haas  z-30  font-bold ">
           EDIE XU
         </span>
       </div>
       {/* Footer navigation */}
-      <div className="w-full   fixed bottom-3  text-[11px] font-alte-haas flex z-20 place-items-center justify-center">
-        <div className="flex space-x-4 flex-row">
+      <div className="w-full   fixed bottom-3  text-[11px] pl-[66px] font-alte-haas flex z-20 placee-items-start justify-start">
+        <div className="flex space-x-8 flex-row">
           <a href="mailto:ediexxu@gmail.com">EMAIL</a>
           <a
             href="http://instagram.com/e__xu"

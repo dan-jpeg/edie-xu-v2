@@ -26,9 +26,9 @@ const MobileHome = () => {
       {/* Page header */}
 
       {/* 3-column grid layout */}
-      <div className="grid grid-cols-3 gap-4 px-8">
+      <div className="grid grid-cols-3  gap-4 px-8">
         {/* Works column */}
-        <div className="content-column w-full  place-items-end">
+        <div className="content-column w-full   place-items-end">
           <div className="flex flex-col text-right place-self-start space-y-2">
             <h2 className=" text-[11px] font-bold mb-12">WORKS</h2>
             {sortedContent
