@@ -26,7 +26,7 @@ const MobileHome = () => {
       {/* Page header */}
 
       {/* 3-column grid layout */}
-      <div className="grid grid-cols-3  gap-4 px-8">
+      <div className="grid grid-cols-3 place-items-end gap-4 px-8">
         {/* Works column */}
         <div className="content-column w-full   place-items-end">
           <div className="flex flex-col text-right place-self-start space-y-2">
