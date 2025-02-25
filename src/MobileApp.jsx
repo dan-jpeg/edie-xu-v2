@@ -82,18 +82,16 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
         />
       </div>
 
-      <div className=" fixed bottom-0  z-30 w-screen">
-        <div
-          onClick={goToHome}
-          className="flex w-full place-items-end cursor-pointer  font-alte-haas justify-end flex-row"
-        >
-          <span className=" cursor-pointer text-[11px] px-16 py-3 z-30  font-bold mb-1">
-            EDIE XU
-          </span>
-        </div>
+      <div
+        onClick={goToHome}
+        className=" fixed bottom-[10px] transform tranlate-y-[1px] z-30 right-16"
+      >
+        <span className=" cursor-pointer text-[11px] font-alte-haas  z-30  font-bold ">
+          EDIE XU
+        </span>
       </div>
       {/* Footer navigation */}
-      <div className="w-full   fixed bottom-4 italic text-[11px] font-alte-haas flex z-10 place-items-center justify-center">
+      <div className="w-full   fixed bottom-3  text-[11px] font-alte-haas flex z-20 place-items-center justify-center">
         <div className="flex space-x-4 flex-row">
           <a href="mailto:ediexxu@gmail.com">EMAIL</a>
           <a
