@@ -9,7 +9,7 @@ const FromEarthAndUp = () => {
   return (
     <div className="displayed-project-container cursor-default scrollbar-hide pb-20 md:pb-0">
       <div className="displayed-title-container text-center">
-        <div className="work-included-container">
+        <div className="work-included-container pb-14">
           <p className="work-included-title italic pb-10 text-sm ">
             FROM EARTH AND UP
           </p>

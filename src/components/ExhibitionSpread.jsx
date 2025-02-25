@@ -101,11 +101,11 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
   return (
     <div className="exhibition-spread-container flex flex-col items-end text-right gap-4 pb-16 md:pb-0">
       <div></div>
-      <p className="pb-2  w-full m-0 md:fixed md:bottom-[50vh]  uppercase text-[20px]  md:right-[5vw] ">
-        {title}
-      </p>
 
-      <div className="   place-content-end ml-4 pt-[calc(100vh-220px)]">
+      <div className="   place-content-end ml-4 pt-[calc(100vh-800px)]">
+        <p className="pb-2 w-full m-0 capitalize text-[12px]  font-bold text-center">
+          {title}
+        </p>
         <p className=" pb-2 place-s not-italic">{location}</p>
         <p className=" pb-3 not-italic m-0">{date}</p>
       </div>

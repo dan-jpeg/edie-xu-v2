@@ -326,7 +326,7 @@ const videos = [
   {
     id: "v1",
     title: "石子路",
-    safeTitle: "gravel-road",
+    safeTitle: "gravelroad",
     year: "2023",
     duration: "7 Min",
     videoUrl:
