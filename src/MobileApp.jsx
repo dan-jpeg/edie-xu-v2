@@ -72,7 +72,7 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
   };
 
   return (
-    <div className="mobile-app-container scrollbar-hide">
+    <div className="mobile-app-container  scrollbar-hide">
       {/* Simple progress bar */}
       <div className="fixed top-0 left-0  w-full h-0.5 bg-gray-100">
         <motion.div
@@ -82,14 +82,14 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
         />
       </div>
 
-      <div className=" fixed bottom-0 w-screen">
-        <div className="flex w-full place-items-end cursor-pointer z-30 font-alte-haas justify-end flex-row">
-          <h1
-            onClick={goToHome}
-            className=" cursor-pointer text-[11px] px-8 py-3 z-30  font-bold mb-1"
-          >
+      <div className=" fixed bottom-0  z-30 w-screen">
+        <div
+          onClick={goToHome}
+          className="flex w-full place-items-end cursor-pointer  font-alte-haas justify-end flex-row"
+        >
+          <span className=" cursor-pointer text-[11px] px-10 py-3 z-30  font-bold mb-1">
             EDIE XU
-          </h1>
+          </span>
         </div>
       </div>
       {/* Footer navigation */}
@@ -110,7 +110,7 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
       </div>
 
       {/* Main content area */}
-      <div className="mobile-main-container">
+      <div className="mobile-main-container px-8">
         <Routes>
           <Route path="/" element={<MobileHome />} />
           <Route path="/exhibition/:slug" element={<ExhibitionPage />} />

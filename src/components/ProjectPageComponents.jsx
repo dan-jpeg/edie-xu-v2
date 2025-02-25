@@ -2,11 +2,12 @@ import "./included-work.css";
 
 export const IncludedWork = ({ work }) => {
   return (
-    <div className="work-included-container">
-      <p className="work-included-title italic pb-3">{work.title}</p>
-      <p className="work-included-material">{work.material}</p>
-      <p className="work-included-dimensions">{work.dimensions}</p>
-      <p className="work-included-year">{work.year}</p>
+    <div className=" text-[11px] grid grid-cols-3  gap-0 w-full ">
+      <div className="col-span-2 flex space-x-4 flex-row">
+        <p className="work-included-material  ">{work.material}</p>
+        <p className="work-included-dimensions">{work.dimensions}</p>
+      </div>
+      <p className="work-included-title col-span-1 italic ">{work.title}</p>
     </div>
   );
 };

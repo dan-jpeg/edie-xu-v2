@@ -112,29 +112,20 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
       <ImagesSingleColumn images={[images[0]]} />
       {textContent && <CollapsibleText text={textContent} />}
       <ImagesSingleColumn images={images.slice(1, 9)} />
-      <div className="grid-cols-3 grid pt-12 w-full">
+      <div className="grid-cols-3 grid m-0 pb-[200px] px-4 md:px-12 w-screen md:w-full">
+        <p className="not-italic col-span-3 place-self-center pb-12 max-w-fit text-[9px] bg-transparent  ">
+          {header}
+        </p>
         {workIncluded && workIncluded.length >= 2 && (
           <>
-            <div className="col-span-1  ">
+            <div className="col-span-3">
               <IncludedWork work={workIncluded[0]} />
-            </div>
-            <div className="col-span-1 opacity-0 -mr-4">
-              <IncludedWork work={workIncluded[0]} />
-            </div>
-            <div className="col-span-1 ">
               <IncludedWork work={workIncluded[1]} />
-            </div>
-            <div className="col-span-1 opacity-0">
-              <IncludedWork work={workIncluded[0]} />
             </div>
           </>
         )}
 
-        <div className="col-span-3 text-center justify-self-center ">
-          <p className="not-italic max-w-[200px] font-[9px] leading-4 pb-[200px] pt-6 ">
-            {header}
-          </p>
-        </div>
+        <div className="col-span-3 text-center justify-self-center "></div>
       </div>
     </div>
   );
