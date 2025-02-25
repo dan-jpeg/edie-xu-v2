@@ -91,7 +91,7 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
         </span>
       </div>
       {/* Footer navigation */}
-      <div className="w-full   fixed bottom-3  text-[11px] pl-[66px] font-alte-haas flex z-20 placee-items-start justify-start">
+      <div className="w-full bg-white fixed bottom-3  text-[11px] pl-[66px] font-alte-haas flex z-20 placee-items-start justify-start">
         <div className="flex space-x-8 flex-row">
           <a href="mailto:ediexxu@gmail.com">EMAIL</a>
           <a
