@@ -78,13 +78,11 @@ const DisplayedProject = ({ project, scrollYProgress }) => {
   return (
     <div className="displayed-project-container scrollbar-hide pb-20 md:pb-0">
       <div className="displayed-title-container text-center">
-        <div className="work-included-container">
-          <p className="work-included-title italic pb-10 text-sm">
-            {project.title}
-          </p>
+        <div className="work-included-container mb-12">
+          <p className="work-included-title italic  text-sm">{project.title}</p>
           <p className="work-included-material">{project.material}</p>
           <p className="work-included-dimensions">{project.dimensions}</p>
-          <p className="work-included-year">{project.year}</p>
+          <p className="work-included-year  mt-1 ">{project.year}</p>
         </div>
 
         {/*<motion.div*/}

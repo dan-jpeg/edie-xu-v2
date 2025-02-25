@@ -4,18 +4,14 @@
     object-fit: fill;
 }
 
-.exhibition-spread-container {
-    max-width: 61vw;
-    padding: 0;
-    font-size: 12px;
-}
+
 
 .images-row {
     display: grid;
     grid-template-columns: 1.618fr 1fr;
     grid-gap: 8px;
     padding-top: 6px;
-    padding-bottom: 6px;
+        padding-bottom: 6px;
 }
 
 
@@ -43,15 +39,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
 
 
 
 @media screen, (max-width: 800px) {
     .exhibition-spread-container {
-        maxwidth: 100%;
+        width: 100%;
         margin: 4px;
+        padding: 0 12px;
     }
 
 }
