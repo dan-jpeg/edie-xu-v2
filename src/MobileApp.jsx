@@ -87,7 +87,7 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
           onClick={goToHome}
           className="flex w-full place-items-end cursor-pointer  font-alte-haas justify-end flex-row"
         >
-          <span className=" cursor-pointer text-[11px] px-10 py-3 z-30  font-bold mb-1">
+          <span className=" cursor-pointer text-[11px] px-16 py-3 z-30  font-bold mb-1">
             EDIE XU
           </span>
         </div>

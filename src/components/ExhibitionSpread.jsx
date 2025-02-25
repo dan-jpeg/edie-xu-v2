@@ -102,7 +102,7 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
     <div className="exhibition-spread-container flex flex-col items-center text-right gap-4 pb-16 md:pb-0">
       <div></div>
 
-      <div className="   place-content-center ml-4 pt-[calc(100vh-210px)]">
+      <div className="   place-content-center ml-4 pt-[calc(100vh-400px)] md:pt-[calc(100vh-210px)]">
         <div className="work-included-container mb-14">
           <p className="uppercase text-[14px]">{title}</p>
           <p className="">{location}</p>
