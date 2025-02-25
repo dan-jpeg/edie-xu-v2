@@ -62,7 +62,7 @@ const MobileHome = () => {
               ))}
           </div>
         </div>
-        <div className="col-span-3 bg-black h-[2px] w-full mt-1"></div>
+        {/*<div className="col-span-3 bg-black h-[2px] w-full mt-1"></div>*/}
       </div>
     </div>
   );
