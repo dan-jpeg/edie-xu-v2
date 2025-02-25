@@ -5,6 +5,7 @@ import {
   Route,
   Routes,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
 import { ReactLenis, useLenis } from "lenis/react";
 import {
@@ -51,6 +52,7 @@ const MobileApp = () => {
 const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
   useScrollToTop();
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Progress bar animation
   const progressScale = useTransform(scrollYProgress, (value) => {
@@ -65,6 +67,10 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
     }
   };
 
+  const goToHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="mobile-app-container scrollbar-hide">
       {/* Simple progress bar */}
@@ -76,8 +82,18 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
         />
       </div>
 
+      <div className=" fixed bottom-0 w-screen">
+        <div className="flex w-full place-items-end cursor-pointer z-30 font-alte-haas justify-end flex-row">
+          <h1
+            onClick={goToHome}
+            className=" cursor-pointer text-[11px] px-8 py-3 z-30  font-bold mb-1"
+          >
+            EDIE XU
+          </h1>
+        </div>
+      </div>
       {/* Footer navigation */}
-      <div className="w-full fixed bottom-4 italic text-[11px] font-alte-haas flex place-items-center justify-center">
+      <div className="w-full   fixed bottom-4 italic text-[11px] font-alte-haas flex z-10 place-items-center justify-center">
         <div className="flex space-x-4 flex-row">
           <a href="mailto:ediexxu@gmail.com">EMAIL</a>
           <a

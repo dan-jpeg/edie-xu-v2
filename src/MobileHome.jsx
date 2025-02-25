@@ -24,11 +24,6 @@ const MobileHome = () => {
   return (
     <div className="pt-8 font-alte-haas pb-32">
       {/* Page header */}
-      <div className="px-8 fixed bottom-3 w-screen  ">
-        <div className="flex w-full place-items-end justify-end flex-row">
-          <h1 className="text-[11px] font-bold mb-1">EDIE XU</h1>
-        </div>
-      </div>
 
       {/* 3-column grid layout */}
       <div className="grid grid-cols-3 gap-4 px-8">
