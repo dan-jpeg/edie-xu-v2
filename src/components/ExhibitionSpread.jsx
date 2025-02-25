@@ -70,7 +70,7 @@ const CollapsibleText = ({ text }) => {
     <div className="relative">
       <AnimatePresence>
         <motion.p
-          className="font-[11px]   leading-5 mx-6 pt-4 indent-[2vw] text-justify "
+          className="text-[11px]  px-12 leading-5 mt-4 pb-12 pt-8 indent-[2vw] text-justify "
           initial={{ height: "auto" }}
           animate={{ height: "auto" }}
           exit={{ height: "auto" }}
@@ -99,20 +99,18 @@ export const ExhibitionDefaultSpread = ({ exhibition }) => {
     exhibition;
 
   return (
-    <div className="exhibition-spread-container flex flex-col items-end text-right gap-4 pb-16 md:pb-0">
+    <div className="exhibition-spread-container flex flex-col items-center text-right gap-4 pb-16 md:pb-0">
       <div></div>
 
-      <div className="   place-content-end ml-4 pt-[calc(100vh-800px)]">
-        <p className="pb-2 w-full m-0 capitalize text-[12px]  font-bold text-center">
-          {title}
-        </p>
-        <p className=" pb-2 place-s not-italic">{location}</p>
-        <p className=" pb-3 not-italic m-0">{date}</p>
+      <div className="   place-content-center ml-4 pt-[calc(100vh-210px)]">
+        <div className="work-included-container mb-14">
+          <p className="uppercase text-[14px]">{title}</p>
+          <p className="">{location}</p>
+          <p className=" px-6">{date}</p>
+        </div>
       </div>
-
       <ImagesSingleColumn images={[images[0]]} />
       {textContent && <CollapsibleText text={textContent} />}
-
       <ImagesSingleColumn images={images.slice(1, 9)} />
       <div className="grid-cols-3 grid pt-12 w-full">
         {workIncluded && workIncluded.length >= 2 && (
