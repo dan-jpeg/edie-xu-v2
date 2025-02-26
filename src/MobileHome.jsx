@@ -30,9 +30,7 @@ const MobileHome = () => {
         {/* Works column */}
         <div className="content-column w-full  border-black   ">
           <div className="flex flex-col text-right  space-y-2">
-            <h2 className=" text-[11px] font-bold underline underline-offset-4 mb-12">
-              WORKS
-            </h2>
+            <h2 className=" text-[10px] font-bold  mb-12">WORKS</h2>
             {sortedContent
               .filter((item) => item.type === "project")
               .map((item, index) => (
@@ -44,9 +42,7 @@ const MobileHome = () => {
         {/* Exhibitions column */}
         <div className="content-column ">
           <div className="flex flex-col text-right space-y-2">
-            <h2 className=" text-[11px] font-bold underline underline-offset-4 mb-12">
-              EXHIBITIONS
-            </h2>
+            <h2 className=" text-[10px] font-bold  mb-12">EXHIBITIONS</h2>
             {sortedContent
               .filter((item) => item.type === "exhibition")
               .map((item, index) => (
@@ -58,9 +54,7 @@ const MobileHome = () => {
         {/* Videos column */}
         <div className="content-column  ">
           <div className="flex flex-col text-right space-y-2">
-            <h2 className=" text-[11px] font-bold underline underline-offset-4 mb-12">
-              VIDEO
-            </h2>
+            <h2 className=" text-[10px] font-bold  mb-12">VIDEO</h2>
             {sortedContent
               .filter((item) => item.type === "video")
               .map((item, index) => (
@@ -96,7 +90,7 @@ const MobileGridItem = ({ item }) => {
         transition={{ duration: 0.3 }}
         className="flex flex-col"
       >
-        <h3 className="text-[11px] uppercase mb-1">{item.title}</h3>
+        <h3 className="text-[10px] italic uppercase mb-1">{item.title}</h3>
       </motion.div>
     </Link>
   );
