@@ -82,28 +82,40 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
       {/*  />*/}
       {/*</div>*/}
 
-      <div
-        onClick={goToHome}
-        className=" fixed bottom-[1.4rem] transform  z-30 right-16"
-      >
-        <span className=" cursor-pointer text-[11px] font-alte-haas  z-30  font-bold ">
-          EDIE XU
-        </span>
-      </div>
+      {/*<div*/}
+      {/*  onClick={goToHome}*/}
+      {/*  className=" fixed bottom-[1.4rem] transform  z-30 right-16"*/}
+      {/*>*/}
+      {/*  <span className=" cursor-pointer text-[11px] font-alte-haas  z-30  font-bold ">*/}
+      {/*    EDIE XU*/}
+      {/*  </span>*/}
+      {/*</div>*/}
       {/* Footer navigation */}
-      <div className="w-full bg-white fixed bottom-[1.3rem]  py-1 text-[11px] pl-16 font-alte-haas flex z-20 placee-items-start justify-start">
-        <div className="flex space-x-14 flex-row">
-          <a href="mailto:ediexxu@gmail.com">EMAIL</a>
-          <a
-            href="http://instagram.com/e__xu"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="w-full bg-white fixed bottom-[1.3rem] py-1  px-8 text-[11px] font-alte-haas flex z-20">
+        <div className="grid grid-cols-4 w-full gap-4  place-items-center text-right ">
+          <div className="col-span-1 w-full ">
+            <a href="mailto:ediexxu@gmail.com">EMAIL</a>
+          </div>
+          <div className="col-span-1   w-full text-right  ">
+            <a
+              href="http://instagram.com/e__xu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              INSTAGRAM
+            </a>
+          </div>
+          <div className="col-span-1 text-center w-full ">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              CV
+            </a>
+          </div>
+          <div
+            onClick={goToHome}
+            className="col-span-1  pr-3   font-bold w-full cursor-pointer "
           >
-            INSTAGRAM
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            CV
-          </a>
+            <span>EDIE XU</span>
+          </div>
         </div>
       </div>
 
