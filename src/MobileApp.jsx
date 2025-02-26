@@ -112,7 +112,7 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
           </div>
           <div
             onClick={goToHome}
-            className="col-span-1  pr-3   font-bold w-full cursor-pointer "
+            className="col-span-1     text-center font-bold w-full cursor-pointer "
           >
             <span>EDIE XU</span>
           </div>
