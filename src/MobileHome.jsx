@@ -27,6 +27,17 @@ const MobileHome = () => {
 
       {/* 3-column grid layout */}
       <div className="grid grid-cols-4  splace-items-start justify-center h-full   gap-4 ">
+        <div className="content-column ">
+          <div className="flex flex-col text-right space-y-2">
+            <h2 className=" text-[10px] font-bold  mb-12">EXHIBITIONS</h2>
+            {sortedContent
+              .filter((item) => item.type === "exhibition")
+              .map((item, index) => (
+                <MobileGridItem key={`exhibition-${index}`} item={item} />
+              ))}
+          </div>
+        </div>
+
         {/* Works column */}
         <div className="content-column w-full  border-black   ">
           <div className="flex flex-col text-right  space-y-2">
@@ -40,16 +51,6 @@ const MobileHome = () => {
         </div>
 
         {/* Exhibitions column */}
-        <div className="content-column ">
-          <div className="flex flex-col text-right space-y-2">
-            <h2 className=" text-[10px] font-bold  mb-12">EXHIBITIONS</h2>
-            {sortedContent
-              .filter((item) => item.type === "exhibition")
-              .map((item, index) => (
-                <MobileGridItem key={`exhibition-${index}`} item={item} />
-              ))}
-          </div>
-        </div>
 
         {/* Videos column */}
         <div className="content-column  ">
@@ -62,8 +63,8 @@ const MobileHome = () => {
               ))}
           </div>
         </div>
-        <div className="col-span-1 opacity-0 text-[11px] text-right border-2  border-black font-bold w-full cursor-pointer">
-          <span>EDIE XU</span>
+        <div className="col-span-1  text-[11px] text-right   border-black font-bold w-full cursor-pointer">
+          <span className="m-0 p-0">EDIE XU</span>
         </div>
         {/*<div className="col-span-3 bg-black h-[2px] w-full mt-1"></div>*/}
       </div>

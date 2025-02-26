@@ -23,6 +23,9 @@ import {
 import useScrollToTop from "./hooks/useScrollToTop";
 import MobileHome from "./MobileHome.jsx";
 
+import whitePaperBg from "/src/assets/white-paper-bg-cropped.png";
+import bangerBg from "/src/assets/banger_01.jpg";
+
 const MobileApp = () => {
   const [lenisScrollProgress, setLenisScrollProgress] = useState(0);
   const { scrollYProgress } = useScroll();
@@ -71,8 +74,25 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
     navigate("/");
   };
 
+  // Determine which background to use based on current route
+  const isHomePage = location.pathname === "/";
+  const backgroundImage = !isHomePage ? bangerBg : bangerBg;
+  const cover = isHomePage ? true : false;
+
+  const bgOpacity = 0.7;
+
   return (
-    <div className="mobile-app-container  scrollbar-hide">
+    <div
+      className={`scrollbar-hide ${isHomePage ? "mobile-app-container" : ""}`}
+
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      //   backgroundSize: `${cover}`,
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      //   minHeight: "100vh",
+      // }}
+    >
       {/* Simple progress bar */}
       {/*<div className="fixed top-0 left-0  w-full h-2 bg-gray-100">*/}
       {/*  <motion.div*/}
@@ -112,7 +132,7 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
           </div>
           <div
             onClick={goToHome}
-            className="col-span-1     text-center font-bold w-full cursor-pointer "
+            className="col-span-1     text-right font-bold w-full cursor-pointer "
           >
             <span>EDIE XU</span>
           </div>
