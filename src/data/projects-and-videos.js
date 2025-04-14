@@ -89,7 +89,7 @@ const selectedWorks = [
     description:
       "This piece was fired multiple times at different temperatures to achieve layers of tonal and texture variations while consistently using the same hand mixed clay body",
     year: "2023",
-    dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
+    dimensions: "75 x 60 x 30 inches (190 x 152 x 76 cm)",
     material: "stoneware",
     media: [
       {
