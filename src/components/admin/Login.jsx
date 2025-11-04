@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SiloHoverButton from "../SiloHoverButton.jsx";
 
 const API_URL =
-  import.meta.env.VITE_API_URL || "https://exu-admin-server.onrender.com";
+  import.meta.env.VITE_API_URL || "https://exu-admin-server.onrender.com/api";
 
 const Login = ({ onLogin }) => {
   const [password, setPassword] = useState("");
