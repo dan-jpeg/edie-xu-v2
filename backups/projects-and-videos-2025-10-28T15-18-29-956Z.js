@@ -310,6 +310,31 @@ const selectedWorks = [
         "url": "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled4.jpg?alt=media&token=1d293cc6-0fb6-4e1a-b76e-ab5310d96271"
       }
     ]
+  },
+  {
+    "title": "dsds",
+    "year": "sdsd",
+    "description": "sdsdsd",
+    "material": "",
+    "dimensions": "",
+    "category": "",
+    "location": "",
+    "date": "",
+    "url": "",
+    "videoUrl": "",
+    "safeTitle": "",
+    "duration": "",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://firebasestorage.googleapis.com/v0/b/edie-xu-backend.firebasestorage.app/o/works%2F1761534245900-INSTA_STORY_B.png?alt=media&token=a177af62-a469-4ddd-9c19-bddb2846bc17"
+      }
+    ],
+    "images": [],
+    "header": "",
+    "textContent": "",
+    "workIncluded": [],
+    "id": "1761534252861"
   }
 ];
 

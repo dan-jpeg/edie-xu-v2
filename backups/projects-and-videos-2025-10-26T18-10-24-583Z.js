@@ -310,6 +310,31 @@ const selectedWorks = [
         "url": "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled4.jpg?alt=media&token=1d293cc6-0fb6-4e1a-b76e-ab5310d96271"
       }
     ]
+  },
+  {
+    "title": "dan",
+    "year": "2024",
+    "description": "sa,dnsalkdnklndsadb",
+    "material": "terracotta",
+    "dimensions": "104cm ",
+    "category": "",
+    "location": "",
+    "date": "",
+    "url": "",
+    "videoUrl": "",
+    "safeTitle": "",
+    "duration": "",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://firebasestorage.googleapis.com/v0/b/edie-xu-backend.firebasestorage.app/o/projects%2F1761492545071-IG_STORY_A_FIX.png?alt=media&token=0c457d87-fea8-48e2-a89b-c0087c7422c1"
+      }
+    ],
+    "images": [],
+    "header": "",
+    "textContent": "",
+    "workIncluded": [],
+    "id": "1761492553136"
   }
 ];
 

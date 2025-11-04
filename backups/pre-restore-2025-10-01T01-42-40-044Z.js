@@ -20,30 +20,6 @@ const selectedWorks = [
     ]
   },
   {
-    "id": "1",
-    "category": " ",
-    "location": " ",
-    "title": "02 20 ",
-    "description": "",
-    "year": "2023",
-    "dimensions": "12 x 12 x 27 inches (30 x 30 x 69cm)",
-    "material": "stoneware",
-    "media": [
-      {
-        "type": "image",
-        "url": "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/02-20_01.jpeg"
-      },
-      {
-        "type": "image",
-        "url": "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/02-20_02.jpeg"
-      },
-      {
-        "type": "image",
-        "url": "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/02-20_03.jpeg"
-      }
-    ]
-  },
-  {
     "id": "2",
     "category": " ",
     "location": " ",

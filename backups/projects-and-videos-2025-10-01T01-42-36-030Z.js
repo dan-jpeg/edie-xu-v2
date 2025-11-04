@@ -1,0 +1,659 @@
+const selectedWorks = [
+  {
+    id: "10",
+    category: " ",
+    location: "Gui Zhou, China",
+    title: "FROM EARTH AND UP",
+    description: "",
+    year: "Photographed in April of 2024",
+    dimensions: "61 x 19 x 4 (cm)",
+    material: "stoneware",
+    media: [
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/FROM_EARTH_AND_UP00001.jpeg?alt=media&token=4d20ba91-2f10-4e4c-8690-767554e798c9",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/FROM_EARTH_AND_UP00002.jpeg?alt=media&token=ae265c46-4f8a-4baf-bb01-c010ae5f3edc",
+      },
+    ],
+  },
+  {
+    id: "1",
+    category: " ",
+    location: " ",
+    title: "02 20 ",
+    description: "",
+    year: "2023",
+    dimensions: "12 x 12 x 27 inches (30 x 30 x 69cm)",
+    material: "stoneware",
+    media: [
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/02-20_01.jpeg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/02-20_02.jpeg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/02-20_03.jpeg",
+      },
+    ],
+  },
+  {
+    id: "2",
+    category: " ",
+    location: " ",
+    title: "Thine air",
+    description:
+      "The piece takes the form of nostalgia for one's embrace through the memories of my hands. The piece is slightly curved and bent over, showing subtle bumps of one's spine, arched into a finger-like tentacle. The piece is not glazed; it is made with two different clay, fired at 1800 degrees, creating various textures and colors. The black line in the middle of the 'torso' is reminiscent of the two digestive tracks of shrimp, the back which then morphs with the spinal cords of the human back.",
+    year: "2023",
+    dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
+    material: "unglazed stoneware",
+    media: [
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_01-%400.33x.jpg",
+      },
+
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_03-%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_02-%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_04-%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/THINE_AIR_END%400.25x.jpg?alt=media&token=6393f2dd-46b8-4d08-90ca-13a4c896540a",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/THINE_AIR_END2%400.25x.jpg?alt=media&token=6a4083e7-1907-405b-bf8d-8d1a7522e8b8",
+      },
+    ],
+  },
+  {
+    id: "3",
+    category: " ",
+    location: " ",
+    title: "oxygenated  ",
+    description:
+      "This piece was fired multiple times at different temperatures to achieve layers of tonal and texture variations while consistently using the same hand mixed clay body",
+    year: "2023",
+    dimensions: "75 x 60 x 30 inches (190 x 152 x 76 cm)",
+    material: "stoneware",
+    media: [
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_03%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_01%400.33x.jpg",
+      },
+
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_04%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_05%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_02.png",
+      },
+
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/oxygenated_6n.jpg?alt=media&token=c5cb9b32-cea8-417a-a449-408347f8b750",
+      },
+
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/oxygenated-7%400.2x.jpg?alt=media&token=2bbb22b6-6b4d-4f93-9326-3d6a7192ca5b",
+      },
+    ],
+  },
+  {
+    id: "4",
+    category: " ",
+    location: " ",
+    title: "philtrum",
+    description: "",
+    year: "2022",
+    dimensions: "75 x 65 x 28 inches(190 x 165 x 71cm)",
+    material: "stoneware with wash",
+    media: [
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_01%400.3x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_02%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_03%400.33x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_04%400.3x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_05%400.3x.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_06%400.3x.jpg",
+      },
+    ],
+  },
+  {
+    id: "5",
+    category: " ",
+    location: " ",
+    title: "Being series 01",
+    description: "",
+    year: "2022",
+    dimensions: "24 x 18 x 15 inches (60 x 45 x 38 cm)",
+    material: "Unglazed stoneware",
+    media: [
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_02.png",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_01.jpg",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_SERIES.jpg?alt=media&token=968d8f47-02e1-4713-bb89-a5e5675067eb",
+      },
+    ],
+  },
+  {
+    id: "6",
+    category: " ",
+    location: " ",
+    title: "Being series 02",
+    description: "",
+    year: "2022",
+    dimensions: "35 x 30 inches (89 x 76 cm)",
+    material: "Terracotta",
+    media: [
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_01%400.25x.jpg?alt=media&token=72b7baf4-a061-4b77-b6c6-cef4af080caa",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_SERIES_0201.jpg?alt=media&token=31583244-b6cb-414f-8617-89ca5f5f9a3d",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/BEING_SERIES_0202.jpg?alt=media&token=3c698625-04dd-49e6-874f-266495b09d41",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-02_02.jpg",
+      },
+    ],
+  },
+  {
+    id: "7",
+    category: " ",
+    location: " ",
+    title: "White (resonance)",
+    description: "",
+    year: "2022",
+    dimensions: "48 x 24 x 32 inches (121 x 60 x 81 cm)",
+    material: "Stoneware with glaze",
+    media: [
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_01.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_02.png",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_03.png",
+      },
+    ],
+  },
+  {
+    id: "8",
+    category: " ",
+    location: " ",
+    title: "Peculiar intimacy",
+    description: "",
+    year: "2022",
+    dimensions: "75 x 65 x 28 inches (190 x 165 x 71 cm)",
+    material: "Machine knit, metal and plaster",
+    media: [
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_01.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_02-small.jpg",
+      },
+      {
+        type: "image",
+        url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_03-small.jpg",
+      },
+    ],
+  },
+  {
+    id: "11",
+    category: " ",
+    location: " ",
+    title: "Sound of Kiln",
+    description:
+      "The broken, already-made plates and ceramic wares become fragmented pieces of organic space. Questioning where 'form' comes from, I combined these already \"made' forms with the raw clay. At the same time, it questions the craftsmanship of perfection in ceramic as the pieces slowly collapse into one in the heat of the kiln, creating cracks due to the different densities of the pre-and post-fired clay. As they melted and collapsed upon each other, creating something beautiful",
+    year: "2020",
+    dimensions: "24 x 42 x 32inches",
+    material: "thrifted/found used ceramic ware fired with green ware",
+    media: [
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound1.jpg?alt=media&token=b05492b5-ed5f-4c20-b99a-b9a81426e005",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound2.jpg?alt=media&token=cc2eb6ed-22e4-4a76-a660-f38b4d209c95",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound3.jpg?alt=media&token=3234331a-3e86-4148-b937-f353d8675238",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/sound4.jpg?alt=media&token=8bc5ae2f-6362-4ed2-9f3c-bf20f999eacf",
+      },
+    ],
+  },
+  {
+    id: "12",
+    category: " ",
+    location: " ",
+    title: "UNTITLED",
+    description: "",
+    year: "2020",
+    dimensions: "36 x 18 x 22 inches",
+    material: "Medium; glazed stone ware ",
+    media: [
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled1-new.jpg?alt=media&token=e690640e-8107-467e-b9e3-aed0e8fc7586",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled2.jpg?alt=media&token=ef3d51bd-fa5e-4cea-8520-90189ab88966",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled3.jpg?alt=media&token=d7ae2e55-a2da-4678-8031-5cd639ca1a6c",
+      },
+      {
+        type: "image",
+        url: "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled4.jpg?alt=media&token=1d293cc6-0fb6-4e1a-b76e-ab5310d96271",
+      },
+    ],
+  },
+];
+
+export { selectedWorks };
+
+const videos = [
+  {
+    id: "v1",
+    title: "石子路",
+    safeTitle: "gravelroad",
+    year: "2023",
+    duration: "7 Min",
+    videoUrl:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/%E7%9F%B3%E5%AD%90%E8%B7%AF.mov",
+    thumbnail:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/%E3%80%8A%E7%9F%B3%E5%AD%90%E8%B7%AF%E3%80%8B_thumbnail.jpeg",
+  },
+  {
+    id: "v2",
+    title: "Erase",
+    safeTitle: "Erase",
+    year: "2020",
+    duration: "12min",
+    videoUrl:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/Erase.mp4",
+    thumbnail:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/erase_thumbnail.jpeg",
+  },
+  {
+    id: "v3",
+    title: "Dog Walk",
+    safeTitle: "Dog Walk",
+    year: "2020",
+    duration: "6min",
+    videoUrl:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/dog-walk.mov",
+    thumbnail:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/dog-walk_thumbnail.jpeg",
+  },
+  {
+    id: "v4",
+    title: "Skin Contact",
+    safeTitle: "Skin Contact",
+    year: "2019",
+    duration: "19min",
+    videoUrl:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/skin-contact.mp4",
+    thumbnail:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/skin-contact_thumbnail.jpeg",
+  },
+  {
+    id: "v5",
+    title: "Re",
+    safeTitle: "Re",
+    year: "2019",
+    duration: "8min",
+    videoUrl:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/re.MP4",
+    thumbnail:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/re_thumbnail.jpeg",
+  },
+  {
+    id: "v6",
+    title: "Untitled",
+    safeTitle: "Untitled",
+    year: "2019",
+    duration: "13min",
+    videoUrl:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/untitled.mp4",
+    thumbnail:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/%E3%80%8A%E7%9F%B3%E5%AD%90%E8%B7%AF%E3%80%8B_thumbnail.jpeg",
+  },
+  {
+    id: "v7",
+    title: "Ceramic Meets Metal Meets Ceramic",
+    safeTitle: "CMMMC",
+    year: "2022",
+    duration: "11min, 15min",
+    videoUrl:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/ceramic_meets_metal_1.mp4",
+    videoUrl2:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/ceramic_metal_closeup.mp4",
+    thumbnail:
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/%E3%80%8A%E7%9F%B3%E5%AD%90%E8%B7%AF%E3%80%8B_thumbnail.jpeg",
+  },
+];
+
+export { videos };
+
+const exhibitions2 = [
+  {
+    id: "e0",
+    category: "",
+    title: "limited intentionality",
+    location: "Shanghart, Shang Hai",
+    url: "https://www.shanghartgallery.com/galleryarchive/exhibition.htm?exbId=17117",
+    date: "2024 03. 22-06. 01",
+    images: [
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/limited-intentionality_01.jpeg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality07small.jpg",
+      "https://edie-xu-portfolizo.s3.us-east-2.amazonaws.com/photos/limited_intentionality06-small.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality08-small.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality01-small.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality02-small.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality03-small.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality04-small.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited-intentionality05-small.jpg",
+    ],
+
+    header:
+      "Group Exhibition with Cai Lei, Hang Chunhui, Liu Yue, Su Chang, Sun Wenjia",
+    subheader: "Curated by Zhang Jiarong",
+    textContent:
+      "Thine air took form as a nostalgia of ones embrace through the memories of my hands. The back of the piece is slightly cured and bent over showing subtle bumps of one’s spine, arched into a finger like tentacle. The piece is not glazed, it is made with two different clay, fired at 1800 degrees creating different texture and color. The black line in the middle of the ‘torso’ is inspired a daily life encounter of washing shrimp, and being surprised to realize they actually have two black vein instead of one",
+    workIncluded: [
+      {
+        id: 1,
+        title: "Hear me sing",
+        year: "2023",
+        dimensions: "28 x 30 x 8 inches (71 x 78 x 20 cm)",
+        material: "Unglazed stoneware",
+        description: "",
+      },
+      {
+        id: 2,
+        title: "Thine air",
+        year: "2023",
+        dimensions: "34 x 23 x 15 inches (86 x 58 x 38cm)",
+        material: "Unglazed stoneware",
+        description: "",
+      },
+    ],
+  },
+
+  {
+    id: "e1",
+    category: "",
+    title: "Out of place",
+    location: "Beijing Commune, Beijing",
+    url: "https://www.beijingcommune.com/exhibitions/108.html",
+    date: "2024. 01. 26-03. 02",
+    header:
+      "Group exhibition with Chang Yuchen, Ge Yulu, Hu Xiaoyuan, Li Binyuan, Li Shuang, Zhao Zhiliang, and Zhou Yilun",
+    subheader: "",
+
+    images: [
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/out-of-place_01.jpeg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place01%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place02%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place03%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place04%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place05%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place06%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place07%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place08%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place09%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place10%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place11%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/OUT-of-small/out-of-place12%400.25x.jpg",
+    ],
+    textContent:
+      "Beijing Commune is pleased to present “Out of Place”, a group exhibition featuring works by Chang Yuchen, Ge Yulu, Hu Xiaoyuan, Li Binyuan, Li Shuang, Xu Siyi, Zhao Zhiliang, and Zhou Yilun, from January 26 to March 2, 2024. Spanning sculptures, videos, installations, and site-specific paintings, the works on display open up a multi-layered experience tunnelingthrough different portals: the screen, the lens, the curtain, and the door. While entrance often implies a metaphorical segmentation between the past and future, contemporary life dwells on the threshold, constantly prompting retrospection and prospection only to attest to their fecklessness and futility. Weaving a tapestry of ill-timed encounters, the exhibition spotlights a range of perceptions and (non-)adaptions with the artists’ works oscillating between metamorphosing and decaying, reveling and mourning, and remembering and forgetting. Dimly lit, the exhibition room seems to extend beyond the physical space as Hu Xiaoyuan’s video dominates one side of the wall venturing into a disphotic zone. A hissing noise from the drone intrudes the picturesque exploration, suggestive of the tools and technology that wedge in between human and nature. The nonplussed rooster hovering in the unfathomable cave alludes to the hands controlling it through the drone, recalling the bygone Zuhandenheit (present-at-hand) since ways of production are mediated by technology. In the elongated sculptures on the glossy plastic stool by Zhao Zhiliang, the rough porcelain surface retains traces of extensive kneading, rubbing, and caressing by the artist's hands, incorporating the fuzzy intimacy of the corporeal experience. In the same vein of questioning functionality that strips away the agency of hands, Zhou Yilun’s destruction of furniture and domestic settings rails against the prescribed form. Meanwhile, Chang Yuchen's kaleidoscope of coral sketches is a personal language system based on the corals she collected on Dinawan Island. Each combination can be read as a sentence. With poetic connotations, it would be surprising to know that each line is from a selection of example sentences in a mass-printed Chinese-Malay dictionary. Illuminating sentiments in handwriting which Heidegger discerned as the counterpart of typewriting, Chang’s meticulous, as detailed as printmaking, coral sentences challenge the relationship between the reader and the artist, between language and nature. For that up to this point, all distances are abolished: seat and seat; word and word; place and place, “everything gets lumped together into uniform distancelessness.” [1] Li Binyuan's performance video is often taken against the backdrop of generic places which would be the least unfamiliar scenes to the audience here. Nonetheless, they are anonymous. Mirroring emotional connections that are neither remote nor truly close, the frantic flame charts both evocation and oblivion in Li’s seemingly absurd attempt to engage. Suspension of distance emerges almost instantaneously from Edie Siyi Xu’s juxtaposition of the ponderous and mechanical iron stand and the fossil-like ceramics: upon closer scrutiny, one notices crevices on the enclosed clay cocoon which hint at the mysterious hollow often seen in her work evoking the intuitive sense of belonging. Underlining the status of disassociation, Li Shuang, who is absent in her video, recruited 20 performers styled identically in blunt-cut fringe and spycam-like glasses like the artist herself. The footage of avatars interacting with Li’s friends through the lens in their glasses unveils a world infiltrated by interfaces. We are always connected, always plugged in. If it weren't for a light source on the ground, perhaps no one would notice Ge Yulu's Matrix-like diagram map painted on the floor. Light has always been the metaphor for the field of vision, but now the flashlight illuminates an interface for access. The source code sounds remote, maybe the only thing remote; the matrix should be preserved in the polar glacier, yet it is close at one’s feet.",
+    footnote:
+      "[1] Heidegger, M. (1971e). ‘The Thing’. In A. Hofstadter (Ed.), Poetry, Language, Thought (pp.165-186). New York: Harper and Row. p. 165",
+    workIncluded: [
+      {
+        id: 1,
+        title: "Hear me sing",
+        year: "2023",
+        dimensions: "28 x 30 x 8 inches (71 x 78 x 20 cm)",
+        material: "Unglazed stoneware",
+        description: "",
+      },
+      {
+        id: 2,
+        title: "Thine air",
+        year: "2023",
+        dimensions: "34 x 23 x 15 inches (86 x 58 x 38cm)",
+        material: "Unglazed stoneware",
+        description: "",
+      },
+    ],
+  },
+
+  {
+    id: "e2",
+    category: " ",
+    title: "Resonate with Fragmentation",
+    location: "Ginkgo Space, Shanghai",
+    date: "2024. 01. 06-03. 09",
+    url: "https://www.ginkgospace.cn/en/exhibition/details/2267",
+    header:
+      "Exhibited with Cheng Tingting, Chen Jiajun, Hu Longxiang, Xiong Haoqi, Xu Siyi, Wang Yuxiao, Zhou Tianyu",
+    subheader: "",
+    images: [
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/resonate-with-fragmentation_01.jpeg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate02%400.3x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate03%400.3x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate04%400.3x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate05%400.3x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/resonate06%400.3x.jpg",
+    ],
+    textContent2:
+      "  Edie Xu, born in New York in 2000, graduated from the School of the Art Institute of Chicago in 2023. Her works involve various media, including sculpture installations, ceramics, clothing, painting, and more. The delicacy and fragility of these media create tension within her works. Her recent pieces question aesthetic standards by exploring geometric distortions of the body, interpreting the relationship between media and symbols, expressing precisely the irregular and unconstrained essence between humanity and society. Her works in the exhibition, spanning different media, focus on the exploration of perceptions of the body, space, and time, collectively revealing the dialectical relationship between positive and negative forms in space. In the ceramic sculpture 'Intimate being,' the tension between the ceramic shell and its hollow interior mirrors the positive and negative spaces within and around our bodies. The solid presence of ceramics evokes associations with the human body, while fabric serves as the external skin, enveloping the form. In the soft sculpture piece 'Landmart', she chooses fabric as a soft material to explore the ever- changing relationship between the artwork and space. The hollow of the ceramic sculpture transforms into holes between taut fabric fibers here. The lead nail powder left on the ground becomes an integral part of the work, extending the connection with the space. As a highly flexible medium, fabric brings infinite possibilities for change, establishing diverse and fragile relationships with space. It can not only be worn on the human body but can also be related to the current exhibition space. Body, space, and concepts in Edie Xu's sculptural works form a cohesive whole, presenting an organic form that flows and spreads ''",
+    footnote: "",
+    workIncluded: [
+      {
+        id: 1,
+        title: "Landmart",
+        year: "2024",
+        dimensions: "352 × 522 × 475 cm",
+        material: "Knit, aluminum, cement residue",
+        description: "",
+      },
+      {
+        id: 2,
+        title: "Intimate Being",
+        year: "2023",
+        dimensions: "40 × 25 × 25 cm",
+        material: "Ceramics",
+        description:
+          "s embrace through the memories of my hands. The back of the piece is slightly cured and bent over showing subtle bumps of one’s spine, arched into a finger like tentacle. The piece is not glazed, it is made with two different clay, fired at 1800 degrees creating different texture and color. The black line in the middle of the ‘torso’ is inspired a daily life encounter of washing shrimp, and being surprised to realize they actually have two black vein instead of one",
+      },
+    ],
+  },
+
+  {
+    id: "e3",
+    category: "",
+    title: "N 39.984036 S 116.496563",
+    location: "Caijin Space, Beijing",
+    date: "2023. 06. 26-08. 31",
+    header: "",
+    subheader: "",
+    images: [
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/n-s_01.jpeg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/n-s02.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/n-s03.jpg",
+    ],
+    textContent: "",
+    footnote: "",
+    workIncluded: [],
+  },
+
+  {
+    id: "e4",
+    category: " ",
+    title: "Allure Of The Abject",
+    location: "SITE Gallery, Chicago ",
+    date: "2022. 06. 03-16. 14",
+    url: "https://sites.saic.edu/sitegalleries/2022/05/29/allure-of-the-abject/",
+    header:
+      "Exhibited with Anika Jeyaranjan, Dillon Bryant, Fernanda Carvalho Santos, Goldie, Inaara Vishnani, Maddie May, Riley Lynch, and Ryan Zhao",
+    subheader: "Curated by Bri Pizarro, Matthew Cortez, and Sarah Grogan",
+    images: [
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/allure-of-the-abject_01.jpeg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject02.png",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject04.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject05.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject06.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject07.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject08.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject09.png",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/allure-of-the-abject10.png",
+    ],
+    textContent:
+      "In her seminal essay Powers of Horror: An Essay on Abjection (1982), Kristeva described the abject as “fear having been bracketed, … [in confrontation] with otherness, a burden both repellent and repelled, a deep well of memory that is unapproachable and intimate.” The abject involves a deconstructing and reconstituting of one’s sense of self, of peeling back the veneer of civility to see our true selves for what we are. It constitutes the liberation of our repressed subconscious and desires.Amidst increasing disenchantment with idealism and romanticism brought upon by our contemporary anxieties it seems we are pervaded by a sense of desolation. Disillusioned, many of us have begun making a turn towards the abject.",
+    workIncluded: [],
+  },
+
+  {
+    id: "e5",
+    category: " ",
+    title: "Somatic Attunement",
+    location: "Studio Gallery, ShangHai",
+    date: "2021. 09. 12-10. 17",
+    url: "https://www.studiogallery.cn/zljt",
+    header:
+      "Group Exhibition with Cai Lei, Hang Chunhui, Liu Yue, Su Chang, Sun Wenjia",
+    subheader: "Curated by Zhang Yi",
+
+    images: [
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/somatic-attunement_01.png",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement02%400.25x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement03%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement04%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement05%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement06%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement07%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement08%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement09%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement10%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement11%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement12%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement13%400.2x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/somatic-attunement14%400.25x.jpg",
+    ],
+    textContent: `Studio Gallery are very pleased to have invited eleven Chinese contemporary female young artists to present the group exhibition Borrow Somatic Attunement 」. This time exhibition takes the artist's delicate 'material view' as a clue, and will be the first sculpture exhibition presented since the opening of the new space of the studio gallery. exhibition will open on September 12 and remain on display until October 17.
+
+-About the exhibition-
+
+Psychoanalysis: analysts mobilize their own activity and consciously experience the bodies of others, resulting in emotional resonance. In diagnosis and treatment, the analyst goes beyond the habitual perception of consciousness and pre-emotively identifies the minutiae of feelings in order to interact with the patient. Can we use this therapy to counteract the aphasia that is sensitive to materials in art viewing? From the level of feeling consciousness, the artist transfers, performs himself at the level of borrowing objects, and recognizes the expressions of objects with his own body sense. this process is like 'tuning' which is another term: adjusting the frequency of an oscillating electromagnetic wave so that it resonates with another oscillating electromagnetic wave. In the process of searching for radio stations in the noise, the artist uses the hand of his fingers to distinguish the wave band. In the process of distinguishing materials and feeling cultural symbols from natural skin, the artist captures imagination and intention with the common sense of materials and space, and reflects the different steps of feeling-awareness-image-concept step by step. 'thinking in images' is often used to describe the artist's thinking model against the logic of language. In contrast, the texture thinking' of thinking in the material is further materialized. The eleven creators/groups in this exhibition cut into their practice from different themes, from semantics, from fetishes, from embodied self-consciousness, from gender conventions, from social work against gender conventions, from texture memory, from the labor steps ofmaintaining or challenging media to form different textures of objects. Their respective frequencies infect, interfere and collaborate with each other in the same field, showing a slice of sculptural practice driven by material thinking. Test whether the empty frame of the sculpture can be filled with sufficient somatic processes to escape the trap of theory and bypass the spectacle of the installation.
+
+-- Zhang yi`,
+    footnote: "September 2021",
+    workIncluded: [],
+  },
+
+  {
+    id: "e6",
+    category: " ",
+    title: "Outside of Bodies",
+    location: "Zero Gallery ",
+    date: "2021",
+    header: "161H x 169W x 146W inches",
+    subheader: "Nylon, wall and fillings",
+    images: [
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies01%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies02%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies03%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies04%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies05%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies06%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies07%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies08%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies09%400.33x.jpg",
+      "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/outside-of-bodies10%400.33x.jpg",
+    ],
+    textContent:
+      "The quilting of work Outside of bodies is inspired by the lines of wrinkles on the soles of our feet. The piece explores social taboos, inner desires, and fetish through an immersive site-\n" +
+      "specific installation that is hand and machine-sewn",
+    textContent2:
+      "A series that I started working on in 2019, starting from on a 40 x 40 canvas. The installation is partly sewn with a sewing machine and hand stuffed throughout. Other areas are hand stitches before and during installation, and lastly negative spaces that are cut and torn for finishing touches. I was really interested in how one feels when they walk into the gallery space which is still something I am researching and diving deeper into, lot of light adjustments, including brightness, warmth, angel, shadows, and overall vibe. Space, spatial perception, interconnections, and changes as the audience walks to, around, and within. So before the actual piece was made, it was first a photo from different angles, sketches, and imagined measurements. Then blank canvases were hung, with ideas of the whole installation already in mind. Ladders were built and r hen it was the process of on-site sketching. After all pieces were sketched they were brought back to the studio to sew together. Brought back, reassembling, and slight changes, lastly the interconnecting tubes were shown by hand on sight as the width, tension, and length were then adjusted according to the whole thing.",
+    footnote:
+      "The form of the piece it self is a macroscopic view into the micro, into the abject and sacred. The stitched forms are replication of foot wrinkles",
+    workIncluded: [],
+  },
+];
+
+export { exhibitions2 };

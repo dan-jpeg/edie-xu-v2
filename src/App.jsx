@@ -29,6 +29,7 @@ import useScrollToTop from "./hooks/useScrollToTop";
 import ScrollBasedAnimation from "./components/NavigationControls.jsx";
 import { getAdjacentItems } from "./components/NavigationUtility.jsx";
 import ContactMenu from "./components/ContactMenu.jsx";
+import AdminPanel from "./AdminPanel.jsx";
 
 const App = () => {
   const [lenisScrollProgress, setLenisScrollProgress] = useState(0);
@@ -269,6 +270,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
             element={<ProjectPage scrollYProgress={scrollYProgress} />}
           />
           <Route path="/video/:slug" element={<VideoPage />} />
+          <Route path="/admin" element={<AdminPanel />} />
           <Route
             path="/exhibition1"
             element={<ExhibitionSpread scrollYProgress={scrollYProgress} />}

@@ -310,6 +310,20 @@ const selectedWorks = [
         "url": "https://firebasestorage.googleapis.com/v0/b/common-base-d538e.firebasestorage.app/o/untitled4.jpg?alt=media&token=1d293cc6-0fb6-4e1a-b76e-ab5310d96271"
       }
     ]
+  },
+  {
+    "title": "sdsad",
+    "year": "sadasd",
+    "description": "dasdad",
+    "material": "dasdsad",
+    "dimensions": "dasd",
+    "category": "",
+    "location": "dasdad",
+    "date": "",
+    "videoUrl": "",
+    "safeTitle": "",
+    "duration": "",
+    "id": "1761491136256"
   }
 ];
 
