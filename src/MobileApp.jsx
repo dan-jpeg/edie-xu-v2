@@ -1,4 +1,4 @@
-// MobileApp.jsx - Our streamlined mobile version
+// MobileApp.jsx - Mobile version with DataProvider
 import { useState, useCallback } from "react";
 import {
   BrowserRouter as Router,
@@ -14,7 +14,6 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { exhibitions2 } from "./data/projects-and-videos.js";
 import {
   ExhibitionPage,
   ProjectPage,
@@ -22,15 +21,25 @@ import {
 } from "./components/PageComponents.jsx";
 import useScrollToTop from "./hooks/useScrollToTop";
 import MobileHome from "./MobileHome.jsx";
+import { DataProvider } from "./context/DataContext.jsx";
 
 import whitePaperBg from "/src/assets/white-paper-bg-cropped.png";
 import bangerBg from "/src/assets/banger_01.jpg";
 
 const MobileApp = () => {
+  return (
+    <Router>
+      <DataProvider>
+        <MobileAppWrapper />
+      </DataProvider>
+    </Router>
+  );
+};
+
+const MobileAppWrapper = () => {
   const [lenisScrollProgress, setLenisScrollProgress] = useState(0);
   const { scrollYProgress } = useScroll();
 
-  // Simple scroll tracking
   const onLenisScroll = useCallback(({ scroll, limit }) => {
     const progress = scroll / limit;
     setLenisScrollProgress(progress);
@@ -41,14 +50,12 @@ const MobileApp = () => {
   };
 
   return (
-    <Router>
-      <ReactLenis root options={lenisOptions} onScroll={onLenisScroll}>
-        <MobileAppContent
-          scrollYProgress={scrollYProgress}
-          lenisScrollProgress={lenisScrollProgress}
-        />
-      </ReactLenis>
-    </Router>
+    <ReactLenis root options={lenisOptions} onScroll={onLenisScroll}>
+      <MobileAppContent
+        scrollYProgress={scrollYProgress}
+        lenisScrollProgress={lenisScrollProgress}
+      />
+    </ReactLenis>
   );
 };
 
@@ -57,12 +64,10 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Progress bar animation
   const progressScale = useTransform(scrollYProgress, (value) => {
     return value <= 1 ? 0.1 + value * 0.9 : 1;
   });
 
-  // Scroll to top functionality
   const lenis = useLenis();
   const scrollToTop = () => {
     if (lenis) {
@@ -74,7 +79,6 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
     navigate("/");
   };
 
-  // Determine which background to use based on current route
   const isHomePage = location.pathname === "/";
   const backgroundImage = !isHomePage ? bangerBg : bangerBg;
   const cover = isHomePage ? true : false;
@@ -84,39 +88,14 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
   return (
     <div
       className={`scrollbar-hide ${isHomePage ? "mobile-app-container" : ""}`}
-
-      // style={{
-      //   backgroundImage: `url(${backgroundImage})`,
-      //   backgroundSize: `${cover}`,
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat",
-      //   minHeight: "100vh",
-      // }}
     >
-      {/* Simple progress bar */}
-      {/*<div className="fixed top-0 left-0  w-full h-2 bg-gray-100">*/}
-      {/*  <motion.div*/}
-      {/*    className="h-full bg-black"*/}
-      {/*    style={{ scaleX: progressScale, transformOrigin: "0%" }}*/}
-      {/*    onClick={scrollToTop}*/}
-      {/*  />*/}
-      {/*</div>*/}
-
-      {/*<div*/}
-      {/*  onClick={goToHome}*/}
-      {/*  className=" fixed bottom-[1.4rem] transform  z-30 right-16"*/}
-      {/*>*/}
-      {/*  <span className=" cursor-pointer text-[11px] font-alte-haas  z-30  font-bold ">*/}
-      {/*    EDIE XU*/}
-      {/*  </span>*/}
-      {/*</div>*/}
       {/* Footer navigation */}
-      <div className="w-full bg-white fixed bottom-[1.3rem] py-1  px-8 text-[11px] font-alte-haas flex z-20">
-        <div className="grid grid-cols-4 w-full gap-4  place-items-center text-right ">
-          <div className="col-span-1 w-full ">
+      <div className="w-full bg-white fixed bottom-[1.3rem] py-1 px-8 text-[11px] font-alte-haas flex z-20">
+        <div className="grid grid-cols-4 w-full gap-4 place-items-center text-right">
+          <div className="col-span-1 w-full">
             <a href="mailto:ediexxu@gmail.com">EMAIL</a>
           </div>
-          <div className="col-span-1   w-full text-right  ">
+          <div className="col-span-1 w-full text-right">
             <a
               href="http://instagram.com/e__xu"
               target="_blank"
@@ -125,14 +104,18 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
               INSTAGRAM
             </a>
           </div>
-          <div className="col-span-1 text-center w-full ">
-            <a href="#" target="_blank" rel="noopener noreferrer">
+          <div className="col-span-1 text-center w-full">
+            <a
+              href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               CV
             </a>
           </div>
           <div
             onClick={goToHome}
-            className="col-span-1     text-right font-bold w-full cursor-pointer "
+            className="col-span-1 text-right font-bold w-full cursor-pointer"
           >
             <span>EDIE XU</span>
           </div>
@@ -154,7 +137,5 @@ const MobileAppContent = ({ scrollYProgress, lenisScrollProgress }) => {
     </div>
   );
 };
-
-// Simple Mobile Home component placeholder
 
 export default MobileApp;

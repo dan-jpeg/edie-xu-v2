@@ -1,19 +1,40 @@
-// MobileHome.jsx - Three column grid layout
+// MobileHome.jsx - Three column grid layout with API data
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  exhibitions2,
-  selectedWorks,
-  videos,
-} from "./data/projects-and-videos.js";
+import { useData } from "./context/DataContext.jsx";
 import { slugify } from "./helpers/slugify";
 
 const MobileHome = () => {
+  const { data, loading, error } = useData();
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider text-gray-400">
+          Loading...
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="text-[10px] uppercase tracking-wider text-red-500 mb-2">
+            Error loading data
+          </div>
+          <div className="text-[9px] text-gray-400">{error}</div>
+        </div>
+      </div>
+    );
+  }
+
   // Combine all content types
   const allContent = [
-    ...exhibitions2.map((item) => ({ ...item, type: "exhibition" })),
-    ...selectedWorks.map((item) => ({ ...item, type: "project" })),
-    ...videos.map((item) => ({ ...item, type: "video" })),
+    ...data.exhibitions.map((item) => ({ ...item, type: "exhibition" })),
+    ...data.selectedWorks.map((item) => ({ ...item, type: "project" })),
+    ...data.videos.map((item) => ({ ...item, type: "video" })),
   ];
 
   // Sort by date (assuming items have a date property)
@@ -23,13 +44,11 @@ const MobileHome = () => {
 
   return (
     <div className="pt-8 font-alte-haas pb-32">
-      {/* Page header */}
-
       {/* 3-column grid layout */}
-      <div className="grid grid-cols-4  splace-items-start justify-center h-full   gap-4 ">
-        <div className="content-column ">
+      <div className="grid grid-cols-4 splace-items-start justify-center h-full gap-4">
+        <div className="content-column">
           <div className="flex flex-col text-right space-y-2">
-            <h2 className=" text-[10px] font-bold  mb-12">EXHIBITIONS</h2>
+            <h2 className="text-[10px] font-bold mb-12">EXHIBITIONS</h2>
             {sortedContent
               .filter((item) => item.type === "exhibition")
               .map((item, index) => (
@@ -39,9 +58,9 @@ const MobileHome = () => {
         </div>
 
         {/* Works column */}
-        <div className="content-column w-full  border-black   ">
-          <div className="flex flex-col text-right  space-y-2">
-            <h2 className=" text-[10px] font-bold  mb-12">WORKS</h2>
+        <div className="content-column w-full border-black">
+          <div className="flex flex-col text-right space-y-2">
+            <h2 className="text-[10px] font-bold mb-12">WORKS</h2>
             {sortedContent
               .filter((item) => item.type === "project")
               .map((item, index) => (
@@ -50,12 +69,10 @@ const MobileHome = () => {
           </div>
         </div>
 
-        {/* Exhibitions column */}
-
         {/* Videos column */}
-        <div className="content-column  ">
+        <div className="content-column">
           <div className="flex flex-col text-right space-y-2">
-            <h2 className=" text-[10px] font-bold  mb-12">VIDEO</h2>
+            <h2 className="text-[10px] font-bold mb-12">VIDEO</h2>
             {sortedContent
               .filter((item) => item.type === "video")
               .map((item, index) => (
@@ -63,10 +80,9 @@ const MobileHome = () => {
               ))}
           </div>
         </div>
-        <div className="col-span-1  text-[11px] text-right   border-black font-bold w-full cursor-pointer">
+        <div className="col-span-1 text-[11px] text-right border-black font-bold w-full cursor-pointer">
           <span className="m-0 p-0">EDIE XU</span>
         </div>
-        {/*<div className="col-span-3 bg-black h-[2px] w-full mt-1"></div>*/}
       </div>
     </div>
   );
