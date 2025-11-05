@@ -4,33 +4,38 @@ import { motion } from "framer-motion";
 import { uploadImage } from "../../firebase";
 
 const FormModal = ({ type, item, onClose, onSave }) => {
-  const [formData, setFormData] = useState(() => ({
-    title: "",
-    year: "",
-    description: "",
-    material: "",
-    dimensions: "",
-    category: "",
-    location: "",
-    date: "",
-    url: "",
-    videoUrl: "",
-    safeTitle: "",
-    duration: "",
-    media: [],
-    images: [],
-    header: "",
-    textContent: "",
-    workIncluded: [],
-    ...item,
-  }));
+  const [formData, setFormData] = useState(() => {
+    const initialData = {
+      title: "",
+      year: "",
+      description: "",
+      material: "",
+      dimensions: "",
+      category: "",
+      location: "",
+      date: "",
+      url: "",
+      videoUrl: "",
+      safeTitle: "",
+      duration: "",
+      media: [],
+      images: [],
+      header: "",
+      textContent: "",
+      workIncluded: [],
+      ...item,
+    };
+    console.log("FormModal initialized with:", initialData);
+    return initialData;
+  });
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState("");
   const [saving, setSaving] = useState(false);
 
   const handleSubmit = () => {
-    if (!formData.title || !formData.year) {
-      alert("Please fill in required fields (Title and Year)");
+    // Only title is required
+    if (!formData.title || formData.title.trim() === "") {
+      alert("Please fill in Title (required)");
       return;
     }
 
@@ -147,7 +152,7 @@ const FormModal = ({ type, item, onClose, onSave }) => {
 
             <div>
               <label className="block text-[9px] uppercase tracking-wider mb-2 text-gray-500">
-                Year *
+                Year
               </label>
               <input
                 type="text"

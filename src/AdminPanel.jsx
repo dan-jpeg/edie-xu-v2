@@ -9,7 +9,8 @@ import { useLenis } from "lenis/react";
 import SiloHoverButton from "./components/SiloHoverButton.jsx";
 
 const API_URL =
-  import.meta.env.VITE_ADMIN_API_URL || "https://exu-admin-server.onrender.com";
+  import.meta.env.VITE_ADMIN_API_URL ||
+  "https://exu-admin-server.onrender.com/api";
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {
