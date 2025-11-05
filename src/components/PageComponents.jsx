@@ -1,23 +1,36 @@
+// src/components/PageComponents.jsx
 import { useParams, useNavigate } from "react-router-dom";
 import DisplayedProject from "./DisplayedProject";
 import DisplayedVideo from "./DisplayedVideo";
 import { ExhibitionDefaultSpread } from "./ExhibitionSpread.jsx";
-import {
-  selectedWorks,
-  videos,
-  exhibitions2,
-} from "../data/projects-and-videos.js";
 import { slugify } from "../helpers/slugify.jsx";
-import { getAdjacentItems } from "./NavigationUtility.jsx";
+import { useAdjacentItems } from "./NavigationUtility.jsx";
+import { useData } from "../context/DataContext.jsx";
 
 const ProjectPage = ({ scrollYProgress }) => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const project = selectedWorks.find((p) => slugify(p.title) === slug);
-  const { prev, next } = getAdjacentItems(slug);
+  const { data, loading } = useData();
+  const project = data.selectedWorks.find((p) => slugify(p.title) === slug);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider text-gray-400">
+          Loading...
+        </div>
+      </div>
+    );
+  }
 
   if (!project) {
-    return <div>Project not found</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider">
+          Project not found
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -30,11 +43,27 @@ const ProjectPage = ({ scrollYProgress }) => {
 const VideoPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const video = videos.find((v) => slugify(v.safeTitle) === slug);
-  const { prev, next } = getAdjacentItems(slug);
+  const { data, loading } = useData();
+  const video = data.videos.find((v) => slugify(v.safeTitle) === slug);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider text-gray-400">
+          Loading...
+        </div>
+      </div>
+    );
+  }
 
   if (!video) {
-    return <div>Video not found</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider">
+          Video not found
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -47,11 +76,27 @@ const VideoPage = () => {
 const ExhibitionPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const exhibition = exhibitions2.find((e) => slugify(e.title) === slug);
-  const { prev, next } = getAdjacentItems(slug);
+  const { data, loading } = useData();
+  const exhibition = data.exhibitions.find((e) => slugify(e.title) === slug);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider text-gray-400">
+          Loading...
+        </div>
+      </div>
+    );
+  }
 
   if (!exhibition) {
-    return <div>Exhibition not found</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider">
+          Exhibition not found
+        </div>
+      </div>
+    );
   }
 
   return (

@@ -26,7 +26,7 @@ import {
 } from "framer-motion";
 import useScrollToTop from "./hooks/useScrollToTop";
 import ScrollBasedAnimation from "./components/NavigationControls.jsx";
-import { getAdjacentItems } from "./components/NavigationUtility.jsx";
+import { getAdjacentItemsFromData } from "./components/NavigationUtility.jsx";
 import ContactMenu from "./components/ContactMenu.jsx";
 import AdminPanel from "./AdminPanel.jsx";
 import { DataProvider, useData } from "./context/DataContext.jsx";
@@ -76,6 +76,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const { data } = useData();
   const [isShowingVideo, setIsShowingVideo] = useState(false);
   const [isHome, setIsHome] = useState(false);
   const [isShowingProject, setIsShowingProject] = useState(false);
@@ -99,13 +100,14 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
     setIsShowingVideo(isVideoRoute || isLandingPage);
     setIsShowingProject(isProjectOrExhibitionPage);
 
+    // Update adjacent items whenever the location changes
     if (isProjectOrExhibitionPage || isVideoRoute) {
-      const { prev, next } = getAdjacentItems(location.pathname);
+      const { prev, next } = getAdjacentItemsFromData(data, location.pathname);
       setAdjacentItems({ prev, next });
     } else {
       setAdjacentItems({ prev: null, next: null });
     }
-  }, [location]);
+  }, [location, data]);
 
   const handleNavigation = (direction) => {
     const item = direction === "prev" ? adjacentItems.prev : adjacentItems.next;
