@@ -15,27 +15,53 @@ const Login = ({ onLogin }) => {
     setError("");
     setLoading(true);
 
+    console.log("🔐 Login attempt started");
+    console.log("📍 API URL:", `${API_URL}/login`);
+
     try {
+      console.log("📤 Sending login request...");
+
       const response = await fetch(`${API_URL}/login`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ password }),
       });
 
+      console.log("📥 Response received");
+      console.log("Status:", response.status);
+      console.log("Status Text:", response.statusText);
+      console.log("Headers:", Object.fromEntries(response.headers.entries()));
+
       const data = await response.json();
+      console.log("📦 Response data:", data);
 
       if (response.ok) {
+        console.log("✅ Login successful");
         // Store JWT token
         sessionStorage.setItem("adminToken", data.token);
         sessionStorage.setItem("adminAuth", "true");
         onLogin();
       } else {
+        console.log("❌ Login failed:", data.error);
         setError(data.error || "Invalid password");
       }
     } catch (error) {
-      console.error("Login error:", error);
-      setError("Failed to connect to server");
+      console.error("🚨 Login error caught:", error);
+      console.error("Error name:", error.name);
+      console.error("Error message:", error.message);
+
+      // More specific error messages
+      if (error.name === "TypeError" && error.message.includes("fetch")) {
+        setError("Cannot reach server. Check if backend is running.");
+      } else if (error.message.includes("JSON")) {
+        setError("Server returned invalid response");
+      } else {
+        setError(`Connection error: ${error.message}`);
+      }
     } finally {
+      console.log("🏁 Login attempt completed");
       setLoading(false);
     }
   };
@@ -70,6 +96,12 @@ const Login = ({ onLogin }) => {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
+
+        {/* Debug info */}
+        <div className="mt-4 text-[8px] text-gray-400 text-center space-y-1">
+          <div>Server: {API_URL}</div>
+          <div className="text-[7px]">Check browser console for logs</div>
+        </div>
       </motion.div>
     </div>
   );
