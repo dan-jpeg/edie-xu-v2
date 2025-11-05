@@ -9,7 +9,6 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import { exhibitions2 } from "./data/projects-and-videos.js";
 import ExhibitionSpread, {
   ExhibitionDefaultSpread,
 } from "./components/ExhibitionSpread.jsx";
@@ -30,6 +29,7 @@ import ScrollBasedAnimation from "./components/NavigationControls.jsx";
 import { getAdjacentItems } from "./components/NavigationUtility.jsx";
 import ContactMenu from "./components/ContactMenu.jsx";
 import AdminPanel from "./AdminPanel.jsx";
+import { DataProvider, useData } from "./context/DataContext.jsx";
 
 const App = () => {
   const [lenisScrollProgress, setLenisScrollProgress] = useState(0);
@@ -52,20 +52,21 @@ const App = () => {
   });
 
   const onLenisScroll = useCallback(({ scroll, limit }) => {
-    // Calculate scroll progress as a percentage
     const progress = scroll / limit;
     setLenisScrollProgress(progress);
   }, []);
 
   return (
     <Router>
-      <ReactLenis root options={lenisOptions} onScroll={onLenisScroll}>
-        <AppContent
-          lenisScrollProgress={lenisScrollProgress}
-          scrollYProgress={scrollYProgress}
-          hidden={hidden}
-        />
-      </ReactLenis>
+      <DataProvider>
+        <ReactLenis root options={lenisOptions} onScroll={onLenisScroll}>
+          <AppContent
+            lenisScrollProgress={lenisScrollProgress}
+            scrollYProgress={scrollYProgress}
+            hidden={hidden}
+          />
+        </ReactLenis>
+      </DataProvider>
     </Router>
   );
 };
@@ -86,8 +87,8 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   const [contactMenuExpanded, setContactMenuExpanded] = useState(false);
 
   useEffect(() => {
-    const isHomePage = location.pathname === "/"; // Check if the current route is "/"
-    setIsHome(isHomePage); // Update isHome state
+    const isHomePage = location.pathname === "/";
+    setIsHome(isHomePage);
 
     const isVideoRoute = location.pathname.includes("/video/");
     const isLandingPage = location.pathname === "/hello";
@@ -98,7 +99,6 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
     setIsShowingVideo(isVideoRoute || isLandingPage);
     setIsShowingProject(isProjectOrExhibitionPage);
 
-    // Update adjacent items whenever the location changes
     if (isProjectOrExhibitionPage || isVideoRoute) {
       const { prev, next } = getAdjacentItems(location.pathname);
       setAdjacentItems({ prev, next });
@@ -132,11 +132,10 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   );
 
   const topRightOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const scaleThreshold = 1; // Reach full scale at 15% scroll instead of 10%
+  const scaleThreshold = 1;
 
   const progressScale = useTransform(scrollYProgress, (value) => {
     if (value <= scaleThreshold) {
-      // Scale from 0.1 to 1 over the defined threshold
       return 0.1 + value * (0.9 / scaleThreshold);
     } else {
       return 1;
@@ -157,20 +156,18 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
   };
 
   return (
-    <div className="app-container    scrollbar-hide">
+    <div className="app-container scrollbar-hide">
       <div
-        className={`top-right-header-wrapper  fixed left-[1.8rem] top-[4.5rem] md:top-auto md:bottom-[10vh] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
+        className={`top-right-header-wrapper fixed left-[1.8rem] top-[4.5rem] md:top-auto md:bottom-[10vh] z-[3000] ${isShowingVideo ? "translate-y-[-50px]" : ""} `}
       >
         <motion.div
           variants={contactVariants}
           animate={hidden ? "hidden" : "visible"}
           transition={{ duration: 0.32, ease: "linear" }}
-          className="top-right-header italic font-bold  text-[12px]"
+          className="top-right-header italic font-bold text-[12px]"
         >
           <ul
-            className={
-              "  hidden font-alte-haas cursor-context-menu grid-cols-2"
-            }
+            className={"hidden font-alte-haas cursor-context-menu grid-cols-2"}
           >
             <li className={`pt-14 not-italic m-0 md:py-1`}>
               <h1
@@ -198,7 +195,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
         </motion.div>
       </div>
 
-      <div className="w-full fixed bottom-4 italic text-[11px]  font-alte-haas flex place-items-center justify-center">
+      <div className="w-full fixed bottom-4 italic text-[11px] font-alte-haas flex place-items-center justify-center">
         <div className="flex space-x-4 font flex-row">
           <a href="mailto:ediexxu@gmail.com">EMAIL</a>
           <a
@@ -208,7 +205,6 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
           >
             INSTAGRAM
           </a>
-
           <a
             href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf"
             target="_blank"
@@ -218,6 +214,7 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
           </a>
         </div>
       </div>
+
       <div
         className={`${
           isShowingProject || isShowingVideo ? "" : "hidden"
@@ -225,18 +222,16 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
           isShowingVideo ? "translate-y-[50px]" : ""
         }`}
       >
-        {/* Previous Button */}
         <motion.div
-          className="italic hover:opacity-30 text-[11px] "
+          className="italic hover:opacity-30 text-[11px]"
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("prev")}
         >
           {adjacentItems.prev ? "PREVIOUS" : ""}
         </motion.div>
 
-        {/* Next Button */}
         <motion.div
-          className="italic hover:opacity-30 text-[11px] "
+          className="italic hover:opacity-30 text-[11px]"
           style={{ translateY: bottomLeftTranslate }}
           onClick={() => handleNavigation("next")}
         >
@@ -275,7 +270,6 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
             path="/exhibition1"
             element={<ExhibitionSpread scrollYProgress={scrollYProgress} />}
           />
-          {/*<Route path="/hello" element={<LandingPage />} />*/}
         </Routes>
       </div>
     </div>
@@ -283,16 +277,41 @@ const AppContent = ({ lenisScrollProgress, scrollYProgress, hidden }) => {
 };
 
 const Home = () => {
+  const { data, loading, error } = useData();
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-[10px] uppercase tracking-wider text-gray-400">
+          Loading...
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="text-[10px] uppercase tracking-wider text-red-500 mb-2">
+            Error loading data
+          </div>
+          <div className="text-[9px] text-gray-400">{error}</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className=" pb-[510px] ">
-      <span className=" hidden text-black text-[12px] -mt-1 italic md:block md:absolute transform -translate-x-[80px]">
+    <div className="pb-[510px]">
+      <span className="hidden text-black text-[12px] -mt-1 italic md:block md:absolute transform -translate-x-[80px]">
         EXHIBITIONS
       </span>
-      {exhibitions2.map((exhibition, index) => (
+      {data.exhibitions.map((exhibition, index) => (
         <Listing
           key={exhibition.id}
           listing={exhibition}
-          previousListing={index > 0 ? exhibitions2[index - 1] : null}
+          previousListing={index > 0 ? data.exhibitions[index - 1] : null}
         />
       ))}
     </div>
