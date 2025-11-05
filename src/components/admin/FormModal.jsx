@@ -1,7 +1,20 @@
 // src/components/admin/FormModal.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { uploadImage, uploadVideo } from "../../firebase";
+
+// Helper function to create safe title
+const createSafeTitle = (title) => {
+  if (!title) return "";
+
+  return title
+    .toLowerCase() // Convert to lowercase
+    .replace(/[^\x00-\x7F]/g, "") // Remove non-ASCII characters (Chinese, etc.)
+    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters except spaces and hyphens
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with single hyphen
+    .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+};
 
 const FormModal = ({ type, item, onClose, onSave }) => {
   const [formData, setFormData] = useState(() => {
@@ -33,11 +46,34 @@ const FormModal = ({ type, item, onClose, onSave }) => {
   const [saving, setSaving] = useState(false);
   const [videoUploading, setVideoUploading] = useState(false);
   const [videoUploadProgress, setVideoUploadProgress] = useState("");
+  const [safeTitleManuallyEdited, setSafeTitleManuallyEdited] = useState(false);
+
+  // Auto-generate safe title from title for videos
+  useEffect(() => {
+    if (type === "videos" && formData.title && !safeTitleManuallyEdited) {
+      const autoSafeTitle = createSafeTitle(formData.title);
+      setFormData((prev) => ({
+        ...prev,
+        safeTitle: autoSafeTitle,
+      }));
+    }
+  }, [formData.title, type, safeTitleManuallyEdited]);
 
   const handleSubmit = () => {
-    // Only title is required
+    // Title is always required
     if (!formData.title || formData.title.trim() === "") {
       alert("Please fill in Title (required)");
+      return;
+    }
+
+    // Safe title is required for videos
+    if (
+      type === "videos" &&
+      (!formData.safeTitle || formData.safeTitle.trim() === "")
+    ) {
+      alert(
+        "Safe Title is required for videos. It should auto-generate from the title.",
+      );
       return;
     }
 
@@ -51,6 +87,11 @@ const FormModal = ({ type, item, onClose, onSave }) => {
   };
 
   const handleChange = (field, value) => {
+    // Track if safe title was manually edited
+    if (field === "safeTitle") {
+      setSafeTitleManuallyEdited(true);
+    }
+
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -220,14 +261,22 @@ const FormModal = ({ type, item, onClose, onSave }) => {
               <>
                 <div>
                   <label className="block text-[9px] uppercase tracking-wider mb-2 text-gray-500">
-                    Safe Title
+                    Safe Title *{" "}
+                    {!safeTitleManuallyEdited && (
+                      <span className="text-gray-400">(auto-generated)</span>
+                    )}
                   </label>
                   <input
                     type="text"
                     value={formData.safeTitle}
                     onChange={(e) => handleChange("safeTitle", e.target.value)}
                     className="w-full bg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
+                    placeholder="auto-generates from title"
                   />
+                  <p className="text-[8px] text-gray-400 mt-1">
+                    Used in URL: /video/
+                    {formData.safeTitle || "safe-title-here"}
+                  </p>
                 </div>
 
                 <div>
@@ -463,7 +512,7 @@ const FormModal = ({ type, item, onClose, onSave }) => {
               )}
             </div>
 
-            {/* Included Works Section - Moved to after Images */}
+            {/* Included Works Section */}
             {type === "exhibitions" && (
               <div className="pt-4 border-t border-black">
                 <div className="flex items-center justify-between mb-3">
