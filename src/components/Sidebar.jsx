@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { selectedWorks, videos } from "../data/projects-and-videos.js";
 import { Link } from "react-router-dom";
 import { slugify } from "../helpers/slugify.jsx";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useData } from "../context/DataContext.jsx";
 
 import "./newSidebarCss.css";
 
 const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
+  const { data, loading } = useData();
   const [isDesktop, setIsDesktop] = useState(false);
   const [worksExpanded, setWorksExpanded] = useState(true);
   const [videosExpanded, setVideosExpanded] = useState(false);
@@ -31,6 +32,10 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Use data from context instead of static imports
+  const selectedWorks = data.selectedWorks;
+  const videos = data.videos;
+
   const displayedWorks = worksExpanded
     ? selectedWorks
     : selectedWorks.slice(0, 3);
@@ -50,6 +55,24 @@ const Sidebar = ({ isShowingVideo, hidden, isHome }) => {
     visible: { y: 0, opacity: 1 },
     hidden: { y: 10, opacity: 0 },
   };
+
+  // Show loading state or empty arrays while loading
+  if (loading) {
+    return (
+      <div
+        className={`md-block ${isShowingVideo ? "sticky" : "fixed"} z-[1000]`}
+      >
+        <div className="sidebar-header mr-16 md: flex-row z-40 fixed top-3 left-4 ">
+          <h3
+            className="edie-xu ml-2 text-[11px] italic text-black font-bold mb-0 mt-[24px] cursor-pointer"
+            onClick={() => (window.location.href = "/")}
+          >
+            EDIE XU
+          </h3>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`md-block ${isShowingVideo ? "sticky" : "fixed"} z-[1000]`}>
