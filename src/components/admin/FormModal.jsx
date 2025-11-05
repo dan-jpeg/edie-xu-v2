@@ -1,7 +1,7 @@
 // src/components/admin/FormModal.jsx
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { uploadImage } from "../../firebase";
+import { uploadImage, uploadVideo } from "../../firebase";
 
 const FormModal = ({ type, item, onClose, onSave }) => {
   const [formData, setFormData] = useState(() => {
@@ -31,6 +31,8 @@ const FormModal = ({ type, item, onClose, onSave }) => {
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState("");
   const [saving, setSaving] = useState(false);
+  const [videoUploading, setVideoUploading] = useState(false);
+  const [videoUploadProgress, setVideoUploadProgress] = useState("");
 
   const handleSubmit = () => {
     // Only title is required
@@ -88,6 +90,30 @@ const FormModal = ({ type, item, onClose, onSave }) => {
     }
   };
 
+  const handleVideoUpload = async (file) => {
+    if (!file) return;
+
+    setVideoUploading(true);
+    setVideoUploadProgress("Uploading video...");
+
+    try {
+      const url = await uploadVideo(file, "videos");
+      setFormData((prev) => ({
+        ...prev,
+        videoUrl: url,
+      }));
+
+      setVideoUploadProgress("Video uploaded!");
+      setTimeout(() => setVideoUploadProgress(""), 2000);
+    } catch (error) {
+      alert("Failed to upload video. Make sure Firebase is configured.");
+      console.error(error);
+      setVideoUploadProgress("");
+    } finally {
+      setVideoUploading(false);
+    }
+  };
+
   const handleRemoveImage = (index) => {
     if (type === "works") {
       setFormData((prev) => ({
@@ -125,9 +151,9 @@ const FormModal = ({ type, item, onClose, onSave }) => {
       <div className="min-h-screen flex justify-center">
         <motion.div
           onClick={(e) => e.stopPropagation()}
-          className="bg-white   w-full max-w-2xl my-8 overflow-y-auto max-h-[90vh]"
+          className="bg-white w-full max-w-2xl my-8 overflow-y-auto max-h-[90vh]"
         >
-          <div className="  p-6 flex justify-between items-center sticky top-0 bg-white">
+          <div className="p-6 flex justify-between items-center sticky top-0 bg-white">
             <h2 className="text-[11px] uppercase tracking-wider">
               {item?.id ? "Edit" : "Add New"}{" "}
               {type === "works" ? "Work" : type.slice(0, -1)}
@@ -158,7 +184,7 @@ const FormModal = ({ type, item, onClose, onSave }) => {
                 type="text"
                 value={formData.year}
                 onChange={(e) => handleChange("year", e.target.value)}
-                className="w-full  bg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
+                className="w-full bg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
               />
             </div>
 
@@ -172,7 +198,7 @@ const FormModal = ({ type, item, onClose, onSave }) => {
                     type="text"
                     value={formData.material}
                     onChange={(e) => handleChange("material", e.target.value)}
-                    className="w-fullbg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
+                    className="w-full bg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
                   />
                 </div>
 
@@ -213,19 +239,92 @@ const FormModal = ({ type, item, onClose, onSave }) => {
                     value={formData.duration}
                     onChange={(e) => handleChange("duration", e.target.value)}
                     className="w-full bg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
+                    placeholder="e.g., 5:30"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-[9px] uppercase tracking-wider mb-2 text-gray-500">
-                    Video URL
+                {/* Video Upload Section */}
+                <div className="border-t border-black pt-4">
+                  <label className="block text-[9px] uppercase tracking-wider mb-3 text-gray-500">
+                    Video
                   </label>
-                  <input
-                    type="text"
-                    value={formData.videoUrl}
-                    onChange={(e) => handleChange("videoUrl", e.target.value)}
-                    className="w-full bg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
-                  />
+
+                  {/* Upload Button */}
+                  <div className="mb-4">
+                    <label className="flex items-center justify-center w-full h-24 border border-dashed border-black hover:bg-gray-50 cursor-pointer transition-colors">
+                      <div className="text-center">
+                        <p className="text-[9px] uppercase tracking-wider">
+                          {videoUploading
+                            ? videoUploadProgress
+                            : formData.videoUrl
+                              ? "✓ Video Uploaded - Click to Replace"
+                              : "+ Upload Video"}
+                        </p>
+                        {formData.videoUrl && !videoUploading && (
+                          <p className="text-[8px] text-gray-400 mt-1">
+                            or paste URL below
+                          </p>
+                        )}
+                      </div>
+                      <input
+                        type="file"
+                        accept="video/*"
+                        onChange={(e) => {
+                          const file = e.target.files[0];
+                          if (file) {
+                            // Check file size (e.g., max 100MB)
+                            const maxSize = 100 * 1024 * 1024; // 100MB
+                            if (file.size > maxSize) {
+                              alert(
+                                "Video file is too large. Maximum size is 100MB.",
+                              );
+                              return;
+                            }
+                            handleVideoUpload(file);
+                          }
+                        }}
+                        className="hidden"
+                        disabled={videoUploading}
+                      />
+                    </label>
+                  </div>
+
+                  {/* Video URL Input - Alternative to upload */}
+                  <div>
+                    <label className="block text-[9px] uppercase tracking-wider mb-2 text-gray-500">
+                      Or Paste Video URL
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.videoUrl}
+                      onChange={(e) => handleChange("videoUrl", e.target.value)}
+                      className="w-full bg-gray-50 border-black p-2 text-[11px] focus:outline-none bg-transparent"
+                      placeholder="https://... or Firebase URL"
+                      disabled={videoUploading}
+                    />
+                  </div>
+
+                  {/* Video Preview */}
+                  {formData.videoUrl && !videoUploading && (
+                    <div className="mt-4">
+                      <div className="relative group">
+                        <video
+                          src={formData.videoUrl}
+                          controls
+                          className="w-full max-h-64 bg-black"
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                        <button
+                          type="button"
+                          onClick={() => handleChange("videoUrl", "")}
+                          className="absolute top-2 right-2 bg-black/80 text-white px-2 py-1 text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          × Remove Video
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </>
             )}
@@ -267,7 +366,7 @@ const FormModal = ({ type, item, onClose, onSave }) => {
                     onChange={(e) =>
                       handleChange("textContent", e.target.value)
                     }
-                    className="w-full  border-black p-2 h-40 text-[11px] focus:outline-none bg-transparent"
+                    className="w-full border-black p-2 h-40 text-[11px] focus:outline-none bg-transparent"
                     placeholder="Full exhibition description..."
                   />
                 </div>
@@ -306,7 +405,7 @@ const FormModal = ({ type, item, onClose, onSave }) => {
                   type="text"
                   value={formData.url}
                   onChange={(e) => handleChange("url", e.target.value)}
-                  className="w-full  border-black p-2 text-[11px] focus:outline-none bg-transparent"
+                  className="w-full border-black p-2 text-[11px] focus:outline-none bg-transparent"
                 />
               </div>
             )}
@@ -479,22 +578,6 @@ const FormModal = ({ type, item, onClose, onSave }) => {
                           }}
                           className="w-full bg-gray-50 p-2 text-[10px] focus:outline-none"
                         />
-
-                        {/*<textarea*/}
-                        {/*  placeholder="Description"*/}
-                        {/*  value={work.description}*/}
-                        {/*  onChange={(e) => {*/}
-                        {/*    const newWorkIncluded = [*/}
-                        {/*      ...formData.workIncluded,*/}
-                        {/*    ];*/}
-                        {/*    newWorkIncluded[index] = {*/}
-                        {/*      ...work,*/}
-                        {/*      description: e.target.value,*/}
-                        {/*    };*/}
-                        {/*    handleChange("workIncluded", newWorkIncluded);*/}
-                        {/*  }}*/}
-                        {/*  className="w-full bg-gray-50 p-2 h-20 text-[10px] focus:outline-none"*/}
-                        {/*/>*/}
                       </div>
                     ))}
                   </div>
@@ -505,14 +588,14 @@ const FormModal = ({ type, item, onClose, onSave }) => {
             <div className="flex gap-4 pt-6">
               <button
                 onClick={handleSubmit}
-                disabled={saving || uploading}
+                disabled={saving || uploading || videoUploading}
                 className="flex-1 bg-black text-white py-3 hover:opacity-80 transition-opacity text-[9px] uppercase tracking-wider disabled:opacity-30"
               >
                 {saving ? "Saving..." : "Save"}
               </button>
               <button
                 onClick={onClose}
-                disabled={saving || uploading}
+                disabled={saving || uploading || videoUploading}
                 className="flex-1 border border-black py-3 hover:bg-black hover:text-white transition-colors text-[9px] uppercase tracking-wider disabled:opacity-30"
               >
                 Cancel

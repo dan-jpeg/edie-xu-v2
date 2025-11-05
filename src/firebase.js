@@ -38,6 +38,18 @@ export const uploadImage = async (file, folder = "images") => {
   }
 };
 
+export const uploadVideo = async (file, folder = "videos", onProgress) => {
+  const timestamp = Date.now();
+  const filename = `${folder}/${timestamp}-${file.name}`;
+  const storageRef = ref(storage, filename);
+
+  // For progress tracking, you'd need uploadBytesResumable
+  // But for simplicity, we'll use uploadBytes
+  await uploadBytes(storageRef, file);
+  const url = await getDownloadURL(storageRef);
+  return url;
+};
+
 // Delete image from Firebase Storage
 export const deleteImage = async (imageUrl) => {
   try {
